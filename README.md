@@ -2,6 +2,11 @@
 
 一个轻量的Windows 11后台闲置提醒工具。离开键盘和鼠标达到设定时间后，在本地播放提示音或自行导入的录音，帮助你记起电脑上原本正在做的事。
 
+画画、玩游戏途中拿起手机，随后忘记电脑上正在做什么？IdleReminder 在你长时间未操作键鼠时播放提醒，帮助你回到电脑。
+
+Ever picked up your phone while drawing or gaming, only to forget what you were doing on your computer?
+IdleReminder plays a reminder sound when your keyboard and mouse have been inactive for a while, helping you get back to what you were doing.
+
 本项目完全免费，当前为试用版0.0.1.28。
 
 ## 下载与运行
