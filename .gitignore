@@ -1,0 +1,11 @@
+bin/
+obj/
+publish/
+data/
+.tools/
+*.user
+backups/
+tests/config-fixtures/
+audit/
+ui-check/phone-trigger-silence.wav
+ui-check/fault-fixtures/
