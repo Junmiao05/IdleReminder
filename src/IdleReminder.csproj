@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup><OutputType>WinExe</OutputType><TargetFramework>net10.0-windows10.0.19041.0</TargetFramework><SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion><UseWindowsForms>true</UseWindowsForms><UseWPF>true</UseWPF><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode><ApplicationManifest>app.manifest</ApplicationManifest><Version>0.0.1.28</Version><AssemblyVersion>0.0.1.28</AssemblyVersion><FileVersion>0.0.1.28</FileVersion><InformationalVersion>0.0.1.28</InformationalVersion><IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion><ApplicationIcon>..\assets\icons\app.ico</ApplicationIcon></PropertyGroup>
+<ItemGroup><Content Include="..\assets\tone?.wav" Link="assets\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" /><Content Include="..\使用指南.txt" Link="使用指南.txt" CopyToOutputDirectory="PreserveNewest" /><Content Include="..\更新日志.txt" Link="更新日志.txt" CopyToOutputDirectory="PreserveNewest" /><Content Include="..\PHONE_NOTIFICATIONS.md" Link="PHONE_NOTIFICATIONS.md" CopyToOutputDirectory="PreserveNewest" /><Content Include="..\ICON_PREPARATION.md" Link="ICON_PREPARATION.md" CopyToOutputDirectory="PreserveNewest" /><EmbeddedResource Include="..\assets\icons\app.ico" LogicalName="IdleReminder.Icons.App.ico"/><EmbeddedResource Include="..\assets\icons\tray.ico" LogicalName="IdleReminder.Icons.Tray.ico"/></ItemGroup>
+</Project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
