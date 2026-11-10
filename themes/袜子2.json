@@ -1,0 +1,33 @@
+{
+  "CheckmarkImage": null,
+  "Name": "\u889C\u5B502",
+  "Colors": {
+    "Window": "#FAF5E7",
+    "Surface": "#FDFAF2",
+    "Control": "#FBF7EC",
+    "Text": "#315E42",
+    "Helper": "#538867",
+    "Accent": "#EDCE65",
+    "Button": "#FBB095",
+    "ButtonText": "#FDFAF2",
+    "AccentText": "#538867",
+    "Border": "#A5B580",
+    "DisabledControl": "#F0F0F0",
+    "DisabledText": "#D5C09B",
+    "CheckBox.CheckedFill": "#8CAB89",
+    "CheckBox.CheckedBorder": "#538867",
+    "CheckBox.Checkmark": "#FDFAF2",
+    "CheckBox.UncheckedFill": "#F4ECD5",
+    "CheckBox.UncheckedBorder": "#F2DD93",
+    "CheckBox.DisabledFill": "#F4F0E8",
+    "CheckBox.DisabledBorder": "#EFE4CB",
+    "CheckBox.DisabledCheckmark": "#FDFAF2",
+    "SelectionBackground": "#EDCE65",
+    "SelectionText": "#FDFAF2",
+    "SliderTrack": "#F4ECD5",
+    "SliderFill": "#F9DB97",
+    "SliderThumb": "#FDA093",
+    "SliderTicks": "#8CAB89",
+    "SliderDisabled": "#D5C09B"
+  }
+}
