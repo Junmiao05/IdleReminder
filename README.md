@@ -11,7 +11,7 @@ IdleReminder plays a reminder sound when your keyboard and mouse have been inact
 
 ## 下载与运行
 
-请到本仓库Releases页面下载IdleReminder-v0.0.1.28-win-x64.zip，解压到固定、可写的目录，运行IdleReminder.exe。请保留整个目录，无需额外安装.NET Runtime。
+请到本仓库Releases页面下载IdleReminder-v0.0.1.28-win-x64.zip，https://github.com/Junmiao05/IdleReminder/releases/tag/v0.0.1.28 ,解压到固定、可写的目录，运行IdleReminder.exe。请保留整个目录，无需额外安装.NET Runtime。
 源码附件是IdleReminder-v0.0.1.28-source.zip，供开发和自行编译使用。
 
 软件常驻系统托盘，关闭设置窗口不等于退出。修改选项后请点击“保存设置”。
