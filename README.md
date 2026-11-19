@@ -20,7 +20,7 @@ https://github.com/Junmiao05/IdleReminder/releases/tag/v0.0.2.0
 软件常驻系统托盘，关闭设置窗口不等于退出。修改选项后请点击“保存设置”。
 当前未进行代码签名。遇到安全提示时请先核对下载来源和SHA256，不要关闭系统安全防护。
 
-皮肤设计器/ SkinDesigner （目前仅提供简体中文界面。The interface is currently available in Simplified Chinese only.）
+皮肤设计器/ SkinDesigner （目前仅提供简体中文界面。The interface is currently available in Simplified Chinese only.）：
 https://github.com/Junmiao05/IdleReminder/releases/tag/skin-designer-v0.0.1.0
 
 ## 功能
