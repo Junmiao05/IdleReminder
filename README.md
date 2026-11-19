@@ -7,15 +7,20 @@
 Ever picked up your phone while drawing or gaming, only to forget what you were doing on your computer?
 IdleReminder plays a reminder sound when your keyboard and mouse have been inactive for a while, helping you get back to what you were doing.
 
-本项目完全免费，当前为试用版0.0.1.28。
+本项目完全免费，当前为v0.0.2.0。
 
 ## 下载与运行
 
-请到本仓库Releases页面下载IdleReminder-v0.0.1.28-win-x64.zip，https://github.com/Junmiao05/IdleReminder/releases/tag/v0.0.1.28 ，解压到固定、可写的目录，运行IdleReminder.exe。请保留整个目录，无需额外安装.NET Runtime。
-源码附件是IdleReminder-v0.0.1.28-source.zip，供开发和自行编译使用。
+Windows 11 x64 用户请下载 IdleReminder-v0.0.2.0-win-x64.zip；已知限制及更新注意事项见包内说明。
 
+For Windows 11 x64, download IdleReminder-v0.0.2.0-win-x64.zip. See the included documentation for known limitations and update instructions.
+
+https://github.com/Junmiao05/IdleReminder/releases/tag/v0.0.2.0
 软件常驻系统托盘，关闭设置窗口不等于退出。修改选项后请点击“保存设置”。
 当前未进行代码签名。遇到安全提示时请先核对下载来源和SHA256，不要关闭系统安全防护。
+
+皮肤设计器/ SkinDesigner （目前仅提供简体中文界面。The interface is currently available in Simplified Chinese only.）
+https://github.com/Junmiao05/IdleReminder/releases/tag/skin-designer-v0.0.1.0
 
 ## 功能
 
