@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>IdleReminder User Guide — v0.0.2.0</title>
+<style>:root {
+  color-scheme: light dark;
+  --page: #f5f7fa;
+  --paper: #fff;
+  --text: #202a35;
+  --muted: #526171;
+  --line: #dbe2e9;
+  --link: #175fa9;
+  --note: #edf4fc;
+  --code: #edf0f4;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 1.5rem; }
+body { margin: 0; background: var(--page); color: var(--text); font: 1.0625rem/1.8 system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--link); outline-offset: 4px; border-radius: 2px; }
+.skip { position: absolute; top: -8rem; left: 1rem; padding: .5rem 1rem; background: var(--paper); z-index: 10; }
+.skip:focus { top: .5rem; }
+.site-header { max-width: 1180px; margin: auto; padding: 1.5rem 1.75rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.brand { color: var(--text); font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+.brand span { color: var(--muted); font-size: .9rem; font-weight: 400; margin-left: .6rem; }
+.languages { display: flex; flex-wrap: wrap; gap: .9rem; font-size: .9rem; }
+.languages [aria-current] { color: var(--text); font-weight: 700; text-decoration: none; }
+.layout { max-width: 1180px; margin: 0 auto; padding: 0 1.75rem; display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 2rem; align-items: start; }
+.toc { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto; padding: .75rem .5rem .75rem 0; font-size: .87rem; line-height: 1.55; }
+.toc h2 { margin: 0 0 .8rem; font-size: .95rem; color: var(--muted); }
+.toc ol { padding-left: 1.4rem; margin: 0; }
+.toc li { padding: .23rem 0 .23rem .2rem; }
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+main { min-width: 0; overflow-wrap: break-word; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 2.25rem 2.5rem; }
+.mobile-toc { display: none; }
+.toc h2 { border: 0; padding: 0; }
+h1, h2, h3 { line-height: 1.35; text-wrap: balance; }
+h1 { font-size: clamp(1.85rem, 3vw, 2.4rem); letter-spacing: -.025em; margin: 0 0 1.1rem; }
+h2 { font-size: 1.45rem; padding-top: 2rem; margin: 2.1rem 0 1.1rem; border-top: 1px solid var(--line); }
+h3 { font-size: 1.12rem; margin: 1.6rem 0 .7rem; }
+p { margin: 0 0 1rem; }
+li { margin: .45rem 0; padding-left: .25rem; }
+ul, ol { margin: .6rem 0 1.25rem; padding-left: 1.5rem; }
+strong { font-weight: 650; }
+code { font-family: "Cascadia Code", Consolas, monospace; background: var(--code); border-radius: 4px; padding: .1em .3em; font-size: .88em; overflow-wrap: anywhere; }
+.notice { border-left: 4px solid var(--link); background: var(--note); border-radius: 0 8px 8px 0; padding: .9rem 1.1rem; margin: 1.4rem 0; }
+.notice p { margin: 0; }
+.back-top { margin: 2.5rem 0 0; font-size: .92rem; }
+footer { max-width: 1180px; margin: 1.5rem auto 2.5rem; padding: 0 1.75rem; color: var(--muted); font-size: .85rem; }
+@media (prefers-color-scheme: dark) {
+  :root { --page: #141a21; --paper: #1c242e; --text: #e6edf5; --muted: #afbecf; --line: #3a4654; --link: #8bbff7; --note: #25354a; --code: #303b49; }
+}
+@media (max-width: 850px) {
+  .layout { display: block; }
+  .toc { display: none; }
+  .mobile-toc { display: block; margin-bottom: 1.25rem; padding: .8rem 1.1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+  .mobile-toc summary { cursor: pointer; color: var(--link); font-weight: 600; }
+  .mobile-toc ol { font-size: .9rem; }
+  main { padding: 1.75rem; }
+}
+@media (max-width: 520px) {
+  .site-header { align-items: start; flex-direction: column; padding: 1.1rem; }
+  .layout { padding: 0 .75rem; }
+  main { padding: 1.3rem 1.1rem; border-radius: 10px; }
+  h2 { font-size: 1.3rem; }
+  footer { padding: 0 1.1rem; }
+}
+@media print {
+  :root { --page: #fff; --paper: #fff; --text: #000; --muted: #444; --line: #bbb; --link: #000; --note: #f3f3f3; --code: #eee; }
+  .toc, .mobile-toc, .languages, .back-top, .skip, footer { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; border: 0; }
+  h2, h3 { break-after: avoid; }
+  .notice { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to guide</a>
+<header class="site-header">
+ <a class="brand" href="#content">IdleReminder <span>User guide</span></a>
+ <nav class="languages" aria-label="Language"><a href="UserGuide.zh-Hans.html" lang="zh-Hans">简体中文</a><a href="UserGuide.en.html" lang="en" aria-current="page">English</a></nav>
+</header>
+<div class="layout">
+ <nav class="toc" aria-label="Contents"><h2>On this page</h2><ol><li><a href="#section-01">Quick start</a></li>
+<li><a href="#section-02">Idle timing and repeat reminders</a></li>
+<li><a href="#section-03">Reminder sounds and recordings</a></li>
+<li><a href="#section-04">Pause and resume</a></li>
+<li><a href="#section-05">Media Rules: three different functions</a></li>
+<li><a href="#section-06">App lists and playing rules</a></li>
+<li><a href="#section-07">Device Volume: preview before enabling</a></li>
+<li><a href="#section-08">Slideshow suppression</a></li>
+<li><a href="#section-09">Input timing and administrator permissions</a></li>
+<li><a href="#section-10">Game and pen-app suggestions</a></li>
+<li><a href="#section-11">Phone Notifications (experimental)</a></li>
+<li><a href="#section-12">Skins and display language</a></li>
+<li><a href="#section-13">Files, updates, and removal</a></li>
+<li><a href="#section-14">Troubleshooting and known limits</a></li>
+<li><a href="#section-15">Project and license</a></li></ol></nav>
+ <details class="mobile-toc"><summary>Contents — jump to a section</summary><nav aria-label="Contents"><ol><li><a href="#section-01">Quick start</a></li>
+<li><a href="#section-02">Idle timing and repeat reminders</a></li>
+<li><a href="#section-03">Reminder sounds and recordings</a></li>
+<li><a href="#section-04">Pause and resume</a></li>
+<li><a href="#section-05">Media Rules: three different functions</a></li>
+<li><a href="#section-06">App lists and playing rules</a></li>
+<li><a href="#section-07">Device Volume: preview before enabling</a></li>
+<li><a href="#section-08">Slideshow suppression</a></li>
+<li><a href="#section-09">Input timing and administrator permissions</a></li>
+<li><a href="#section-10">Game and pen-app suggestions</a></li>
+<li><a href="#section-11">Phone Notifications (experimental)</a></li>
+<li><a href="#section-12">Skins and display language</a></li>
+<li><a href="#section-13">Files, updates, and removal</a></li>
+<li><a href="#section-14">Troubleshooting and known limits</a></li>
+<li><a href="#section-15">Project and license</a></li></ol></nav></details>
+ <main id="content"><h1>IdleReminder User Guide</h1>
+<p>Applies to IdleReminder v0.0.2.0</p>
+<p>An audio reminder to check back after you have been away from your PC. Start with the essentials, then add media rules, device volume settings, and app suggestions as needed.</p>
+<aside class="notice" role="note"><p><strong>Two things to remember:</strong> click <strong>Save Settings</strong> after editing. Closing Settings leaves IR running; use <strong>Exit</strong> in the system tray menu to quit.</p></aside>
+<section aria-labelledby="section-01"><h2 id="section-01">Quick start</h2>
+<ol>
+<li>Extract the complete release to a folder you can keep, then run <code>IdleReminder.exe</code>. Keep the runtime files and language folders together.</li>
+<li>Set your idle threshold on <strong>Basic Settings</strong>. A new configuration defaults to <strong>20 minutes</strong>.</li>
+<li>Choose a tone or import a recording on <strong>Reminder Sound</strong>, then try a normal preview.</li>
+<li>Click <strong>Save Settings</strong>. Closing Settings leaves the tray app running.</li>
+<li>To take a break from reminders, choose a timed pause, <strong>Custom pause</strong>, or an indefinite pause from the tray.</li>
+</ol>
+<aside class="notice" role="note"><p><strong>Volume boost is off by default.</strong> Start at normal volume. Enable automatic boosting only after confirming separate speakers and completing the dedicated device-volume preview.</p></aside>
+</section>
+<section aria-labelledby="section-02"><h2 id="section-02">Idle timing and repeat reminders</h2>
+<h3>When a reminder plays</h3>
+<p>Normal keyboard or mouse input starts a new idle period. Once the threshold is reached, IR plays your configured reminder. Input detected during an actual reminder stops it and starts recovery of temporary volume changes. Checks run about once a second.</p>
+<p>Enable <strong>Repeat reminders while idle</strong> to hear another reminder after the repeat interval if you have not returned. With repeat off, each uninterrupted idle period produces one reminder.</p>
+<h3>Lock screen, display off, and sleep</h3>
+<ul>
+<li><strong>Windows locked:</strong> reminders pause. After unlock, new input is required before idle timing restarts.</li>
+<li><strong>Display off only:</strong> this is different from lock or sleep; reminders may still play.</li>
+<li><strong>Sleep:</strong> behavior depends on the PC and standby mode. Reminders still played during S0 Modern Standby on the developer&#39;s PC.</li>
+</ul>
+<p>If the PC sleeps before the threshold and this causes missed reminders, shorten the threshold or change Windows power settings yourself. If reminders already work after sleep, there is no need to change power settings for IR. The app does not change Windows sleep or hibernation policies.</p>
+</section>
+<section aria-labelledby="section-03"><h2 id="section-03">Reminder sounds and recordings</h2>
+<p>Choose <strong>Tone only</strong>, <strong>Voice only</strong>, or <strong>Tone, then voice</strong>. The combined mode plays in sequence. Actual reminders fade in for about a second; a combined sequence fades in only once. App volume controls IR&#39;s own playback gain.</p>
+<p>Five synthesized tones are included. <strong>No voices are bundled.</strong> Import local WAV or MP3 files up to 50 MB each; each clip plays for at most 2 minutes. Imports are copied into the data folder. The app does not record microphone audio.</p>
+<p><strong>Normal previews</strong> do not pause media, reduce players, boost master volume, or send phone notifications. Input does not stop previews; use <strong>Stop Preview</strong>. Actual reminders stop when new input is detected.</p>
+<h3>Missing or invalid files</h3>
+<p>Renaming another file to <code>.mp3</code> does not convert its contents. Playback depends on the real format and Windows decoding support. Preview imported files before relying on them.</p>
+<p>An invalid file can be saved in settings and then fail during playback. A valid first clip may finish before an invalid second clip reports an error. Playback failure ends the attempt and releases temporary volume changes. Windows notification sound uses Windows&#39; own volume settings.</p>
+<p>Deleting the original source does not delete the imported copy. Replacing or canceling imports can leave unused copies; check and back them up before cleaning. Deleting an active skin does not immediately remove colors already loaded; reopening Settings reloads the preset.</p>
+</section>
+<section aria-labelledby="section-04"><h2 id="section-04">Pause and resume</h2>
+<p>The tray offers 30-minute, 1-hour, 2-hour, and indefinite pauses. <strong>Custom pause</strong> accepts <strong>1–10,080 minutes</strong>, up to 7 days, and starts immediately without saving settings. Cancel keeps the current pause unchanged.</p>
+<p>Timed pauses resume automatically when they expire. An indefinite pause is never forcibly resumed during the current session.</p>
+<p>If resume questions are enabled, the configured delay must pass and new input must occur, with no full-screen app. The question does not take focus; <strong>Later</strong> restarts its timer. Time passing alone does not show a question while you remain away.</p>
+<aside class="notice" role="note"><p><strong>Starting IR enables reminders.</strong> Pauses do not carry over to the next session. Approving an administrator handoff starts a new instance and follows the same startup rule.</p></aside>
+</section>
+<section aria-labelledby="section-05"><h2 id="section-05">Media Rules: three different functions</h2>
+<h3>Pause media</h3>
+<p>Before an actual reminder, pause playing Windows media sessions that support pausing. Choose all supported media, only listed apps, or all except listed apps. An empty only-listed list pauses nothing.</p>
+<p>Media is not resumed automatically afterward. Some players do not expose suitable Windows sessions or cannot be paused.</p>
+<h3>Lower player volume</h3>
+<p>Temporarily lower active audio from listed EXEs while the reminder plays. Music progress continues. The percentage is <strong>relative to original app volume</strong>: keeping 20% of an app set to 50% temporarily gives 10%.</p>
+<p>This list is separate from the pause scope and exceptions. Keeping a player running does not prevent its volume from being reduced. Reduction also works with media pausing off. Manual player-volume or mute changes are kept.</p>
+<h3>Suppress reminder sound</h3>
+<p><strong>While playing</strong> uses a Windows media app ID. <strong>While running</strong> uses an EXE filename or full path, including background and minimized apps. Any matching enabled rule suppresses reminders.</p>
+<p>Suppression controls IR&#39;s sound. It does not automatically pause or lower media.</p>
+</section>
+<section aria-labelledby="section-06"><h2 id="section-06">App lists and playing rules</h2>
+<h3>Set up a While playing rule</h3>
+<ol>
+<li>Start playback in the target app.</li>
+<li>Click <strong>Read Current Media Apps</strong> and select the reported media app ID.</li>
+<li>Add a <strong>While playing</strong> rule, then save.</li>
+</ol>
+<aside class="notice" role="note"><p><strong>An EXE name may not be the media ID.</strong> <strong>Browse Apps</strong> is for running rules. Read active media to configure playing rules; this method was tested successfully with Edge.</p></aside>
+<p>Browsers are handled as whole apps. Websites and tabs cannot be distinguished reliably. URL lists are unsupported; IR does not read pages, browsing history, or media titles.</p>
+<p>Running rules check whether an EXE is running without reading process memory. Rules are checked about every 2 seconds. Failed detection falls back to normal idle rules. When a rule stops matching, reminders use actual idle time; missed reminders are not queued. Remove the rule and save to restore normal detection.</p>
+<p><strong>Enable per-app rules</strong> on Basic Settings controls these suppression rules only. Turning it off keeps the lists. Slideshow has its own switch. Media pausing, volume reduction, and manual pauses are separate.</p>
+<p>IR does not automatically identify every game or large download. Configure app rules yourself when needed.</p>
+</section>
+<section aria-labelledby="section-07"><h2 id="section-07">Device Volume: preview before enabling</h2>
+<p>Each Windows output endpoint has its own master-volume target. Boost is off by default. Headphones, shared jacks, and unclear device types are blocked. Reinstalling drivers may change endpoint IDs and require setup again.</p>
+<ol>
+<li>Select the current default output and confirm that separate speakers are actually connected.</li>
+<li>Start with a low target and pause other playback first.</li>
+<li>Choose <strong>Preview with Volume Adjustment</strong> and approve the warning.</li>
+<li>Let playback finish, then confirm the preview volume is suitable.</li>
+<li>Enable volume boost for that device and click <strong>Save Settings</strong>.</li>
+</ol>
+<p>Normal previews do not boost master volume. Stopping, failure, changing devices, or changing the target requires another confirmation preview.</p>
+<aside class="notice" role="note"><p><strong>Master volume affects other apps on the same device.</strong> A dedicated preview or actual boost may make them louder. IR only raises volume below the target; it does not lower an already higher volume or unmute a device.</p></aside>
+<h3>Coordinate with music reduction</h3>
+<p>Consider configuring listed-player reduction first. Enabling it also selects permission for coordinated master-volume boost; you can clear that permission separately. A confirmed, enabled device target is still required.</p>
+<p>When master volume rises, music on that device is reduced further to compensate for the gain. Music may briefly mute during the transition. At the end, master volume is restored first, then player volume. Without coordinated permission, other active, unreduced audio may block a boost.</p>
+<h3>Recovery and manual changes</h3>
+<p>Temporary changes are restored after playback. Manual volume or mute changes are respected. If you manually leave master volume higher than before, recovering music may still be louder; recovery takes about 2 seconds. Forced termination, power loss, or audio-service failures cannot guarantee recovery. Check the Windows volume mixer if something goes wrong.</p>
+<p>The developer&#39;s <strong>Tmall Genie Fangtang R</strong> smart speaker showed unstable volume synchronization and recovery, including volume jumping back after paused music resumes even with IR closed. Keep automatic boost off for that device. Other models were not tested; this is not a finding about all Tmall Genie or Bluetooth speakers.</p>
+</section>
+<section aria-labelledby="section-08"><h2 id="section-08">Slideshow suppression</h2>
+<p>With suppression enabled, reminders run normally while editing and pause when a slideshow is detected. A running PowerPoint process or an arbitrary full-screen app alone does not count. IR does not read slides, document names, window titles, or notes.</p>
+<p><strong>PowerPoint windowed-show detection remains unreliable on the developer&#39;s PC.</strong> Status may alternate, and a reminder may start briefly before stopping. Pause IR manually for that scenario and resume afterward. Editing and full-screen shows were tested, without establishing compatibility everywhere.</p>
+<p>WPS has not had full practical verification. Some versions need manual rules: start a show, read windows, and select a class used only for slideshow windows. Rules are limited to <code>POWERPNT.EXE</code> or <code>wpp.exe</code>; wildcards are unsupported. Test both editing and presenting.</p>
+<p>If editing is also suppressed, check for conflicting running-app rules. You can disable automatic detection for an app or remove a manual rule.</p>
+<p>A same-name, non-elevated helper process may briefly appear in Task Manager. It has no tray or audio playback. Its presence does not establish successful detection or remove the windowed-show limitation.</p>
+</section>
+<section aria-labelledby="section-09"><h2 id="section-09">Input timing and administrator permissions</h2>
+<h3>Windows input timing</h3>
+<p>The default mode needs no administrator privileges. Some games or apps reset Windows&#39; last-input timer without actual input, preventing an idle reminder.</p>
+<h3>Keyboard and mouse events (experimental)</h3>
+<p>Try this mode and save if Windows timing is being disturbed. It counts input event headers, not keys, characters, mouse coordinates, screen contents, or game memory. It installs no input hooks or drivers and does not inject into games.</p>
+<p>Virtual devices, touch, remote control, and anti-cheat compatibility are limited. <strong>Gamepads and controllers are not adapted</strong>: their use may count as idle and may not stop playback. Return to the default mode if real input fails to prevent reminders.</p>
+<h3>Ignore events without a device ID</h3>
+<p>This filter is off by default. Enable it only after testing shows unidentified events interfere. It may miss touchpad, pen, remote, or assistive input. A device ID does not prove physical input.</p>
+<p>With Gaomon M7, AP515, and GaomonTablet 16.0.0.188, pen buttons and drawing stopped reminders in Windows mode. In device mode they stopped reminders with the filter off, but not with it on. The developer&#39;s touchpad also failed to stop playback with filtering, while the built-in keyboard worked. Other drivers and continuous drawing scenarios are not guaranteed.</p>
+<h3>UAC and fallback</h3>
+<p>Starting or saving device mode requests normal Windows UAC if IR is not elevated. An elevated instance does not ask again. Canceling keeps the app running without repeated prompts. To retry, save again and dismiss the saved message.</p>
+<p>If the foreground app has higher privileges or access cannot be verified, device timing temporarily falls back to Windows timing and shows a warning. If the game resets that timer, reminders may again fail to trigger. Basic and Advanced Settings display the current privilege state.</p>
+<p>IR does not change UAC policy, set a permanent administrator requirement, or create elevation tasks. On approval, the old instance restores volume and exits before the administrator instance takes over. This is a new startup: reminders are enabled and idle timing begins again.</p>
+</section>
+<section aria-labelledby="section-10"><h2 id="section-10">Game and pen-app suggestions</h2>
+<p>Advanced Settings has two <strong>independent switches and lists</strong>, both empty by default.</p>
+<ul>
+<li><strong>Games:</strong> while using Windows timing, a listed running app can suggest device timing.</li>
+<li><strong>Pen apps:</strong> while using device timing, a listed app can suggest Windows timing or turning the device ID filter off.</li>
+</ul>
+<p>These are not suppression lists. Suggestions do not switch modes, suppress sound, or request elevation automatically. Click a notification to open Advanced Settings, then choose and save yourself.</p>
+<p>Use EXE filenames or full paths, up to 512 entries per list. Select the actual running app, not merely its launcher. Update paths after an app moves.</p>
+<p>Checks run about every 10 seconds. Each entry is suggested at most once per IR session, with at least a minute between notifications across both categories. Suggestions are withheld while paused, locked, suspended, or playing a reminder. Windows Do Not Disturb or full-screen rules may hide them.</p>
+<h3>Import from Steam</h3>
+<p>Select a Steam install, library, <code>steamapps</code>, or <code>steamapps\common</code> folder. Import other libraries separately. Check full paths and prefer the real game EXE; launchers, anti-cheat tools, crash reporters, and uninstallers usually are not needed.</p>
+<p>Nothing is checked by default. <strong>Select All includes helpers</strong>, so review before importing. Results are deduplicated and merged without replacing your list. Scans can be canceled, skip linked or inaccessible locations, and have count, depth, and time limits. Browse to add missing entries if results are incomplete.</p>
+<p>Import changes only the settings draft, not Steam or game files. Save afterward.</p>
+</section>
+<section aria-labelledby="section-11"><h2 id="section-11">Phone Notifications (experimental)</h2>
+<p>Send fixed reminder text to a selected, paired Android phone through KDE Connect. Off by default; background reliability varies.</p>
+<ol>
+<li>Install <a href="https://kdeconnect.kde.org/download.html">official KDE Connect</a> on both devices and pair them manually on a trusted local network.</li>
+<li>Select the full path to the official <code>kdeconnect-cli.exe</code> on Phone Notifications.</li>
+<li>Refresh paired online phones and explicitly select the target.</li>
+<li>Send a test and confirm arrival, then enable notifications and save.</li>
+</ol>
+<p>A test sends immediately without saving. Normal audio previews do not send. Actual reminders send asynchronously when playback starts, once per combined sequence. Offline phones or failures do not stop PC audio; expired notifications are not resent or redirected to another phone.</p>
+<p>About 10 seconds after startup, enabled phone notifications produce a local Windows reminder to open KDE Connect on the phone. This does not open the phone app or guarantee background connectivity. A submitted command does not prove delivery.</p>
+<p>Check phone notification permissions, lock-screen behavior, Do Not Disturb, and background battery restrictions. Disable unrelated KDE Connect plugins such as file sharing, clipboard, remote input, and notification mirroring. IR does not install, pair, change firewall rules, or send filenames and app content.</p>
+</section>
+<section aria-labelledby="section-12"><h2 id="section-12">Skins and display language</h2>
+<h3>Skins</h3>
+<p>Select a preset for immediate preview and save to keep it. Use the separate Skin Designer to edit colors. Put exported JSON and required <code>assets</code> in <code>themes</code>, then reopen Settings.</p>
+<p>Missing or invalid presets are skipped or fall back to the default. Personal skin names, device names, paths, and media IDs are kept as provided.</p>
+<h3>Language</h3>
+<p>Choose 简体中文 or English on <strong>语言 / Language</strong>. The save button immediately uses the target language; successful saving refreshes the rest of the UI without exiting for the language change.</p>
+<p>Refresh keeps window placement, selected page, expanded details, and current pause deadlines. Saving still restarts idle timing normally. If the save also completes an administrator handoff, the startup rule described above applies.</p>
+<p>The guide button opens local HTML in the active language. Missing future translations fall back to Chinese. Windows-generated errors may use the system language. Previous notifications and historical diagnostic records are not translated retroactively.</p>
+<h3>Read long dropdown names</h3>
+<p>Closed controls keep their original size and use an ellipsis for text that does not fit. The popup has the same width as the closed control and fixed-height rows. Hover over a truncated long list item to read its full name in a tooltip. F2 / <strong>View full name</strong> still opens a read-only viewer for scrolling, selection, and copying; Esc closes it without changing the option.</p>
+</section>
+<section aria-labelledby="section-13"><h2 id="section-13">Files, updates, and removal</h2>
+<h3>Find your data</h3>
+<p>Use the paths on <strong>Version &amp; Updates</strong>. In the development checkout, <code>data</code> and <code>themes</code> are under the ancestor marked <code>.idlereminder-root</code>. A standalone extraction without that marker uses its own folder. Settings are not universally stored in AppData.</p>
+<p>Data, themes, and backups may contain personal recordings and settings. Logs are size-limited and can rotate. Extracting to a new location does not migrate personal settings automatically.</p>
+<h3>Update safely</h3>
+<ol>
+<li>Exit the old app from its tray menu; closing Settings is not enough.</li>
+<li>Back up <code>data</code>, <code>themes</code>, recordings, and the complete old version.</li>
+<li>Replace the full release, not just the EXE, while keeping private data.</li>
+<li>Check the running version, paths, audio files, skin, and device targets.</li>
+<li>After moving the app, run it once and save startup settings again. Recheck at the next sign-in.</li>
+</ol>
+<p>There is no automatic patch installer or guaranteed rollback mechanism. An old running instance can prevent the new copy from staying open. Older versions may discard new fields; use a matching backup for rollback and avoid old and new versions writing the same settings.</p>
+<h3>Remove IR</h3>
+<p>Turn off Windows startup in Basic Settings, save, and exit from the tray. Back up recordings and skins you want to keep, then remove the application folder.</p>
+</section>
+<section aria-labelledby="section-14"><h2 id="section-14">Troubleshooting and known limits</h2>
+<h3>No reminder sound</h3>
+<p>Check that IR is running and enabled, with no active pause. Verify the running version and path, then inspect suppression status and timing mode. Games may reset Windows timing; the device ID filter may instead miss touch or pen input.</p>
+<h3>No game suggestion</h3>
+<p>Check Windows timing, the enabled game-suggestion switch, the actual game EXE in the list, and saved settings. Then check <strong>Do Not Disturb and automatic gaming/full-screen rules</strong> under Windows Settings → System → Notifications.</p>
+<p>A notification already attempted in this session is not automatically resent. For a comparison, exit from the tray and restart. A hidden notification does not prove a matching failure or that launchers are generally unsupported.</p>
+<h3>Volume did not rise or recover</h3>
+<p>Check the default output, device type, dedicated preview confirmation, enabled switch, and saved settings. Read device-volume status. Mute, failed checks, or other active audio can block boosting. Stop playback and inspect the Windows volume mixer after an error. Keep boost off for the tested Fangtang R.</p>
+<h3>Settings will not save</h3>
+<p>Failed reads, newer settings formats, or external file changes block overwriting. Exit, keep and back up the original <code>settings.json</code>, then restore a verified <code>settings.json.bak</code> or project backup before restarting. Do not delete the original as an experiment.</p>
+<h3>Compatibility to keep in mind</h3>
+<ul>
+<li>PowerPoint windowed-show suppression is unreliable; WPS is not fully tested.</li>
+<li>The developer&#39;s S0 standby still allows playback; sleep behavior varies.</li>
+<li>Phone background delivery is unreliable; submission does not prove arrival.</li>
+<li>Controllers are unsupported; device ID filtering may miss touchpad, pen, or remote input.</li>
+<li>Fangtang R volume synchronization and recovery have issues; other models were not tested.</li>
+<li>Forced termination, power loss, or audio-service failure cannot guarantee volume recovery.</li>
+</ul>
+</section>
+<section aria-labelledby="section-15"><h2 id="section-15">Project and license</h2>
+<p>IdleReminder is free of charge. Code and bundled skin presets use <strong>GNU GPL version 3 only</strong>. Official icons have a separate license; see the included <code>LICENSE</code>, <code>LICENSE_SCOPE.md</code>, and <code>ICON-LICENSE.md</code>.</p>
+<p>Developed by <strong>君喵Junmiao &amp; Codex</strong>. Visit <a href="https://github.com/Junmiao05/IdleReminder">GitHub / IdleReminder</a>. Tested devices do not establish compatibility with every PC; verify the scenarios you depend on.</p>
+</section>
+<p class="back-top"><a href="#content">Back to top ↑</a></p></main>
+</div>
+<footer>Read this guide offline. External links need an internet connection.</footer>
+</body>
+</html>

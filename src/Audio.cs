@@ -21,7 +21,7 @@ internal sealed class Audio : IDisposable {
  internal Func<ulong> ReadInput {get;set;}=()=>Native.LastInput();
  internal Func<bool>? CanPlay {get;set;}
  internal event Action<string>? VolumeStatusChanged;
- internal string LastVolumeStatus {get;private set;}="尚未进行自动音量调整";
+ internal string LastVolumeStatus {get;private set;}=UiText.Get("Audio_001");
  internal void ReportVolume(string text){LastVolumeStatus=text;VolumeStatusChanged?.Invoke(text);}
  internal Settings? VolumeSettings {get;set;}
  IDisposable? volumeLease;MediaDuckingLease? duckLease;
@@ -36,10 +36,10 @@ internal sealed class Audio : IDisposable {
     // Apply gain after Open has initialized the player, before any playback.
     player.Play();
     if(Purpose==AudioPurpose.Reminder&&!reminderNotified){reminderNotified=true;ReminderStarted?.Invoke();}
-   }catch(Exception e){Store.Log("audio-start-failed",e);Stop();Failed?.Invoke("音频无法开始播放。");}
+   }catch(Exception e){Store.Log("audio-start-failed",e);Stop();Failed?.Invoke(UiText.Get("Audio_002"));}
   };
-  fade.Tick+=(_,_)=>{try{var elapsed=Environment.TickCount64-fadeStarted;player.Volume=FadeInPolicy.Gain(targetVolume,elapsed);if(elapsed>=FadeInPolicy.DurationMilliseconds)fade.Stop();}catch(Exception e){Store.Log("audio-fade-failed",e);Stop();Failed?.Invoke("播报渐入失败，已停止并恢复音量。");}};
-  player.MediaEnded+=(_,_)=>Next();player.MediaFailed+=(_,e)=>{Store.Log("audio-failed",e.ErrorException);Stop();Failed?.Invoke("音频无法播放，请更换文件。");};timeout.Tick+=(_,_)=>Stop();}
+  fade.Tick+=(_,_)=>{try{var elapsed=Environment.TickCount64-fadeStarted;player.Volume=FadeInPolicy.Gain(targetVolume,elapsed);if(elapsed>=FadeInPolicy.DurationMilliseconds)fade.Stop();}catch(Exception e){Store.Log("audio-fade-failed",e);Stop();Failed?.Invoke(UiText.Get("Audio_003"));}};
+  player.MediaEnded+=(_,_)=>Next();player.MediaFailed+=(_,e)=>{Store.Log("audio-failed",e.ErrorException);Stop();Failed?.Invoke(UiText.Get("Audio_004"));};timeout.Tick+=(_,_)=>Stop();}
  internal void Play(IEnumerable<string> files,int volume,AudioPurpose purpose=AudioPurpose.Reminder,Func<Action,IDisposable?>? previewBoost=null,bool suppressAutoBoost=false){
   Stop();if(CanPlay?.Invoke()==false)return;
   Purpose=purpose;reminderNotified=false;FirstPlaybackGain=null;StartInput=ReadInput();targetVolume=Math.Clamp(volume/100.0,0,1);
@@ -56,14 +56,14 @@ internal sealed class Audio : IDisposable {
    else if(purpose==AudioPurpose.Reminder&&mayBoost&&VolumeSettings!=null)
     volumeLease=VolumeLease.Begin(VolumeSettings,()=>Stop(),ReportVolume,duckLease);
    else if(purpose==AudioPurpose.Reminder)
-    ReportVolume(duckFailed?"未提高音量：媒体压低或会话检查失败":"未提高音量：媒体暂停或压低状态尚未确认");
+    ReportVolume(duckFailed?UiText.Get("Audio_005"):UiText.Get("Audio_006"));
   }catch(Exception ex){
-   Store.Log("volume-adjustment-failed",ex);ReportVolume("音量调整失败，详情见诊断日志");
-   if(previewBoost!=null){Stop();Failed?.Invoke("自动音量试听未能执行：请检查静音状态、默认设备和设备类型。");return;}
+   Store.Log("volume-adjustment-failed",ex);ReportVolume(UiText.Get("Audio_007"));
+   if(previewBoost!=null){Stop();Failed?.Invoke(UiText.Get("Audio_008"));return;}
   }
   Next();
  }
- void Next(){if(CanPlay?.Invoke()==false){Stop();return;}player.Close();if(queue.Count==0){Stop(true);return;}var p=queue.Dequeue();try{player.Open(new Uri(p));timeout.Stop();timeout.Start();}catch(Exception e){Store.Log("audio-open-failed",e);Stop();Failed?.Invoke("音频打开失败，请检查文件。");}}
+ void Next(){if(CanPlay?.Invoke()==false){Stop();return;}player.Close();if(queue.Count==0){Stop(true);return;}var p=queue.Dequeue();try{player.Open(new Uri(p));timeout.Stop();timeout.Start();}catch(Exception e){Store.Log("audio-open-failed",e);Stop();Failed?.Invoke(UiText.Get("Audio_009"));}}
  internal void Stop(bool completed=false){var wasPlaying=Playing;fade.Stop();fadePending=false;timeout.Stop();queue.Clear();Playing=false;try{player.Close();}finally{try{volumeLease?.Dispose();}finally{volumeLease=null;try{duckLease?.Dispose();}finally{duckLease=null;if(wasPlaying)Finished?.Invoke(completed);}}}}
  public void Dispose(){Stop();fade.Dispose();timeout.Dispose();}
 }

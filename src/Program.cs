@@ -18,15 +18,16 @@ internal static class Program {
  if(args.Contains("--verify-media")){MediaPause.VerifyReadOnlyAsync().GetAwaiter().GetResult();return;}
  if(args.Contains("--verify-devices")){ApplicationConfiguration.Initialize();DeviceVerification.Run();return;}
  if(args.Contains("--verify-audio")){ApplicationConfiguration.Initialize();Verification.Run();return;}
- if(!StartupElevation.WaitForParent(args)){MessageBox.Show("管理员交接未完成，原实例保留；请从托盘退出后重试。");return;}
- if(StartupElevation.AnotherInstanceRunning()){MessageBox.Show("闲置提醒器已在运行，请从系统托盘打开设置。");return;}
+ try{ApplicationLanguage.Apply(Store.Load().Language);}catch(Exception ex){Store.Log("language-load-failed",ex);ApplicationLanguage.Apply(LanguagePolicy.SimplifiedChinese);}
+ if(!StartupElevation.WaitForParent(args)){MessageBox.Show(UiText.Get("Program_001"));return;}
+ if(StartupElevation.AnotherInstanceRunning()){MessageBox.Show(UiText.Get("Program_002"));return;}
  if(StartupElevation.TryStartElevated(args))return;
  using var mutex=new Mutex(true,StartupElevation.InstanceName,out var first);
- if(!first){MessageBox.Show("闲置提醒器已在运行，请从系统托盘打开设置。");return;}
+ if(!first){MessageBox.Show(UiText.Get("Program_002"));return;}
  ApplicationConfiguration.Initialize();
- Application.ThreadException+=(_,e)=>{Store.Log("ui-error",e.Exception);MessageBox.Show("发生错误，详情见项目 data 诊断日志。");};
+ Application.ThreadException+=(_,e)=>{Store.Log("ui-error",e.Exception);MessageBox.Show(UiText.Get("Program_003"));};
  AppDomain.CurrentDomain.UnhandledException+=(_,e)=>Store.Log("fatal-error",e.ExceptionObject as Exception);
- try{using var app=new Tray(args.Contains("--background"));Application.Run(app);}catch(Exception e){Store.Log("startup-failed",e);MessageBox.Show("程序无法启动，请检查项目 data 诊断日志。");}
+ try{using var app=new Tray(args.Contains("--background"));Application.Run(app);}catch(Exception e){Store.Log("startup-failed",e);MessageBox.Show(UiText.Get("Program_004"));}
  }
 }
 

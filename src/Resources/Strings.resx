@@ -1,0 +1,1643 @@
+<root>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <data name="SettingsForm_001" xml:space="preserve">
+    <value>忽略无设备标识事件</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_VoicePreset" xml:space="preserve">
+    <value>正在使用人声预设：{0}</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_AudioFileFilter" xml:space="preserve">
+    <value>音频文件</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="Tray_StatusSuffix" xml:space="preserve">
+    <value>；{0}</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_StatusTooltip" xml:space="preserve">
+    <value>闲置提醒器：{0}</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="AppIcons_001" xml:space="preserve">
+    <value>程序图标资源缺失，请重新解压完整发布包。</value>
+    <comment>UI text; source: AppIcons</comment>
+  </data>
+  <data name="Audio_001" xml:space="preserve">
+    <value>尚未进行自动音量调整</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_002" xml:space="preserve">
+    <value>音频无法开始播放。</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_003" xml:space="preserve">
+    <value>播报渐入失败，已停止并恢复音量。</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_004" xml:space="preserve">
+    <value>音频无法播放，请更换文件。</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_005" xml:space="preserve">
+    <value>未提高音量：媒体压低或会话检查失败</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_006" xml:space="preserve">
+    <value>未提高音量：媒体暂停或压低状态尚未确认</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_007" xml:space="preserve">
+    <value>音量调整失败，详情见诊断日志</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_008" xml:space="preserve">
+    <value>自动音量试听未能执行：请检查静音状态、默认设备和设备类型。</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_009" xml:space="preserve">
+    <value>音频打开失败，请检查文件。</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="AudioSessionSafety_001" xml:space="preserve">
+    <value>仍有其他程序的活动音频，保持原主音量</value>
+    <comment>UI text; source: AudioSessionSafety</comment>
+  </data>
+  <data name="AudioSessionSafety_002" xml:space="preserve">
+    <value>无法确认其他程序的音频状态，保持原主音量</value>
+    <comment>UI text; source: AudioSessionSafety</comment>
+  </data>
+  <data name="ConfigFileStore_001" xml:space="preserve">
+    <value>主配置缺失，但存在备份；请先恢复备份。</value>
+    <comment>UI text; source: ConfigFileStore</comment>
+  </data>
+  <data name="ConfigFileStore_002" xml:space="preserve">
+    <value>配置不能为null</value>
+    <comment>UI text; source: ConfigFileStore</comment>
+  </data>
+  <data name="ConfigFileStore_003" xml:space="preserve">
+    <value>配置读取失败或尚未读取，已禁止覆盖。请保留settings.json并从备份恢复后重新启动。</value>
+    <comment>UI text; source: ConfigFileStore</comment>
+  </data>
+  <data name="ConfigFileStore_004" xml:space="preserve">
+    <value>配置被其他实例或外部程序修改，已停止保存。请重新打开程序核对配置。</value>
+    <comment>UI text; source: ConfigFileStore</comment>
+  </data>
+  <data name="CoreAudio_001" xml:space="preserve">
+    <value>（扬声器）</value>
+    <comment>UI text; source: CoreAudio</comment>
+  </data>
+  <data name="CoreAudio_002" xml:space="preserve">
+    <value>（禁止自动提升）</value>
+    <comment>UI text; source: CoreAudio</comment>
+  </data>
+  <data name="CoreAudio_003" xml:space="preserve">
+    <value>未知输出设备</value>
+    <comment>UI text; source: CoreAudio</comment>
+  </data>
+  <data name="CoreAudio_004" xml:space="preserve">
+    <value>驱动报告为扬声器；仍需确认实际连接为扬声器</value>
+    <comment>UI text; source: CoreAudio</comment>
+  </data>
+  <data name="CoreAudio_005" xml:space="preserve">
+    <value>耳机、混合接口或类型不明确，禁止提升</value>
+    <comment>UI text; source: CoreAudio</comment>
+  </data>
+  <data name="DeviceVolumePanel_024" xml:space="preserve">
+    <value>
+不同设备按 Windows 端点 ID 区分；驱动重装后可能需要重新设置。</value>
+    <comment>UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_025" xml:space="preserve">
+    <value>将试听当前提醒，必要时把「{0}」的 Windows 主音量提高到 {1}%。
+这是明确授权的音量测试，会放大其他程序声音；不会自动暂停或压低媒体。请先暂停其他播放，并从较低目标开始。
+播放结束后恢复；不会解除静音。确定开始？</value>
+    <comment>UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_026" xml:space="preserve">
+    <value>音量试听警告</value>
+    <comment>UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="Engine_001" xml:space="preserve">
+    <value>不支持的配置格式版本</value>
+    <comment>UI text; source: Engine</comment>
+  </data>
+  <data name="Engine_002" xml:space="preserve">
+    <value>配置名单或设备中含null项</value>
+    <comment>UI text; source: Engine</comment>
+  </data>
+  <data name="InputActivitySource_001" xml:space="preserve">
+    <value>前台权限较高，临时回退Windows计时</value>
+    <comment>UI text; source: InputActivitySource</comment>
+  </data>
+  <data name="InputActivitySource_002" xml:space="preserve">
+    <value>无法确认前台接收权限，临时回退Windows计时</value>
+    <comment>UI text; source: InputActivitySource</comment>
+  </data>
+  <data name="InputActivitySource_003" xml:space="preserve">
+    <value>设备事件接收失败，已回退Windows计时</value>
+    <comment>UI text; source: InputActivitySource</comment>
+  </data>
+  <data name="InputActivitySource_004" xml:space="preserve">
+    <value>设备键鼠事件计时（实验）</value>
+    <comment>UI text; source: InputActivitySource</comment>
+  </data>
+  <data name="InputActivitySource_005" xml:space="preserve">
+    <value>Windows输入计时</value>
+    <comment>UI text; source: InputActivitySource</comment>
+  </data>
+  <data name="InputModeNoticePanel_007" xml:space="preserve">
+    <value>数位板软件：提示切换检测方式</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_008" xml:space="preserve">
+    <value>游戏类软件：提示切换检测方式</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_009" xml:space="preserve">
+    <value>启用数位板软件检测方式提示</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_010" xml:space="preserve">
+    <value>启用游戏类软件检测方式提示</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_011" xml:space="preserve">
+    <value>当前使用设备键鼠计时且名单内软件运行时，提示考虑Windows计时或关闭无设备标识过滤。
+名单默认留空，请浏览添加自己的绘画等软件。只提示，由你手动选择并保存，不自动切换。</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_012" xml:space="preserve">
+    <value>当前使用Windows输入计时且名单内软件运行时，发送Windows通知；点击通知可打开本页手动选择并保存。
+不自动切换、不自动提权，不影响是否播放闲置提醒。
+名单默认留空，请自行浏览或导入软件；不把全屏软件当作游戏。</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_013" xml:space="preserve">
+    <value>Windows程序</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_014" xml:space="preserve">
+    <value>选择Steam安装目录或游戏库目录（包含steamapps\common）</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_015" xml:space="preserve">
+    <value>提示名单最多512项，请减少勾选项或先删除部分名单。</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_016" xml:space="preserve">
+    <value>设备键鼠计时</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_017" xml:space="preserve">
+    <value>Windows输入计时</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_018" xml:space="preserve">
+    <value>本类提示已关闭；修改后需保存。</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_019" xml:space="preserve">
+    <value>所选{0}：本类提示不触发。</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_020" xml:space="preserve">
+    <value>所选{0}：名单为空，本类提示不触发。</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_021" xml:space="preserve">
+    <value>所选{0}：本类提示可触发；修改后需保存。</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_022" xml:space="preserve">
+    <value>闲置提醒器</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePolicy_001" xml:space="preserve">
+    <value>检测方式提示名单最多支持512项。</value>
+    <comment>UI text; source: InputModeNoticePolicy</comment>
+  </data>
+  <data name="InputModeNoticePolicy_002" xml:space="preserve">
+    <value>请填写单独的EXE文件名，或通过浏览选择完整路径。</value>
+    <comment>UI text; source: InputModeNoticePolicy</comment>
+  </data>
+  <data name="KdeStartupNotification_001" xml:space="preserve">
+    <value>手机通知已启用</value>
+    <comment>UI text; source: KdeStartupNotification</comment>
+  </data>
+  <data name="KdeStartupNotification_002" xml:space="preserve">
+    <value>请打开手机上的 KDE Connect，并确认电脑与手机已连接。手机端被彻底关闭后，可能无法收到通知。</value>
+    <comment>UI text; source: KdeStartupNotification</comment>
+  </data>
+  <data name="KdeStartupNotification_003" xml:space="preserve">
+    <value>闲置提醒器：手机连接提示</value>
+    <comment>UI text; source: KdeStartupNotification</comment>
+  </data>
+  <data name="MediaApplicationFilter_001" xml:space="preserve">
+    <value>请选择软件的 .exe 文件，不支持快捷方式或其他文件。</value>
+    <comment>UI text; source: MediaApplicationFilter</comment>
+  </data>
+  <data name="MediaApplicationFilter_002" xml:space="preserve">
+    <value>这里只支持软件的媒体应用标识，不支持网址。请从当前媒体列表添加。</value>
+    <comment>UI text; source: MediaApplicationFilter</comment>
+  </data>
+  <data name="MediaDuckingLease_001" xml:space="preserve">
+    <value>已补偿主音量增益 {0:F1} dB，进一步压低同设备音乐</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_002" xml:space="preserve">
+    <value>未压低媒体：请在压低音量名单中添加播放器 .exe</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_003" xml:space="preserve">
+    <value>指定播放器应用音量 {0:F1}% → {1:F1}%（临时）</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_004" xml:space="preserve">
+    <value>已临时压低 {0} 个指定播放器音频会话，保留原应用音量的 {1}%</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_005" xml:space="preserve">
+    <value>无需压低音乐：名单内没有需要衰减的活动音频；主音量按设备授权判断</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_006" xml:space="preserve">
+    <value>主音量保留手动设置，音乐将在约2秒内渐渐恢复；最终仍按当前主音量播放</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_007" xml:space="preserve">
+    <value>部分播放器音量恢复失败，请检查 Windows 音量混合器</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_008" xml:space="preserve">
+    <value>播放器音量处理结束：已恢复 {0} 个会话，保留手动调整 {1} 个会话</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaScopePanel_017" xml:space="preserve">
+    <value>全部：暂停所有可暂停媒体</value>
+    <comment>UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_018" xml:space="preserve">
+    <value>仅暂停名单内的软件，其余保持播放</value>
+    <comment>UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_019" xml:space="preserve">
+    <value>名单内的软件保持播放，其余可暂停媒体才暂停</value>
+    <comment>UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_020" xml:space="preserve">
+    <value>Windows 程序（*.exe）</value>
+    <comment>UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_021" xml:space="preserve">
+    <value>压低音量名单只支持 .exe 文件名或完整路径，请使用浏览按钮添加。</value>
+    <comment>UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="PermissionStatusText_001" xml:space="preserve">
+    <value>当前已以管理员权限运行，无需重复申请。</value>
+    <comment>UI text; source: PermissionStatusText</comment>
+  </data>
+  <data name="PermissionStatusText_002" xml:space="preserve">
+    <value>当前未以管理员权限运行。
+设备计时在高权限软件中可能无法接收输入并回退Windows计时；如需提权，请再次点击“保存设置”，关闭保存提示后确认UAC。</value>
+    <comment>UI text; source: PermissionStatusText</comment>
+  </data>
+  <data name="PermissionStatusText_003" xml:space="preserve">
+    <value>当前未以管理员权限运行。
+Windows输入计时无需管理员权限；选择设备计时并保存时可申请。</value>
+    <comment>UI text; source: PermissionStatusText</comment>
+  </data>
+  <data name="PermissionStatusText_004" xml:space="preserve">
+    <value>当前管理员权限状态无法确认；请核对运行权限，勿仅凭未看到UAC判断。</value>
+    <comment>UI text; source: PermissionStatusText</comment>
+  </data>
+  <data name="PhoneNotifications_001" xml:space="preserve">
+    <value>闲置提醒：你已离开电脑一段时间，记得回来看看。</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_002" xml:space="preserve">
+    <value>请选择官方 kdeconnect-cli.exe。</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_003" xml:space="preserve">
+    <value>KDE Connect命令未启动。</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_004" xml:space="preserve">
+    <value>KDE Connect输出超出限制。</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_005" xml:space="preserve">
+    <value>KDE Connect设备检查失败。</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_006" xml:space="preserve">
+    <value>手机通知已关闭</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_007" xml:space="preserve">
+    <value>手机通知未配置</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_008" xml:space="preserve">
+    <value>手机通知发送中，本次跳过</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_009" xml:space="preserve">
+    <value>手机未连接，本次跳过（不补发）</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_010" xml:space="preserve">
+    <value>闲置提醒器：这是一条手机通知测试。</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_011" xml:space="preserve">
+    <value>通知命令已提交，请在手机确认是否收到</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_012" xml:space="preserve">
+    <value>手机通知发送失败，电脑提醒不受影响</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhonePanel_017" xml:space="preserve">
+    <value>KDE Connect 命令行</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_018" xml:space="preserve">
+    <value>；尚未检查连接。离线刷新不会清除已保存目标。</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_019" xml:space="preserve">
+    <value>。请测试并保存。</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_020" xml:space="preserve">
+    <value>未找到已配对且在线的手机；保留原目标，不会自动改发其他设备。</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_021" xml:space="preserve">
+    <value>目标手机在线。可发送测试通知。</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_022" xml:space="preserve">
+    <value>请选择一台已配对且在线的手机，不会自动选择其他设备。</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_023" xml:space="preserve">
+    <value>请等待手机通知操作结束后保存。</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_024" xml:space="preserve">
+    <value>启用手机通知前，请选择官方命令行程序和已配对手机。</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="Presets_001" xml:space="preserve">
+    <value>清脆铃声</value>
+    <comment>UI text; source: Presets</comment>
+  </data>
+  <data name="Presets_002" xml:space="preserve">
+    <value>电子提示音</value>
+    <comment>UI text; source: Presets</comment>
+  </data>
+  <data name="Presets_003" xml:space="preserve">
+    <value>柔和提示音</value>
+    <comment>UI text; source: Presets</comment>
+  </data>
+  <data name="Presets_004" xml:space="preserve">
+    <value>短促警报音</value>
+    <comment>UI text; source: Presets</comment>
+  </data>
+  <data name="Presets_005" xml:space="preserve">
+    <value>经典系统风格</value>
+    <comment>UI text; source: Presets</comment>
+  </data>
+  <data name="Program_001" xml:space="preserve">
+    <value>管理员交接未完成，原实例保留；请从托盘退出后重试。</value>
+    <comment>UI text; source: Program</comment>
+  </data>
+  <data name="Program_002" xml:space="preserve">
+    <value>闲置提醒器已在运行，请从系统托盘打开设置。</value>
+    <comment>UI text; source: Program</comment>
+  </data>
+  <data name="Program_003" xml:space="preserve">
+    <value>发生错误，详情见项目 data 诊断日志。</value>
+    <comment>UI text; source: Program</comment>
+  </data>
+  <data name="Program_004" xml:space="preserve">
+    <value>程序无法启动，请检查项目 data 诊断日志。</value>
+    <comment>UI text; source: Program</comment>
+  </data>
+  <data name="RuleStatusText_001" xml:space="preserve">
+    <value>幻灯片放映中，暂停闲置提醒</value>
+    <comment>UI text; source: RuleStatusText</comment>
+  </data>
+  <data name="RuleStatusText_002" xml:space="preserve">
+    <value>按应用规则暂停闲置提醒</value>
+    <comment>UI text; source: RuleStatusText</comment>
+  </data>
+  <data name="RuleStatusText_003" xml:space="preserve">
+    <value>正在等待用户恢复操作</value>
+    <comment>UI text; source: RuleStatusText</comment>
+  </data>
+  <data name="RuleStatusText_004" xml:space="preserve">
+    <value>正在检查应用提醒规则</value>
+    <comment>UI text; source: RuleStatusText</comment>
+  </data>
+  <data name="SettingsForm_046" xml:space="preserve">
+    <value>未导入 / 自定义录音</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_047" xml:space="preserve">
+    <value>Windows 闲置提醒器 v{0}</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_048" xml:space="preserve">
+    <value>闲置提醒器</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_049" xml:space="preserve">
+    <value>启用提醒</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_050" xml:space="preserve">
+    <value>暂停直到手动恢复</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_051" xml:space="preserve">
+    <value>导入 / 替换提示音</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_052" xml:space="preserve">
+    <value>恢复内置提示音</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_053" xml:space="preserve">
+    <value>导入 / 替换人声</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_054" xml:space="preserve">
+    <value>删除人声</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_055" xml:space="preserve">
+    <value>试听提示音</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_056" xml:space="preserve">
+    <value>试听人声</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_057" xml:space="preserve">
+    <value>试听组合</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_058" xml:space="preserve">
+    <value>停止试听</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_059" xml:space="preserve">
+    <value>设置已保存。</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_060" xml:space="preserve">
+    <value>正在使用内置提示音</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_061" xml:space="preserve">
+    <value>已导入自定义提示音</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_062" xml:space="preserve">
+    <value>已导入自定义人声</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_063" xml:space="preserve">
+    <value>未提供内置人声，请自行导入录音</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SkinSelectionPanel_003" xml:space="preserve">
+    <value>默认（内置）</value>
+    <comment>UI text; source: SkinSelectionPanel</comment>
+  </data>
+  <data name="SkinSelectionPanel_004" xml:space="preserve">
+    <value>
+新增或更新方案后重新打开设置窗口即可读取。
+颜色编辑请使用独立皮肤设计器；本页仅切换预设。
+选择后即时预览，点击保存设置后记住选择。</value>
+    <comment>UI text; source: SkinSelectionPanel</comment>
+  </data>
+  <data name="SkinSelectionPanel_005" xml:space="preserve">
+    <value>
+有 {0} 个无效方案未载入。</value>
+    <comment>UI text; source: SkinSelectionPanel</comment>
+  </data>
+  <data name="SlideShowPanel_009" xml:space="preserve">
+    <value>读取演示软件当前窗口</value>
+    <comment>UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_010" xml:space="preserve">
+    <value>添加放映窗口规则</value>
+    <comment>UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_011" xml:space="preserve">
+    <value>手动规则确认</value>
+    <comment>UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_012" xml:space="preserve">
+    <value>删除所选规则</value>
+    <comment>UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_013" xml:space="preserve">
+    <value>读取演示软件窗口失败，请稍后重试。</value>
+    <comment>UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPolicy_001" xml:space="preserve">
+    <value>仅允许 POWERPNT.EXE / wpp.exe 的具体窗口类名，不能使用全屏或通配符规则。</value>
+    <comment>UI text; source: SlideShowPolicy</comment>
+  </data>
+  <data name="SlideShowPolicy_002" xml:space="preserve">
+    <value>窗口类名必须精确匹配。</value>
+    <comment>UI text; source: SlideShowPolicy</comment>
+  </data>
+  <data name="SteamApplicationImport_001" xml:space="preserve">
+    <value>请选择Steam安装目录、Steam库目录、steamapps或steamapps\common目录。其他库需分别导入。</value>
+    <comment>UI text; source: SteamApplicationImport</comment>
+  </data>
+  <data name="SteamApplicationImport_002" xml:space="preserve">
+    <value>为避免扫描链接指向的其他目录，请选择不经过目录链接的Steam库。</value>
+    <comment>UI text; source: SteamApplicationImport</comment>
+  </data>
+  <data name="SteamImportForm_010" xml:space="preserve">
+    <value>找到 {0} 个候选EXE；跳过 {1} 个链接或不可访问目录。</value>
+    <comment>UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_011" xml:space="preserve">
+    <value>扫描达到数量/深度/时间限制，结果不完整；可手动浏览补充。</value>
+    <comment>UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="Store_001" xml:space="preserve">
+    <value>仅支持 WAV 或 MP3</value>
+    <comment>UI text; source: Store</comment>
+  </data>
+  <data name="Store_002" xml:space="preserve">
+    <value>音频不能超过 50 MB</value>
+    <comment>UI text; source: Store</comment>
+  </data>
+  <data name="SuppressionPanel_012" xml:space="preserve">
+    <value>播放中不提醒</value>
+    <comment>UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_013" xml:space="preserve">
+    <value>运行中不提醒</value>
+    <comment>UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_014" xml:space="preserve">
+    <value>Windows 程序</value>
+    <comment>UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPolicy_001" xml:space="preserve">
+    <value>请选择一个软件或填写一个媒体应用标识。</value>
+    <comment>UI text; source: SuppressionPolicy</comment>
+  </data>
+  <data name="SuppressionPolicy_002" xml:space="preserve">
+    <value>请选择有效的提醒规则。</value>
+    <comment>UI text; source: SuppressionPolicy</comment>
+  </data>
+  <data name="SuppressionPolicy_003" xml:space="preserve">
+    <value>运行中不提醒需要 .exe 文件名或完整路径；媒体包标识只能用于播放中不提醒。</value>
+    <comment>UI text; source: SuppressionPolicy</comment>
+  </data>
+  <data name="Tray_021" xml:space="preserve">
+    <value>提醒功能已启用</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_022" xml:space="preserve">
+    <value>闲置提醒器 v{0}</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_023" xml:space="preserve">
+    <value>暂停 {0} 分钟</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_024" xml:space="preserve">
+    <value>版本 {0}</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_025" xml:space="preserve">
+    <value>原配置已保留，禁止自动覆盖。请备份并恢复配置后重新启动。</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_026" xml:space="preserve">
+    <value>名单内数位板软件正在运行。若数位笔无法停止播报，可考虑Windows输入计时或关闭无设备标识过滤。点击打开高级设置；不会自动切换。</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_027" xml:space="preserve">
+    <value>名单内游戏软件正在运行。若Windows输入计时受影响，可手动选择设备键鼠事件计时（实验）。点击打开高级设置；不会自动切换。</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_028" xml:space="preserve">
+    <value>系统睡眠中，不播放提醒</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_029" xml:space="preserve">
+    <value>锁屏或会话状态未知，暂停提醒</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_030" xml:space="preserve">
+    <value>前台程序权限较高或无法确认接收权限，已临时使用Windows计时。若游戏会刷新该计时，提醒可能无法触发。设备模式启动时会申请UAC；取消后仍保留回退，请核对高级设置说明。</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_031" xml:space="preserve">
+    <value>当前定时暂停</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_032" xml:space="preserve">
+    <value>当前已关闭，等待用户恢复操作</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_033" xml:space="preserve">
+    <value>正在暂停可暂停媒体</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_034" xml:space="preserve">
+    <value>提醒功能已启用；</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_035" xml:space="preserve">
+    <value>；WPS放映未能可靠识别，可配置例外</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_036" xml:space="preserve">
+    <value>；部分媒体未能暂停（{0}）</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_037" xml:space="preserve">
+    <value>；已确认暂停 {0} 个媒体</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_038" xml:space="preserve">
+    <value>；播放中的媒体不在暂停范围内</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_039" xml:space="preserve">
+    <value>；播放中的媒体不支持暂停</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_040" xml:space="preserve">
+    <value>；Windows 未提供可暂停的播放会话</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_041" xml:space="preserve">
+    <value>；媒体暂停超时，仍播放提醒</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_042" xml:space="preserve">
+    <value>；媒体暂停不可用，仍播放提醒</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_043" xml:space="preserve">
+    <value>；正在发送手机通知</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_044" xml:space="preserve">
+    <value>；手机通知已取消或超时</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_045" xml:space="preserve">
+    <value>；手机通知失败，电脑播报不受影响</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_046" xml:space="preserve">
+    <value>设置已保存，但自启动更新失败，请重试。</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="VersionInfoPanel_006" xml:space="preserve">
+    <value>当前运行版本：{0}</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_007" xml:space="preserve">
+    <value>当前程序完整位置（随实际运行位置变化）</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_008" xml:space="preserve">
+    <value>配置与录音目录</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_009" xml:space="preserve">
+    <value>使用指南</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_010" xml:space="preserve">
+    <value>更新建议</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_011" xml:space="preserve">
+    <value>1. 先从托盘退出旧程序，再更新完整发布文件；只关设置窗口不会退出。
+2. 更新前备份上方配置目录和项目 themes，保留私人录音、皮肤与设置。
+3. 尽量使用固定位置；本项目推荐 publish\current。
+4. 更换位置后手动运行一次新版，检查版本及路径，并保存自启动设置。
+5. 旧实例先启动会阻止新版常驻；下次登录后再次核对托盘版本。
+6. 更新后检查人声、皮肤和设备目标，不覆盖私人 data/themes。
+目前没有自动补丁安装器；本页不会下载更新或修改自启动。
+本页信息只读，不需要保存。</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_012" xml:space="preserve">
+    <value>本项目完全免费</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VolumeLease_001" xml:space="preserve">
+    <value>未提高音量：当前输出设备未配置</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_002" xml:space="preserve">
+    <value>未提高音量：所选设备不是当前默认输出</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_003" xml:space="preserve">
+    <value>未提高音量：</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_004" xml:space="preserve">
+    <value>已临时提高 Windows 音量至 {0:F0}%</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_005" xml:space="preserve">
+    <value>已停止提醒并尝试恢复音量：</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_006" xml:space="preserve">
+    <value>提醒结束，已恢复原音量 {0:F0}%</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_007" xml:space="preserve">
+    <value>提醒结束，保留用户或其他程序调整后的音量</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_008" xml:space="preserve">
+    <value>恢复主音量失败，保持音乐衰减；请检查 Windows 音量混合器和诊断日志</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumePolicy_001" xml:space="preserve">
+    <value>设备不是已确认的扬声器或类型不明确</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="VolumePolicy_002" xml:space="preserve">
+    <value>当前输出设备未配置</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="VolumePolicy_003" xml:space="preserve">
+    <value>此设备自动提升尚未启用</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="VolumePolicy_004" xml:space="preserve">
+    <value>目标音量尚未通过试听确认</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="VolumePolicy_005" xml:space="preserve">
+    <value>设备已静音，程序不自动解除静音</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="VolumePolicy_006" xml:space="preserve">
+    <value>当前 Windows 音量 {0:F0}% 已达到目标 {1}%</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="InputModeNoticePolicy_003" xml:space="preserve">
+    <value>请填写EXE文件名或完整路径，不支持网址、快捷方式或启动参数。</value>
+    <comment>UI text; source: InputModeNoticePolicy</comment>
+  </data>
+  <data name="SettingsForm_002" xml:space="preserve">
+    <value>启用按应用不提醒规则</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_003" xml:space="preserve">
+    <value>正式提醒前暂停正在播放且支持暂停的媒体</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_004" xml:space="preserve">
+    <value>持续闲置时重复提醒</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_005" xml:space="preserve">
+    <value>永久关闭后询问是否重新启用</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_006" xml:space="preserve">
+    <value>登录 Windows 后启动</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_007" xml:space="preserve">
+    <value>操作失败：</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_008" xml:space="preserve">
+    <value>基础设置</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_009" xml:space="preserve">
+    <value>首次设置：默认闲置阈值为20分钟。
+睡眠后能否播报取决于电脑的睡眠方式和系统策略，建议先实际测试。
+如果自动睡眠后仍能正常提醒，无需仅为IR调整电源设置。
+仅当提前睡眠导致漏提醒时，再考虑缩短提醒阈值（例如系统10分钟睡眠、提醒设5分钟），或自行调整Windows睡眠时间。
+仅息屏不等于睡眠；程序不会擅自修改电源策略。核对后点击“保存设置”，以后不再显示本提示。</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_010" xml:space="preserve">
+    <value>闲置阈值（分钟）</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_011" xml:space="preserve">
+    <value>重复间隔（分钟）</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_012" xml:space="preserve">
+    <value>关闭后，媒体规则中的“播放中／运行中不提醒”暂不生效，名单仍保留。
+幻灯片放映抑制由其独立页面控制，不受此开关影响。
+程序不自动识别下载或游戏；未配置的软件照常检测闲置。
+锁屏、睡眠、手动暂停及提醒前暂停／压低媒体不受此开关影响。</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_013" xml:space="preserve">
+    <value>提醒音</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_014" xml:space="preserve">
+    <value>播放模式</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_015" xml:space="preserve">
+    <value>内置提示音</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_016" xml:space="preserve">
+    <value>应用音量（0–100）</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_017" xml:space="preserve">
+    <value>人声来源</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_018" xml:space="preserve">
+    <value>支持 WAV、MP3，最大 50 MB。每段最长播放 2 分钟。
+导入文件复制到项目 data 目录；不录音。手机通知启用后使用局域网。</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_019" xml:space="preserve">
+    <value>暂停与恢复</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_020" xml:space="preserve">
+    <value>再次询问延迟（分钟）</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_021" xml:space="preserve">
+    <value>每次启动软件自动启用提醒，上次暂停不延续。
+定时暂停到期自动恢复。
+本次运行内，永久暂停在延迟到期后、有新操作且非全屏时询问。
+询问窗口不主动获取焦点，稍后提醒会重新计时。</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_022" xml:space="preserve">
+    <value>媒体规则</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_023" xml:space="preserve">
+    <value>正式提醒前暂停正在播放且支持暂停的媒体。
+试听不触发；不自动恢复媒体。仅支持 Windows 暴露的媒体会话。</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_024" xml:space="preserve">
+    <value>幻灯片放映</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_025" xml:space="preserve">
+    <value>手机通知</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_026" xml:space="preserve">
+    <value>设备音量</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_027" xml:space="preserve">
+    <value>高级设置</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_028" xml:space="preserve">
+    <value>闲置检测方式</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_029" xml:space="preserve">
+    <value>此过滤项默认关闭，仅在实测无设备标识事件干扰时主动启用。
+可能无法识别部分触控板、远程输入；只用于已验证的外接键鼠。
+非空设备标识也不保证一定来自物理设备。
+本机高权限游戏需匹配权限才能收到真实操作；普通权限遇高权限前台将临时回退并提示，选择设备事件模式并保存后，若当前不是管理员会申请正常UAC；启动时也会检查。取消仍普通运行并保留权限回退。
+开启设备计时后，如当前未以管理员身份运行且未收到权限请求，可尝试再次点击“保存设置”，关闭保存成功提示后留意Windows权限请求。已是管理员时不会重复请求。</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_030" xml:space="preserve">
+    <value>设备事件模式用于排查游戏等软件刷新系统输入时间的问题。
+只统计键鼠事件头，不读取按键内容或鼠标坐标，不安装钩子。
+虚拟设备、触控、远程控制及反作弊兼容性仍有限，不能保证等同于物理操作。
+接收失败会回退Windows计时；锁屏、睡眠、幻灯片及暂停规则仍生效。
+保存或切换模式后重新累计闲置时间。</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_031" xml:space="preserve">
+    <value>自动提高音量：请在设备音量页为独立扬声器分别设置。
+配置、导入音频和有限大小诊断日志位于项目 data 文件夹。
+检测间隔 1 秒；恢复睡眠或解锁后等待新操作。
+默认获取最后输入时间；实验模式只读取事件头，不读取按键内容。</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_032" xml:space="preserve">
+    <value>皮肤</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_033" xml:space="preserve">
+    <value>版本与更新</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_034" xml:space="preserve">
+    <value>记得手动点击“保存设置”按钮</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_035" xml:space="preserve">
+    <value>如果电脑提前自动睡眠导致漏提醒，可缩短提醒阈值或自行调整Windows睡眠时间；若睡眠后仍能正常提醒，无需仅为IR更改电源设置。
+程序不会擅自修改Windows睡眠策略。锁屏时暂停提醒；睡眠后的播报行为需在本机验证，不能用仅息屏结果代替。</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_036" xml:space="preserve">
+    <value>保存设置</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_037" xml:space="preserve">
+    <value>请先导入本地录音。</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_038" xml:space="preserve">
+    <value>保存失败：</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_039" xml:space="preserve">
+    <value>选择本地音频</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_040" xml:space="preserve">
+    <value>状态：</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_041" xml:space="preserve">
+    <value>Windows 输入计时（默认）</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_042" xml:space="preserve">
+    <value>设备键鼠事件计时（实验）</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_043" xml:space="preserve">
+    <value>仅提示音</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_044" xml:space="preserve">
+    <value>仅人声</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_045" xml:space="preserve">
+    <value>提示音 + 人声</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="Tray_001" xml:space="preserve">
+    <value>启用提醒</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_002" xml:space="preserve">
+    <value>自定义暂停…</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_003" xml:space="preserve">
+    <value>暂停直到手动恢复</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_004" xml:space="preserve">
+    <value>打开设置</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_005" xml:space="preserve">
+    <value>退出程序</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_006" xml:space="preserve">
+    <value>音频提醒失败</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_007" xml:space="preserve">
+    <value>检测异常，等待用户操作后恢复</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_008" xml:space="preserve">
+    <value>配置读取失败</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_009" xml:space="preserve">
+    <value>是否调整闲置检测方式？</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_010" xml:space="preserve">
+    <value>设置保存失败，请检查项目 data 文件夹权限。</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_011" xml:space="preserve">
+    <value>配置读取失败，已禁止启用默认提醒。请恢复配置后重新启动。</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_012" xml:space="preserve">
+    <value>提醒功能已启用</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_013" xml:space="preserve">
+    <value>当前已暂停</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_014" xml:space="preserve">
+    <value>系统睡眠中，不播放提醒</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_015" xml:space="preserve">
+    <value>设备输入接收权限受限</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_016" xml:space="preserve">
+    <value>锁屏或安全桌面，暂停提醒</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_017" xml:space="preserve">
+    <value>闲置提醒</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_018" xml:space="preserve">
+    <value>闲置提醒目前已关闭，是否重新启用？</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_019" xml:space="preserve">
+    <value>重新启用</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_020" xml:space="preserve">
+    <value>稍后再次提醒</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="SuppressionPanel_001" xml:space="preserve">
+    <value>闲置提醒抑制规则（独立于媒体暂停名单）</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_002" xml:space="preserve">
+    <value>本区域受基础设置“按应用不提醒规则”总开关控制；关闭时保留名单但不执行。
+幻灯片抑制仍由独立页面控制。
+不暂停不等于不提醒。
+暂停名单决定媒体是否停播；下方规则决定闲置提醒是否发声。
+未配置的软件按普通闲置规则处理，多个规则任一符合即不提醒。</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_003" xml:space="preserve">
+    <value>软件 / 媒体应用标识</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_004" xml:space="preserve">
+    <value>何时不提醒</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_005" xml:space="preserve">
+    <value>浏览软件…</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_006" xml:space="preserve">
+    <value>读取当前媒体软件</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_007" xml:space="preserve">
+    <value>没有可识别的媒体会话，请先开始播放。</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_008" xml:space="preserve">
+    <value>媒体接口不可用，请稍后重试。</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_009" xml:space="preserve">
+    <value>添加 / 更新规则</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_010" xml:space="preserve">
+    <value>删除所选规则</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_011" xml:space="preserve">
+    <value>播放规则请先播放媒体，再用“读取当前媒体软件”添加，EXE名可能与媒体标识不同。</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="PhonePanel_001" xml:space="preserve">
+    <value>启用手机通知（正式播报时发送）</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_002" xml:space="preserve">
+    <value>手机连接尚未检查：请刷新已配对且在线的手机。</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_003" xml:space="preserve">
+    <value>实验性功能，效果不稳定</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_004" xml:space="preserve">
+    <value>通过 KDE Connect 向指定、已配对的 Android 手机发送本地提醒。默认关闭。电脑和手机需安装 KDE Connect，并在可信局域网中手动配对。</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_005" xml:space="preserve">
+    <value>官方命令行程序 kdeconnect-cli.exe 的完整位置</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_006" xml:space="preserve">
+    <value>浏览 KDE Connect 命令行程序</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_007" xml:space="preserve">
+    <value>选择官方安装目录中的 kdeconnect-cli.exe</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_008" xml:space="preserve">
+    <value>刷新已配对且在线的手机</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_009" xml:space="preserve">
+    <value>向所选手机发送测试通知</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_010" xml:space="preserve">
+    <value>测试会立即向当前所选手机发送一条固定文字，无需先保存；普通音频试听不发送。设置完成后请点击底部保存设置。</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_011" xml:space="preserve">
+    <value>请先在 KDE Connect 中完成配对，允许手机显示通知；如锁屏收不到，检查手机后台省电限制。关闭文件共享、剪贴板、远程输入、通知镜像等无关插件。
+本程序不自动安装软件、配对或修改防火墙，只发送固定提醒，不发送文件名或应用内容。
+提交成功不等于手机已收到；通知声音、勿扰和锁屏表现由手机系统决定。</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_012" xml:space="preserve">
+    <value>已保存目标：</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_013" xml:space="preserve">
+    <value>已选择：</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_014" xml:space="preserve">
+    <value>命令行位置已修改，请刷新并重新选择手机。</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_015" xml:space="preserve">
+    <value>手机通知操作已取消或超时，电脑播报不受影响。</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_016" xml:space="preserve">
+    <value>手机通知操作失败，请检查官方CLI路径、KDE Connect是否运行及设备配对。</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_001" xml:space="preserve">
+    <value>确认实际连接的是独立扬声器，不是耳机或混合插孔</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_002" xml:space="preserve">
+    <value>对此设备启用自动提高音量（试听确认后可选）</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_003" xml:space="preserve">
+    <value>确认本次试听音量合适</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_004" xml:space="preserve">
+    <value>每个输出设备独立保存 Windows 主音量目标。默认关闭。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_005" xml:space="preserve">
+    <value>试听不触发媒体自动暂停；普通试听不自动提高音量。
+本页“带音量调整试听并确认”会在同意后临时调整主音量。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_006" xml:space="preserve">
+    <value>刷新输出设备</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_007" xml:space="preserve">
+    <value>目标 Windows 音量百分比（35% 仅为初始建议）</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_008" xml:space="preserve">
+    <value>建议设置好需要的软件音量压低后再启用（不强制）。
+未开启压低时，自动提高主音量会同时放大其他程序的声音。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_009" xml:space="preserve">
+    <value>带音量调整试听并确认</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_010" xml:space="preserve">
+    <value>停止试听 / 恢复音量</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_011" xml:space="preserve">
+    <value>试听已确认。请勾选对此设备启用自动提高音量，再点击保存设置。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_012" xml:space="preserve">
+    <value>注意：临时提高设备主音量，会同时放大该设备上其他程序的声音。
+设备已试听确认并启用后，未开启音乐压低也可提高主音量。
+媒体规则可允许压低音乐后协调提升，其他声音也可能变大。
+状态检查失败时仍不提高主音量。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_013" xml:space="preserve">
+    <value>请先确认独立扬声器，并完成当前目标音量的试听确认。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_014" xml:space="preserve">
+    <value>设备音量操作失败，请刷新设备后重试。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_015" xml:space="preserve">
+    <value>没有可用输出设备，自动提升不可用。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_016" xml:space="preserve">
+    <value>设备识别不可用：自动提升已阻止。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_017" xml:space="preserve">
+    <value>正在试听，请先停止或等待结束。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_018" xml:space="preserve">
+    <value>仅允许已确认实际连接为独立扬声器的设备试听调整。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_019" xml:space="preserve">
+    <value>请先在 Windows 中把所选设备设为默认输出，然后刷新。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_020" xml:space="preserve">
+    <value>请先选择人声，或切换为仅提示音并保存设置。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_021" xml:space="preserve">
+    <value>试听未完成或目标音量未验证，无法确认。请查看上方音量状态后重试。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_022" xml:space="preserve">
+    <value>试听已完成。若音量合适，请点击下方确认按钮；确认后还需启用并保存。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_023" xml:space="preserve">
+    <value>试听未能开始，请检查上方状态后重试。</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_001" xml:space="preserve">
+    <value>名单内软件运行时，提示手动选择闲置检测方式</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_002" xml:space="preserve">
+    <value>看不到游戏提示时，请检查：
+Windows“设置 → 系统 → 通知”中的勿扰，以及“玩游戏时／全屏使用应用时”的自动规则。
+名单中的路径是否实为启动器路径；请选择实际运行的游戏主EXE，启动器可能在拉起游戏后退出。</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_003" xml:space="preserve">
+    <value>添加到提示名单</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_004" xml:space="preserve">
+    <value>删除所选提示项</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_005" xml:space="preserve">
+    <value>从Steam目录批量导入…</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_006" xml:space="preserve">
+    <value>两套提示独立启用，各自保留名单；每项每次运行最多提示一次，通知至少间隔1分钟。
+支持EXE文件名或完整路径，最多512项；浏览与Steam导入保存完整路径。
+可触发不代表立即显示：需匹配运行软件，且不在暂停／播报中；同类程序不重复通知。
+仅修改草稿，点击底部“保存设置”后生效。拒绝/关闭通知不更改设置；勿扰模式可能隐藏通知。</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="MediaScopePanel_001" xml:space="preserve">
+    <value>播报期间临时压低指定播放器音量</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_002" xml:space="preserve">
+    <value>音乐已压低时允许提高主音量（其他声音可能变大）</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_003" xml:space="preserve">
+    <value>暂停范围（仅对上方选项勾选时生效）</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_004" xml:space="preserve">
+    <value>软件名单：每行一个媒体应用标识，精确匹配，不区分大小写</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_005" xml:space="preserve">
+    <value>选择要加入媒体名单的软件（不会运行它）</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_006" xml:space="preserve">
+    <value>无法添加所选程序：</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_007" xml:space="preserve">
+    <value>可选择一个或多个 .exe；不会运行或复制所选软件。
+将按文件名和完整路径加入名单，同名程序可能一起匹配。
+若媒体应用标识不同（如商店应用），请改用下方读取当前媒体软件。
+添加后请点击保存设置。</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_008" xml:space="preserve">
+    <value>当前没有 Windows 可识别的媒体软件。请先打开播放器并开始播放后重试。</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_009" xml:space="preserve">
+    <value>无法读取媒体软件，请稍后重试。</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_010" xml:space="preserve">
+    <value>将所选软件加入名单</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_011" xml:space="preserve">
+    <value>压低音量名单（独立于上方暂停名单）：每行一个 .exe 文件名或完整路径</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_012" xml:space="preserve">
+    <value>浏览要压低音量的软件…</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_013" xml:space="preserve">
+    <value>选择要临时压低音量的播放器（不会运行它）</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_014" xml:space="preserve">
+    <value>保留原应用音量的百分比（例如 20%：原来 50% → 临时 10%）</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_015" xml:space="preserve">
+    <value>只压低本名单内仍有活动音频的播放器。
+“不暂停”不等于“不压低”；关闭暂停功能也可独立压低音乐。
+上方暂停范围和例外名单不会阻止这里的音量调整。
+浏览器会影响该软件的音频，不能按网址区分。
+提醒结束恢复；期间手动调整应用音量或静音则保留调整。
+开启压低音乐会同时勾选允许提高主音量，之后可单独取消。
+音乐进度继续；协调提升还需在设备音量页启用并确认目标。
+提高主音量时会进一步衰减同设备音乐，补偿实际分贝增益。
+切换瞬间音乐可能短暂静音，以避免先随主音量放大。
+勾选允许提升后，未列入名单的其他声音也可能随主音量变大。
+结束时先恢复主音量，再恢复播放器音量；普通试听不触发。</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_016" xml:space="preserve">
+    <value>设置后请点击保存；普通试听不会暂停媒体。</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="SlideShowPanel_001" xml:space="preserve">
+    <value>幻灯片放映期间不提醒</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_002" xml:space="preserve">
+    <value>WPS 演示（兼容接口识别，部分版本需手动规则）</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_003" xml:space="preserve">
+    <value>编辑时正常提醒，放映（全屏或窗口化）时暂停闲置提醒。</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_004" xml:space="preserve">
+    <value>WPS 版本无法识别时：默认正常检测，可配置具体放映窗口类。
+先进入放映，再读取窗口；不要选择编辑窗口通用类名。
+可取消对应软件自动检测，或删除手动规则，作为识别例外。
+手动规则不保证适用所有版本，请在编辑/放映两种状态验证。</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_005" xml:space="preserve">
+    <value>未发现 POWERPNT.EXE / wpp.exe 的可见窗口。</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_006" xml:space="preserve">
+    <value>手动例外：软件进程名（仅 POWERPNT.EXE / wpp.exe）</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_007" xml:space="preserve">
+    <value>放映窗口类名（精确匹配）</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_008" xml:space="preserve">
+    <value>请确认该类名只在放映窗口使用。若编辑窗口也使用同一类名，编辑时也会误暂停提醒。仍要添加？</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SkinSelectionPanel_001" xml:space="preserve">
+    <value>选择预设</value>
+    <comment>Static UI text; source: SkinSelectionPanel</comment>
+  </data>
+  <data name="SkinSelectionPanel_002" xml:space="preserve">
+    <value>预设来源：</value>
+    <comment>Static UI text; source: SkinSelectionPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_001" xml:space="preserve">
+    <value>打开使用指南</value>
+    <comment>Static UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_002" xml:space="preserve">
+    <value>使用指南文件缺失，请重新解压完整发布包中的 docs 文件夹。</value>
+    <comment>Static UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_003" xml:space="preserve">
+    <value>无法打开使用指南，可手动打开上方显示的文件。</value>
+    <comment>Static UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_004" xml:space="preserve">
+    <value>开发：君喵Junmiao &amp; Codex</value>
+    <comment>Static UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_005" xml:space="preserve">
+    <value>无法打开浏览器，可手动访问：</value>
+    <comment>Static UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="SteamImportForm_001" xml:space="preserve">
+    <value>导入勾选项</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_002" xml:space="preserve">
+    <value>全选</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_003" xml:space="preserve">
+    <value>全不选</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_004" xml:space="preserve">
+    <value>从Steam目录批量导入</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_005" xml:space="preserve">
+    <value>仅导入需要提示切换计时方式的游戏EXE，不修改Steam或游戏文件。
+同一游戏可能包含多个EXE，请优先选择实际游戏主程序；启动器、反作弊、崩溃报告和卸载程序通常不需要。
+默认均不勾选；全选会包含辅助程序，请确认后导入。其他Steam库需分别选择。</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_006" xml:space="preserve">
+    <value>正在扫描，可随时取消…</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_007" xml:space="preserve">
+    <value>取消</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_008" xml:space="preserve">
+    <value>正在取消扫描…</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_009" xml:space="preserve">
+    <value>扫描失败，请核对Steam库目录与访问权限。</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="CustomPauseForm_001" xml:space="preserve">
+    <value>自定义暂停</value>
+    <comment>Static UI text; source: CustomPauseForm</comment>
+  </data>
+  <data name="CustomPauseForm_002" xml:space="preserve">
+    <value>暂停时长（分钟）</value>
+    <comment>Static UI text; source: CustomPauseForm</comment>
+  </data>
+  <data name="CustomPauseForm_003" xml:space="preserve">
+    <value>可设置1～10,080分钟（最长7天）。
+到期自动恢复提醒；重新启动程序会自动启用。
+取消不会改变当前暂停状态。</value>
+    <comment>Static UI text; source: CustomPauseForm</comment>
+  </data>
+  <data name="CustomPauseForm_004" xml:space="preserve">
+    <value>开始暂停</value>
+    <comment>Static UI text; source: CustomPauseForm</comment>
+  </data>
+  <data name="Language_Label" xml:space="preserve">
+    <value>界面语言 / Display language</value>
+  </data>
+  <data name="Language_Help" xml:space="preserve">
+    <value>选择语言后，点击底部“保存设置”即可切换。
+设置窗口、托盘菜单和后续提示会使用所选语言。
+
+Choose a language, then click Save Settings to apply it.</value>
+  </data>
+  <data name="Layout_InputHeading">
+    <value>闲置检测</value>
+  </data>
+  <data name="Layout_SlidesIndependent">
+    <value>幻灯片放映规则由独立开关控制。</value>
+  </data>
+  <data name="Layout_Admin">
+    <value>当前已以管理员权限运行。</value>
+  </data>
+  <data name="Layout_DetailsShow">
+    <value>展开详细说明</value>
+  </data>
+  <data name="Layout_Ordinary">
+    <value>当前未以管理员权限运行，详见高级设置。</value>
+  </data>
+  <data name="Layout_FilterHeading">
+    <value>设备输入过滤</value>
+  </data>
+  <data name="Layout_PermissionUnknown">
+    <value>当前管理员权限状态无法确认，详见高级设置。</value>
+  </data>
+  <data name="Layout_FilterWarning">
+    <value>实验选项，默认关闭。开启后可能漏掉触控板、数位笔或远程输入，操作时也可能继续播报。</value>
+  </data>
+  <data name="Layout_PermissionHeading">
+    <value>运行权限</value>
+  </data>
+  <data name="Layout_DetailsHide">
+    <value>收起详细说明</value>
+  </data>
+  <data name="Layout_InputSummary">
+    <value>一般使用 Windows 输入计时；遇到软件持续刷新闲置时间时，可尝试设备事件计时。</value>
+  </data>
+  <data name="Layout_AppRulesEffect">
+    <value>关闭后，应用不提醒规则暂停执行，名单保留。</value>
+  </data>
+  <data name="SkinPreset_InvalidColor" xml:space="preserve">
+    <value>方案包含无效色值</value>
+  </data>
+  <data name="SkinPreset_NoColors" xml:space="preserve">
+    <value>方案颜色为空</value>
+  </data>
+  <data name="CheckmarkAsset_Invalid" xml:space="preserve">
+    <value>请选择有效 PNG，文件不能超过 2 MB。</value>
+  </data>
+  <data name="SkinPreset_InvalidImagePath" xml:space="preserve">
+    <value>勾号PNG路径无效</value>
+  </data>
+  <data name="CheckmarkAsset_NotPng" xml:space="preserve">
+    <value>文件不是 PNG。</value>
+  </data>
+  <data name="SkinPreset_Untitled" xml:space="preserve">
+    <value>未命名</value>
+  </data>
+  <data name="CheckmarkAsset_Size" xml:space="preserve">
+    <value>PNG 尺寸须在 1～512 像素内，建议使用透明背景的方形图标。</value>
+  </data>
+  <data name="CheckmarkPath_Invalid" xml:space="preserve">
+    <value>勾号资源路径无效。</value>
+  </data>
+  <data name="SkinPreset_Invalid" xml:space="preserve">
+    <value>无效方案</value>
+  </data>
+  <data name="SkinPreset_TooLarge" xml:space="preserve">
+    <value>方案文件过大</value>
+  </data>
+  <data name="ComboBox_NameHint" xml:space="preserve">
+    <value>按 F2 或右键菜单打开完整名称。</value>
+  </data>
+  <data name="ComboBox_ViewName" xml:space="preserve">
+    <value>查看完整名称…</value>
+  </data>
+  <data name="ComboBox_NameTitle" xml:space="preserve">
+    <value>完整名称</value>
+  </data>
+
+  <data name="DeviceVolumePanel_012Details" xml:space="preserve"><value>仅提高低于目标的音量，不降低现有音量，不解除静音。
+播放结束恢复；期间手动改音量或静音后不覆盖您的操作。
+播报期间调整音量可能会导致被压低的媒体声音突然变响。
+设备名或驱动报告不能保证识别真实接线；混合插孔禁止使用。</value></data>
+  <data name="DeviceVolumePanel_012Tail" xml:space="preserve"><value>普通试听按钮不会自动调整主音量。确认后还需勾选启用并保存设置。</value></data>
+  <data name="MediaScopePanel_016Details" xml:space="preserve"><value>浏览器按整个软件处理，无法可靠按网址或标签页区分。
+本版不支持网址名单，不读取网页、历史或媒体标题。
+仅暂停名单模式下，空名单表示不暂停任何媒体。
+暂停名单与压低名单分别保存；两者不决定是否发出闲置提醒。
+未启用协调提升时，其他未压低的活动音频会阻止提高主音量。</value></data>
+  <data name="PhonePanel_010Details" xml:space="preserve"><value>正式播报实际开始后异步发送；手机离线或失败不影响电脑播报，重连后不补发过期通知。</value></data>
+  <data name="SlideShowPanel_003Details" xml:space="preserve"><value>不以程序正在运行或任意窗口全屏作为放映依据。
+不读取幻灯片、文稿名称、窗口标题、备注或画面。
+退出放映后按实际键鼠闲置时间恢复，不连续补响。
+已有应用“运行中不提醒”规则仍会生效，请移除冲突规则。</value></data>
+  <data name="SuppressionPanel_011Details" xml:space="preserve"><value>“浏览软件”仅用于运行中不提醒规则。
+播放规则仅识别 Windows 媒体会话；音乐和视频均适用，不区分网址。
+运行规则检测 EXE 是否存在，最小化/后台也生效；不读取进程内存。
+浏览器整个软件运行或播放都会影响规则，请慎选。
+识别失败回退普通闲置规则；约每 2 秒检查一次。
+规则解除后按实际闲置时间判断，不补发堆积提醒。</value></data>
+  <data name="SuppressionPanel_011Tail" xml:space="preserve"><value>删除规则即可恢复该软件的普通检测。修改后点击保存设置。</value></data></root>

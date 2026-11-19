@@ -21,9 +21,9 @@ internal static class SkinPainter {
     else if(c is Label l){
      var role=roles.GetValue(l,label=>new(){Helper=label.ForeColor==Color.FromArgb(96,96,96)||label.ForeColor==SystemColors.GrayText});
      l.BackColor=parent.BackColor;l.ForeColor=C(Equals(l.Tag,"Accent")?"Accent":role.Helper?"Helper":"Text");
-     if(l is LinkLabel link){link.LinkColor=C("Accent");link.ActiveLinkColor=C("Text");link.VisitedLinkColor=C("Accent");}
+     if(l is LinkLabel link){var color=C(Equals(link.Tag,"DetailsLink")?"Text":"Accent");link.LinkColor=color;link.ActiveLinkColor=C("Text");link.VisitedLinkColor=color;}
     }else if(c is Button b){
-     bool primary=(b.Text=="保存设置"&&b.Dock==DockStyle.Bottom)||Equals(b.Tag,"Primary");
+     bool primary=Equals(b.Tag,"Primary");
      b.UseVisualStyleBackColor=false;b.FlatStyle=FlatStyle.Flat;b.FlatAppearance.BorderColor=C("Border");
      var colors=buttonColors.GetValue(b,button=>{var value=new ButtonColors();button.EnabledChanged+=(_,_)=>value.Apply(button);return value;});
      colors.Back=C(primary?"Accent":"Button");colors.Fore=C(primary?"AccentText":"ButtonText");colors.DisabledBack=C("DisabledControl");colors.DisabledFore=C("DisabledText");colors.Apply(b);
@@ -33,6 +33,7 @@ internal static class SkinPainter {
     }else{c.BackColor=parent.BackColor;if(!c.Enabled)c.ForeColor=C("DisabledText");}
     if(c is ThemedComboBox combo)combo.SetColors(skin.Colors);
     if(c is ThemedTrackBar slider)slider.SetColors(skin.Colors);
+    if(c is ThemedTabControl tabs)tabs.SetColors(skin.Colors);
     Visit(c);
    }
   }

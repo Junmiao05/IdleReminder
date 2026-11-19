@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>IdleReminder 使用指南 — v0.0.2.0</title>
+<style>:root {
+  color-scheme: light dark;
+  --page: #f5f7fa;
+  --paper: #fff;
+  --text: #202a35;
+  --muted: #526171;
+  --line: #dbe2e9;
+  --link: #175fa9;
+  --note: #edf4fc;
+  --code: #edf0f4;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 1.5rem; }
+body { margin: 0; background: var(--page); color: var(--text); font: 1.0625rem/1.8 system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--link); outline-offset: 4px; border-radius: 2px; }
+.skip { position: absolute; top: -8rem; left: 1rem; padding: .5rem 1rem; background: var(--paper); z-index: 10; }
+.skip:focus { top: .5rem; }
+.site-header { max-width: 1180px; margin: auto; padding: 1.5rem 1.75rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.brand { color: var(--text); font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+.brand span { color: var(--muted); font-size: .9rem; font-weight: 400; margin-left: .6rem; }
+.languages { display: flex; flex-wrap: wrap; gap: .9rem; font-size: .9rem; }
+.languages [aria-current] { color: var(--text); font-weight: 700; text-decoration: none; }
+.layout { max-width: 1180px; margin: 0 auto; padding: 0 1.75rem; display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 2rem; align-items: start; }
+.toc { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto; padding: .75rem .5rem .75rem 0; font-size: .87rem; line-height: 1.55; }
+.toc h2 { margin: 0 0 .8rem; font-size: .95rem; color: var(--muted); }
+.toc ol { padding-left: 1.4rem; margin: 0; }
+.toc li { padding: .23rem 0 .23rem .2rem; }
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+main { min-width: 0; overflow-wrap: break-word; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 2.25rem 2.5rem; }
+.mobile-toc { display: none; }
+.toc h2 { border: 0; padding: 0; }
+h1, h2, h3 { line-height: 1.35; text-wrap: balance; }
+h1 { font-size: clamp(1.85rem, 3vw, 2.4rem); letter-spacing: -.025em; margin: 0 0 1.1rem; }
+h2 { font-size: 1.45rem; padding-top: 2rem; margin: 2.1rem 0 1.1rem; border-top: 1px solid var(--line); }
+h3 { font-size: 1.12rem; margin: 1.6rem 0 .7rem; }
+p { margin: 0 0 1rem; }
+li { margin: .45rem 0; padding-left: .25rem; }
+ul, ol { margin: .6rem 0 1.25rem; padding-left: 1.5rem; }
+strong { font-weight: 650; }
+code { font-family: "Cascadia Code", Consolas, monospace; background: var(--code); border-radius: 4px; padding: .1em .3em; font-size: .88em; overflow-wrap: anywhere; }
+.notice { border-left: 4px solid var(--link); background: var(--note); border-radius: 0 8px 8px 0; padding: .9rem 1.1rem; margin: 1.4rem 0; }
+.notice p { margin: 0; }
+.back-top { margin: 2.5rem 0 0; font-size: .92rem; }
+footer { max-width: 1180px; margin: 1.5rem auto 2.5rem; padding: 0 1.75rem; color: var(--muted); font-size: .85rem; }
+@media (prefers-color-scheme: dark) {
+  :root { --page: #141a21; --paper: #1c242e; --text: #e6edf5; --muted: #afbecf; --line: #3a4654; --link: #8bbff7; --note: #25354a; --code: #303b49; }
+}
+@media (max-width: 850px) {
+  .layout { display: block; }
+  .toc { display: none; }
+  .mobile-toc { display: block; margin-bottom: 1.25rem; padding: .8rem 1.1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+  .mobile-toc summary { cursor: pointer; color: var(--link); font-weight: 600; }
+  .mobile-toc ol { font-size: .9rem; }
+  main { padding: 1.75rem; }
+}
+@media (max-width: 520px) {
+  .site-header { align-items: start; flex-direction: column; padding: 1.1rem; }
+  .layout { padding: 0 .75rem; }
+  main { padding: 1.3rem 1.1rem; border-radius: 10px; }
+  h2 { font-size: 1.3rem; }
+  footer { padding: 0 1.1rem; }
+}
+@media print {
+  :root { --page: #fff; --paper: #fff; --text: #000; --muted: #444; --line: #bbb; --link: #000; --note: #f3f3f3; --code: #eee; }
+  .toc, .mobile-toc, .languages, .back-top, .skip, footer { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; border: 0; }
+  h2, h3 { break-after: avoid; }
+  .notice { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳到正文</a>
+<header class="site-header">
+ <a class="brand" href="#content">IdleReminder <span>使用指南</span></a>
+ <nav class="languages" aria-label="语言"><a href="UserGuide.zh-Hans.html" lang="zh-Hans" aria-current="page">简体中文</a><a href="UserGuide.en.html" lang="en">English</a></nav>
+</header>
+<div class="layout">
+ <nav class="toc" aria-label="目录"><h2>本页目录</h2><ol><li><a href="#section-01">快速开始</a></li>
+<li><a href="#section-02">闲置检测与重复提醒</a></li>
+<li><a href="#section-03">提醒音与录音</a></li>
+<li><a href="#section-04">暂停与恢复</a></li>
+<li><a href="#section-05">媒体规则：先分清三种功能</a></li>
+<li><a href="#section-06">配置应用名单与播放规则</a></li>
+<li><a href="#section-07">设备音量：先试听，再启用</a></li>
+<li><a href="#section-08">幻灯片放映</a></li>
+<li><a href="#section-09">闲置检测方式与管理员权限</a></li>
+<li><a href="#section-10">游戏与数位板软件的切换提示</a></li>
+<li><a href="#section-11">手机通知（实验）</a></li>
+<li><a href="#section-12">皮肤与显示语言</a></li>
+<li><a href="#section-13">数据、更新与卸载</a></li>
+<li><a href="#section-14">故障排查与已知限制</a></li>
+<li><a href="#section-15">项目与许可</a></li></ol></nav>
+ <details class="mobile-toc"><summary>目录 — 跳转到章节</summary><nav aria-label="目录"><ol><li><a href="#section-01">快速开始</a></li>
+<li><a href="#section-02">闲置检测与重复提醒</a></li>
+<li><a href="#section-03">提醒音与录音</a></li>
+<li><a href="#section-04">暂停与恢复</a></li>
+<li><a href="#section-05">媒体规则：先分清三种功能</a></li>
+<li><a href="#section-06">配置应用名单与播放规则</a></li>
+<li><a href="#section-07">设备音量：先试听，再启用</a></li>
+<li><a href="#section-08">幻灯片放映</a></li>
+<li><a href="#section-09">闲置检测方式与管理员权限</a></li>
+<li><a href="#section-10">游戏与数位板软件的切换提示</a></li>
+<li><a href="#section-11">手机通知（实验）</a></li>
+<li><a href="#section-12">皮肤与显示语言</a></li>
+<li><a href="#section-13">数据、更新与卸载</a></li>
+<li><a href="#section-14">故障排查与已知限制</a></li>
+<li><a href="#section-15">项目与许可</a></li></ol></nav></details>
+ <main id="content"><h1>IdleReminder 使用指南</h1>
+<p>适用版本：IdleReminder v0.0.2.0</p>
+<p>离开电脑一段时间后，用声音提醒自己回来看看。先完成快速设置，再按需要配置媒体、设备音量和应用规则。</p>
+<aside class="notice" role="note"><p><strong>重点记住两件事：</strong> 修改设置后点击底部“保存设置”；关闭设置窗口不会退出 IR，要退出请使用系统托盘菜单。</p></aside>
+<section aria-labelledby="section-01"><h2 id="section-01">快速开始</h2>
+<ol>
+<li>将完整发布包解压到准备长期保留的文件夹，运行 <code>IdleReminder.exe</code>。请保留运行库和语言子文件夹。</li>
+<li>在“基础设置”填写闲置阈值。新配置默认 <strong>20 分钟</strong>。</li>
+<li>在“提醒音”选择提示音或导入录音，先用普通试听确认能播放。</li>
+<li>点击 <strong>保存设置</strong>。关闭设置后，IR 继续在系统托盘运行。</li>
+<li>暂时不想听提醒时，在托盘选择定时暂停、自定义暂停或“暂停直到手动恢复”。</li>
+</ol>
+<aside class="notice" role="note"><p><strong>提高音量不是默认功能。</strong> 先以普通音量使用。只有确认连接的是独立扬声器，并完成设备页的专用试听后，再考虑启用自动提高音量。</p></aside>
+</section>
+<section aria-labelledby="section-02"><h2 id="section-02">闲置检测与重复提醒</h2>
+<h3>什么时候会响</h3>
+<p>正常键鼠操作会重新累计闲置时间。达到阈值后，IR 按当前设置播放提醒；正式播报期间检测到新操作，会停止播放并开始恢复临时音量调整。检测周期约 1 秒。</p>
+<p>开启“持续闲置时重复提醒”后，如果仍没有操作，会按重复间隔再次提醒。关闭时，每段连续闲置只提醒一次。</p>
+<h3>锁屏、息屏与睡眠</h3>
+<ul>
+<li><strong>锁屏：</strong> 暂停提醒；解锁后等待新操作，再重新累计。</li>
+<li><strong>仅息屏：</strong> 不等于锁屏或睡眠，仍可能提醒。</li>
+<li><strong>睡眠：</strong> 取决于电脑和待机方式。开发者电脑在 S0 现代待机期间仍能播报，不能保证所有电脑都一样。</li>
+</ul>
+<p>如果电脑在阈值前睡眠，且确实因此漏提醒，可以缩短 IR 阈值，或自行调整 Windows 电源设置。如果睡眠后本来就能正常提醒，无需仅为 IR 修改睡眠时间。IR 不修改 Windows 睡眠或休眠策略。</p>
+</section>
+<section aria-labelledby="section-03"><h2 id="section-03">提醒音与录音</h2>
+<p>播放模式可以选择“仅提示音”“仅人声”或“提示音 + 人声”。组合按顺序播放，正式播报开头约 1 秒渐入，组合只渐入一次。应用音量只控制 IR 自己的声音。</p>
+<p>内置 5 种合成提示音，<strong>不提供内置人声</strong>。可导入本地 WAV 或 MP3，单文件不超过 50 MB，每段最长播放 2 分钟。导入时复制到数据目录，不使用麦克风录音。</p>
+<p><strong>普通试听</strong>只检查音频播放，不暂停媒体、不压低音乐、不提高主音量，也不发送手机通知。普通键鼠输入不会停止试听，请用“停止试听”；正式提醒则会根据检测到的新输入停止。</p>
+<h3>文件缺失或损坏</h3>
+<p>把其他文件改成 <code>.mp3</code> 后缀不等于转换格式，能否播放取决于实际内容和 Windows 解码能力。建议导入后先试听。</p>
+<p>坏文件可以被保存，实际播放时会报告失败并结束本次播放。组合中的第一段若正常，可能播完后才在第二段失败。Windows 失败通知的提示音使用系统自己的音量设置。</p>
+<p>删除原始素材不会删除已导入的副本。替换或取消导入后可能留下未使用的副本；确认不需要并做好备份后再清理。删除当前皮肤文件也不会立刻撤销已加载的配色，重新打开设置时才会重新读取。</p>
+</section>
+<section aria-labelledby="section-04"><h2 id="section-04">暂停与恢复</h2>
+<p>托盘提供暂停 30 分钟、1 小时、2 小时和暂停直到手动恢复。“自定义暂停…”可设置 <strong>1～10,080 分钟</strong>，最长 7 天；确认后立即生效，不需保存设置。取消不改变当前状态。</p>
+<p>定时暂停到期会自动恢复。暂停直到手动恢复，在本次运行内不会被强制开启。</p>
+<p>开启恢复询问后，需要先达到设定延迟，再发生新操作，且不处于全屏状态，才可能显示询问。窗口不主动抢焦点；选择稍后会重新计时。完全没有操作时不会单纯因为时间到了就弹出。</p>
+<aside class="notice" role="note"><p><strong>重新启动会开启提醒。</strong> 每次启动都会清除上次暂停并重新累计。批准管理员权限交接也会启动新实例，遵循同样的启动规则。</p></aside>
+</section>
+<section aria-labelledby="section-05"><h2 id="section-05">媒体规则：先分清三种功能</h2>
+<h3>暂停媒体</h3>
+<p>正式提醒前，暂停 Windows 能识别、正在播放且支持暂停的媒体。可以暂停全部、只暂停名单内软件，或让名单内软件保持播放。仅名单模式下，空名单表示不暂停任何媒体。</p>
+<p>暂停后不会自动继续播放。部分播放器不提供合适的 Windows 媒体会话，因此可能无法暂停。</p>
+<h3>压低播放器音量</h3>
+<p>播报期间临时压低指定 EXE 的活动音频，音乐进度继续。设置的是<strong>保留原应用音量的百分比</strong>：例如保留 20%，播放器原来 50%，临时变为 10%。</p>
+<p>压低名单与暂停范围、暂停例外分别保存。“不暂停”不等于“不压低”，关闭暂停仍可压低音乐。期间手动修改播放器音量或静音，IR 会保留你的操作。</p>
+<h3>不发出闲置提醒</h3>
+<p>“播放中不提醒”根据 Windows 媒体应用标识判断；“运行中不提醒”根据 EXE 文件名或完整路径判断，后台或最小化运行也算。多个启用规则中，任意一条符合就抑制提醒。</p>
+<p>这些规则只控制 IR 是否发声，不会因为“不提醒”就自动暂停或压低媒体。</p>
+</section>
+<section aria-labelledby="section-06"><h2 id="section-06">配置应用名单与播放规则</h2>
+<h3>播放中不提醒</h3>
+<ol>
+<li>先让目标软件开始播放。</li>
+<li>点击 <strong>读取当前媒体软件</strong>，选择 Windows 报告的媒体应用标识。</li>
+<li>添加“播放中不提醒”规则，然后保存。</li>
+</ol>
+<aside class="notice" role="note"><p><strong>EXE 名不一定是媒体标识。</strong> “浏览软件”用于“运行中不提醒”；设置播放规则时，应读取正在播放的媒体。Edge 已通过这种方式实测抑制提醒。</p></aside>
+<p>浏览器按整个软件处理，不能可靠区分网址或标签页。IR 不读取网页、历史或媒体标题，也不支持网址名单。</p>
+<p>运行规则检测指定 EXE 是否运行，不读取进程内存。规则约每 2 秒检查一次，识别失败时按普通闲置规则处理。规则解除后按实际闲置时间判断，不补发积压的提醒。删除规则并保存可恢复普通检测。</p>
+<p>基础设置的 <strong>启用按应用不提醒规则</strong> 只控制上述抑制规则。关闭时保留名单；幻灯片页面的开关独立生效。它不控制媒体暂停、音量压低或手动暂停。</p>
+<p>IR 不会自动识别所有游戏或大文件下载。需要按软件抑制时，请自行配置名单。</p>
+</section>
+<section aria-labelledby="section-07"><h2 id="section-07">设备音量：先试听，再启用</h2>
+<p>每个 Windows 输出端点分别保存目标主音量。默认关闭，耳机、混合接口或类型不明确的设备禁止自动提高音量。驱动重装后，端点 ID 变化可能需要重新设置。</p>
+<ol>
+<li>选择当前默认输出设备，确认实际接的是独立扬声器。</li>
+<li>从较低目标开始，先暂停其他媒体。</li>
+<li>点击 <strong>带音量调整试听并确认</strong>，阅读并确认音量警告。</li>
+<li>完整播放后，确认本次试听音量合适。</li>
+<li>勾选对此设备启用自动提高音量，再点击 <strong>保存设置</strong>。</li>
+</ol>
+<p>普通试听不会自动提高主音量。停止、失败、切换设备或更改目标后，需重新试听确认。</p>
+<aside class="notice" role="note"><p><strong>主音量会影响同设备上的其他声音。</strong> 专用试听及正式提升都可能让其他程序变响。只在低于目标时提高，不降低本来更高的音量，也不解除静音。</p></aside>
+<h3>与音乐压低配合</h3>
+<p>建议先配置需要压低的播放器。开启音乐压低时，会同时勾选允许协调提高主音量，之后可以单独取消。协调提升仍要求设备页已启用并确认目标。</p>
+<p>提高主音量时，会进一步衰减同设备音乐，补偿实际增益；切换瞬间可能短暂静音。结束时先恢复主音量，再恢复播放器音量。未开启协调许可时，其他未压低的活动音频可能阻止提升。</p>
+<h3>恢复与手动调整</h3>
+<p>播放结束会恢复临时调整；期间手动改音量或静音会被尊重。手动提高后的主音量仍可能让渐渐恢复的音乐更响，恢复过程约 2 秒。强杀程序、断电或音频服务故障不能保证还原，异常时检查 Windows 音量混合器。</p>
+<p>开发者实测的<strong>天猫精灵方糖 R</strong> 存在音量同步和恢复不稳定：退出 IR 后仍可复现暂停期间调低、恢复播放时百分比回跳。建议对该设备关闭自动提高音量。其他型号未测，不能视为所有天猫精灵或蓝牙音响的通病。</p>
+</section>
+<section aria-labelledby="section-08"><h2 id="section-08">幻灯片放映</h2>
+<p>开启放映抑制后，编辑时正常提醒，识别到放映时暂停提醒。运行着 PowerPoint 或任意软件全屏，不会单凭这一点就被当成放映。IR 不读取幻灯片内容、文稿名称、窗口标题或备注。</p>
+<p><strong>PowerPoint 窗口化放映在开发者电脑上仍不可靠。</strong> 状态可能跳动，提醒可能短暂响起后停止。此场景建议手动暂停提醒，结束后再恢复。编辑和全屏放映已实测，不能据此保证全部环境。</p>
+<p>WPS 尚未完成完整实测，部分版本需要手动规则：先进入放映，再读取窗口，仅选择确实只用于放映的窗口类名。规则限定 <code>POWERPNT.EXE</code> 或 <code>wpp.exe</code>，不支持通配符。务必分别测试编辑和放映。</p>
+<p>如果编辑时也不提醒，检查是否有冲突的“运行中不提醒”规则。必要时取消对应软件自动检测，或删除手动规则。</p>
+<p>任务管理器可能短暂出现同名的普通权限放映辅助进程，它不提供托盘或播放声音。本机窗口化放映仍有上述限制，辅助进程存在不代表识别成功。</p>
+</section>
+<section aria-labelledby="section-09"><h2 id="section-09">闲置检测方式与管理员权限</h2>
+<h3>Windows 输入计时</h3>
+<p>默认模式，不需要管理员权限。某些游戏或软件会在无人操作时刷新系统最后输入时间，导致提醒无法达到阈值。</p>
+<h3>设备键鼠事件计时（实验）</h3>
+<p>当默认模式被干扰时，可以尝试此模式并保存。它仅统计键鼠事件头，不读取具体按键、字符、鼠标坐标、屏幕或游戏内存，不安装输入钩子或驱动，也不注入游戏。</p>
+<p>虚拟设备、触控、远程控制和反作弊兼容性有限。<strong>游戏手柄／控制器尚未适配</strong>，不能依赖手柄重置闲置时间或停止播报。操作未能阻止提醒时，请改回默认模式。</p>
+<h3>忽略无设备标识事件</h3>
+<p>此过滤默认关闭，仅在实测匿名事件干扰时启用。它可能漏掉触控板、数位笔、远程或辅助输入；非空标识也不能证明一定是物理操作。</p>
+<p>开发者使用高漫 M7、AP515 和 GaomonTablet 16.0.0.188 测试：Windows 模式下，按键映射和书写均可中止；设备模式下关闭过滤可中止，开启过滤不能中止。过滤开启时，本机触控板也不能中止，内置键盘可以。这不保证所有驱动或持续绘画场景。</p>
+<h3>UAC 与权限回退</h3>
+<p>设备模式启动或保存时，若当前不是管理员，会申请正常 Windows UAC。已是管理员不重复请求。拒绝后继续普通运行，不循环请求；可再次点击保存，关闭保存成功提示后重试。</p>
+<p>普通权限遇到更高权限前台或无法确认访问时，会临时回退 Windows 计时，并显示提示。如果游戏会刷新系统计时，回退后可能再次漏提醒。基础和高级页会显示当前权限状态。</p>
+<p>IR 不修改 UAC 策略，不设永久管理员要求，不创建提权计划任务。批准后由新管理员实例接手，旧实例先恢复音量再退出；这是一次启动，会按既有规则开启提醒并重新累计。</p>
+</section>
+<section aria-labelledby="section-10"><h2 id="section-10">游戏与数位板软件的切换提示</h2>
+<p>高级设置下有两套<strong>独立启用、独立保存</strong>的提示名单，默认均为空。</p>
+<ul>
+<li><strong>游戏类软件：</strong> 在 Windows 计时下运行名单软件时，建议考虑设备模式。</li>
+<li><strong>数位板软件：</strong> 在设备模式下运行名单软件时，建议考虑 Windows 计时，或关闭设备标识过滤。</li>
+</ul>
+<p>这不是“不提醒名单”。通知不会自动切换、抑制播报或申请权限。点击通知打开高级设置，仍需手动选择并保存。</p>
+<p>支持 EXE 文件名或完整路径，每套最多 512 项。选择实际运行的主程序，而非只负责拉起它的启动器；路径变化后需要重新选择。</p>
+<p>约每 10 秒检查一次，每项每次 IR 运行最多尝试通知一次，两类通知总计至少相隔 1 分钟。暂停、锁屏、系统挂起或播报期间不会显示此类建议。Windows 勿扰或全屏策略也可能隐藏它。</p>
+<h3>从 Steam 批量导入</h3>
+<p>选择 Steam 安装目录、库目录、<code>steamapps</code> 或 <code>steamapps\common</code>。其他库分别导入。仔细核对完整路径，优先选择实际游戏 EXE，通常无需选择启动器、反作弊、崩溃报告和卸载程序。</p>
+<p>默认不勾选；<strong>全选也会包含辅助程序</strong>，请确认后导入。结果去重合并，不覆盖原名单。扫描可取消，会跳过链接及无权访问的目录，并有数量、深度与时间限制；结果不完整时可手动补充。</p>
+<p>导入仅修改设置草稿，不修改 Steam 或游戏文件，最后仍需保存。</p>
+</section>
+<section aria-labelledby="section-11"><h2 id="section-11">手机通知（实验）</h2>
+<p>通过 KDE Connect 向指定、已配对的 Android 手机发送固定提醒。默认关闭，后台连接可靠性因设备而异。</p>
+<ol>
+<li>在电脑和手机安装 <a href="https://kdeconnect.kde.org/download.html">KDE Connect 官方版本</a>，在可信局域网中手动配对。</li>
+<li>在手机通知页选择官方 <code>kdeconnect-cli.exe</code> 的完整路径。</li>
+<li>刷新已配对且在线的手机，明确选择目标。</li>
+<li>发送测试，确认手机收到后，再启用并保存。</li>
+</ol>
+<p>测试立即发送，不需先保存；普通音频试听不会发送。正式播报实际开始后异步发送，组合只发一次。离线或失败不影响电脑播报，重连不补发过期通知，也不会自动改发其他手机。</p>
+<p>开启后，启动约 10 秒会有本地 Windows 提示，提醒打开手机 KDE Connect。它不自动打开手机应用，也不能保证手机后台保活。命令已提交不等于已收到。</p>
+<p>检查手机通知权限、锁屏、勿扰和后台省电限制。关闭无关的文件共享、剪贴板、远程输入、通知镜像等插件。IR 不自动配对、安装软件或改防火墙，不发送文件名或应用内容。</p>
+</section>
+<section aria-labelledby="section-12"><h2 id="section-12">皮肤与显示语言</h2>
+<h3>皮肤</h3>
+<p>在皮肤页选择预设即时预览，保存后记住选择。编辑颜色请使用独立 Skin Designer，将导出的 JSON 及所需 <code>assets</code> 放入 <code>themes</code>，重新打开设置再选择。</p>
+<p>皮肤缺失或损坏时会跳过或回退默认。用户提供的皮肤名、设备名、文件路径和媒体 ID 保留原样。</p>
+<h3>语言</h3>
+<p>在“语言 / Language”选择简体中文或 English。保存按钮立即显示目标语言，成功保存后刷新其余界面，无需为语言切换退出。</p>
+<p>刷新保留窗口位置、当前页、展开状态及当前暂停安排；保存仍按正常流程重新累计闲置。若保存同时完成管理员权限交接，遵循前述启动规则。</p>
+<p>使用指南入口按当前生效语言打开本地 HTML。后续缺失的翻译回退简体中文；Windows 自己产生的错误可能使用系统语言。旧通知和历史诊断记录不追溯翻译。</p>
+<h3>查看较长的下拉选项</h3>
+<p>关闭状态保持控件原有宽高，超出部分使用省略号。展开列表与选择框等宽，行高不变；鼠标悬停到被省略的长选项时，通过 Tooltip 查看完整名称。仍可按 F2 或右键选择“查看完整名称”，在只读窗口中滚动查看、选择和复制，按 Esc 关闭。</p>
+</section>
+<section aria-labelledby="section-13"><h2 id="section-13">数据、更新与卸载</h2>
+<h3>文件在哪里</h3>
+<p>以“版本与更新”显示的路径为准。在开发项目里，<code>data</code> 和 <code>themes</code> 位于含 <code>.idlereminder-root</code> 的根目录；独立解压且上级没有该标记时，使用程序目录。不是统一存入 AppData。</p>
+<p><code>data</code>、<code>themes</code> 和备份可能包含私人录音与设置，日志会限制大小并轮换。将程序解压到新位置，不会自动迁移私人设置。</p>
+<h3>更新前后</h3>
+<ol>
+<li>从托盘退出旧程序；只关设置窗口不够。</li>
+<li>备份 <code>data</code>、<code>themes</code> 及录音，保留完整旧版本。</li>
+<li>更新完整发布文件，不要只复制 EXE，不覆盖私人数据。</li>
+<li>核对运行版本、路径、音频、皮肤和设备目标。</li>
+<li>若换了位置，手动运行一次并重新保存自启动设置，下次登录再核对。</li>
+</ol>
+<p>没有自动补丁安装器或保证回滚的升级器。旧实例会阻止新版常驻。早期版本可能丢弃新字段，回退时恢复与该版本匹配的备份，避免新旧程序读写同一份配置。</p>
+<h3>卸载</h3>
+<p>先取消基础页的 Windows 自启动并保存，再从托盘退出。备份需要保留的录音和皮肤后，可移除程序目录。</p>
+</section>
+<section aria-labelledby="section-14"><h2 id="section-14">故障排查与已知限制</h2>
+<h3>没有听到提醒</h3>
+<p>检查 IR 是否运行、是否启用、是否仍在暂停；核对当前实际运行版本和路径，再查看抑制状态与所用输入模式。游戏可能刷新 Windows 计时；启用过滤后，某些触控或数位笔操作又可能无法被识别。</p>
+<h3>没看到游戏切换通知</h3>
+<p>确认当前是 Windows 计时、游戏提示已启用、名单包含实际游戏 EXE 并已保存。再检查 Windows“设置 → 系统 → 通知”里的<strong>勿扰及游戏／全屏自动规则</strong>。</p>
+<p>同次运行已经尝试过的通知不会自动重发。需要对照时，从托盘退出再重开。通知被系统隐藏不等于匹配失败，也不代表所有启动器都不支持。</p>
+<h3>音量未提高或未恢复</h3>
+<p>确认当前默认设备、设备类型、专用试听确认、启用开关和保存状态。查看设备页的音量诊断；静音、状态检查失败或其他活动音频可能阻止提升。发生异常时先停播，检查 Windows 音量混合器；方糖 R 建议关闭提升。</p>
+<h3>配置无法保存</h3>
+<p>读取失败、配置版本过高或文件被外部修改时会阻止覆盖。请退出，保留并备份原 <code>settings.json</code>，再用已确认有效的 <code>settings.json.bak</code> 或项目备份恢复后重启。不要直接删除原文件试错。</p>
+<h3>仍需留意的兼容性</h3>
+<ul>
+<li>PowerPoint 窗口化放映抑制不可靠；WPS 尚未完整实测。</li>
+<li>开发者电脑的 S0 待机仍可能播报，不能保证所有睡眠模式。</li>
+<li>手机后台通知不稳定，提交不保证送达。</li>
+<li>手柄未适配；匿名事件过滤可能漏掉触控板、数位笔或远程输入。</li>
+<li>方糖 R 的音量同步与恢复存在问题，其他型号未测。</li>
+<li>强杀、断电或音频服务故障后，不能保证恢复音量。</li>
+</ul>
+</section>
+<section aria-labelledby="section-15"><h2 id="section-15">项目与许可</h2>
+<p>IdleReminder 完全免费。代码与预设皮肤使用 <strong>GNU GPL 第 3 版，仅该版本</strong>；官方图标使用独立许可，详见随包 <code>LICENSE</code>、<code>LICENSE_SCOPE.md</code> 和 <code>ICON-LICENSE.md</code>。</p>
+<p>开发：<strong>君喵Junmiao &amp; Codex</strong>。项目地址：<a href="https://github.com/Junmiao05/IdleReminder">GitHub / IdleReminder</a>。实测设备不代表所有电脑兼容，具体场景仍以自己的验证为准。</p>
+</section>
+<p class="back-top"><a href="#content">返回顶部 ↑</a></p></main>
+</div>
+<footer>本指南可离线阅读；访问外部链接时需要网络连接。</footer>
+</body>
+</html>

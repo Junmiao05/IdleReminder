@@ -3,8 +3,8 @@
 using System.Runtime.InteropServices;
 namespace IdleReminder;
 internal static class KdeStartupNotification {
- internal const string Title="手机通知已启用";
- internal const string Text="请打开手机上的 KDE Connect，并确认电脑与手机已连接。手机端被彻底关闭后，可能无法收到通知。";
+ internal static string Title=>UiText.Get("KdeStartupNotification_001");
+ internal static string Text=>UiText.Get("KdeStartupNotification_002");
  internal static string? FindIconExecutable(string cliPath){
   if(!PhonePolicy.ValidPath(cliPath))return null;
   var folder=Path.GetDirectoryName(cliPath)!;
@@ -21,7 +21,7 @@ internal static class KdeStartupNotification {
     using var picture=Icon.ExtractAssociatedIcon(exe);if(picture==null)return;
     instance=Activator.CreateInstance(Type.GetTypeFromCLSID(new Guid("0010890e-8789-413c-adbc-48f5b511b3af"),true)!);
     var notification=(IUserNotification)instance!;
-    notification.SetIconInfo(picture.Handle,"闲置提醒器：手机连接提示");
+    notification.SetIconInfo(picture.Handle,UiText.Get("KdeStartupNotification_003"));
     notification.SetBalloonInfo(Title,Text,0x4|0x20|0x80); // USER, LARGE_ICON, RESPECT_QUIET_TIME
     notification.SetBalloonRetry(10000,0,0);
     token.ThrowIfCancellationRequested();

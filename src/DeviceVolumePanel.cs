@@ -6,10 +6,10 @@ internal sealed class DeviceVolumePanel : FlowLayoutPanel {
  readonly ThemedComboBox devices=new(){DropDownStyle=ComboBoxStyle.DropDownList,Width=490};
  readonly ThemedTrackBar target=new(){Minimum=1,Maximum=100,Value=35,TickFrequency=10,Width=360,AutoSize=true};
  readonly Label percent=new(){AutoSize=true},info=new(){AutoSize=true,MaximumSize=new Size(490,0)};
- readonly ThemedCheckBox physical=new(){Text="确认实际连接的是独立扬声器，不是耳机或混合插孔",AutoSize=true};
- readonly ThemedCheckBox enabled=new(){Text="对此设备启用自动提高音量（试听确认后可选）",AutoSize=true};
+ readonly ThemedCheckBox physical=new(){Text=UiText.Get("DeviceVolumePanel_001"),AutoSize=true};
+ readonly ThemedCheckBox enabled=new(){Text=UiText.Get("DeviceVolumePanel_002"),AutoSize=true};
  readonly Dictionary<string,DeviceVolumeSetting> drafts;
- readonly Button confirm=new(){Text="确认本次试听音量合适",Tag="Primary",AutoSize=true,Enabled=false};
+ readonly ThemedButton confirm=new(){Text=UiText.Get("DeviceVolumePanel_003"),Tag="Primary",AutoSize=true,Enabled=false};
  int? testedTarget;string? testedDevice;
  void ResetConfirmation(){testedTarget=null;testedDevice=null;confirm.Enabled=false;}
  bool loading,testing;
@@ -19,28 +19,30 @@ internal sealed class DeviceVolumePanel : FlowLayoutPanel {
   this.settings=settings;this.audio=audio;this.tray=tray;
   drafts=settings.DeviceVolumes.ToDictionary(x=>x.Key,x=>x.Value.Copy());
   FlowDirection=FlowDirection.TopDown;WrapContents=false;AutoSize=true;Width=510;
-  Controls.Add(new Label{Text="每个输出设备独立保存 Windows 主音量目标。默认关闭。",AutoSize=true});
-  Controls.Add(new Label{Text="试听不触发媒体自动暂停；普通试听不自动提高音量。\n本页“带音量调整试听并确认”会在同意后临时调整主音量。",AutoSize=true,MaximumSize=new Size(490,0),ForeColor=SystemColors.GrayText});
+  Controls.Add(new Label{Text=UiText.Get("DeviceVolumePanel_004"),AutoSize=true});
+  Controls.Add(new Label{Text=UiText.Get("DeviceVolumePanel_005"),AutoSize=true,MaximumSize=new Size(490,0),ForeColor=SystemColors.GrayText});
   var diagnostic=new Label{Text=audio.LastVolumeStatus,AutoSize=true,MaximumSize=new Size(490,0)};
   Action<string> updateVolumeStatus=text=>diagnostic.Text=text;audio.VolumeStatusChanged+=updateVolumeStatus;Disposed+=(_,_)=>audio.VolumeStatusChanged-=updateVolumeStatus;Controls.Add(diagnostic);
-  Controls.Add(devices);AddButton("刷新输出设备",RefreshDevices);Controls.Add(info);
-  Controls.Add(new Label{Text="目标 Windows 音量百分比（35% 仅为初始建议）",AutoSize=true});
-  Controls.Add(target);Controls.Add(percent);Controls.Add(physical);Controls.Add(new Label{Text="建议设置好需要的软件音量压低后再启用（不强制）。\n未开启压低时，自动提高主音量会同时放大其他程序的声音。",AutoSize=true,MaximumSize=new Size(490,0),ForeColor=SystemColors.GrayText});Controls.Add(enabled);
-  AddButton("带音量调整试听并确认",Test);
-  AddButton("停止试听 / 恢复音量",()=>audio.Stop());
-  Controls.Add(confirm);confirm.Click+=(_,_)=>{if(Current is not {} current||testedTarget!=target.Value||testedDevice!=Selected?.Id||!physical.Checked||Selected?.Speaker!=true||CoreAudio.DefaultId()!=testedDevice){ResetConfirmation();return;}current.ConfirmedTarget=target.Value;info.Text="试听已确认。请勾选对此设备启用自动提高音量，再点击保存设置。";ResetConfirmation();};
-  Controls.Add(new Label{Text="注意：临时提高设备主音量，会同时放大该设备上其他程序的声音。\n设备已试听确认并启用后，未开启音乐压低也可提高主音量。\n媒体规则可允许压低音乐后协调提升，其他声音也可能变大。\n状态检查失败时仍不提高主音量。\n仅提高低于目标的音量，不降低现有音量，不解除静音。\n播放结束恢复；期间手动改音量或静音后不覆盖您的操作。\n播报期间调整音量可能会导致被压低的媒体声音突然变响。\n设备名或驱动报告不能保证识别真实接线；混合插孔禁止使用。\n普通试听按钮不会自动调整主音量。确认后还需勾选启用并保存设置。",AutoSize=true,MaximumSize=new Size(490,0)});
+  Controls.Add(devices);AddButton(UiText.Get("DeviceVolumePanel_006"),RefreshDevices);Controls.Add(info);
+  Controls.Add(new Label{Text=UiText.Get("DeviceVolumePanel_007"),AutoSize=true});
+  Controls.Add(target);Controls.Add(percent);Controls.Add(physical);Controls.Add(new Label{Text=UiText.Get("DeviceVolumePanel_008"),AutoSize=true,MaximumSize=new Size(490,0),ForeColor=SystemColors.GrayText});Controls.Add(enabled);
+  AddButton(UiText.Get("DeviceVolumePanel_009"),Test);
+  AddButton(UiText.Get("DeviceVolumePanel_010"),()=>audio.Stop());
+  Controls.Add(confirm);confirm.Click+=(_,_)=>{if(Current is not {} current||testedTarget!=target.Value||testedDevice!=Selected?.Id||!physical.Checked||Selected?.Speaker!=true||CoreAudio.DefaultId()!=testedDevice){ResetConfirmation();return;}current.ConfirmedTarget=target.Value;info.Text=UiText.Get("DeviceVolumePanel_011");ResetConfirmation();};
+  Controls.Add(new Label{Text=UiText.Get("DeviceVolumePanel_012"),AutoSize=true,MaximumSize=new Size(490,0)});
+  DetailsSection.Add(this,"DeviceVolumeDetails",490,("DeviceVolumePanel_012Details",false));
+  Controls.Add(new Label{Text=UiText.Get("DeviceVolumePanel_012Tail"),AutoSize=true,MaximumSize=new Size(490,0)});
   devices.SelectedIndexChanged+=(_,_)=>LoadSelected();
   target.ValueChanged+=(_,_)=>{percent.Text=$"{target.Value}%";if(!loading&&Current is {} c){ResetConfirmation();c.TargetPercent=target.Value;c.ConfirmedTarget=null;c.Enabled=false;enabled.Checked=false;}};
   physical.CheckedChanged+=(_,_)=>{if(!loading&&!physical.Checked&&Current is {} c){ResetConfirmation();c.Enabled=false;c.ConfirmedTarget=null;enabled.Checked=false;}};
   enabled.CheckedChanged+=(_,_)=>{
    if(loading||Current is not {} c)return;
-   if(enabled.Checked&&(Selected?.Speaker!=true||!physical.Checked||c.ConfirmedTarget!=target.Value)){enabled.Checked=false;MessageBox.Show("请先确认独立扬声器，并完成当前目标音量的试听确认。");return;}
+   if(enabled.Checked&&(Selected?.Speaker!=true||!physical.Checked||c.ConfirmedTarget!=target.Value)){enabled.Checked=false;MessageBox.Show(UiText.Get("DeviceVolumePanel_013"));return;}
    c.Enabled=enabled.Checked;
   };
   RefreshDevices();
  }
- void AddButton(string text,Action action){var b=new Button{Text=text,AutoSize=true};b.Click+=(_,_)=>{try{action();}catch(Exception e){Store.Log("device-volume-ui-failed",e);MessageBox.Show("设备音量操作失败，请刷新设备后重试。");}};Controls.Add(b);}
+ void AddButton(string text,Action action){var b=new ThemedButton{Text=text,AutoSize=true};b.Click+=(_,_)=>{try{action();}catch(Exception e){Store.Log("device-volume-ui-failed",e);MessageBox.Show(UiText.Get("DeviceVolumePanel_014"));}};Controls.Add(b);}
  void RefreshDevices(){
   if(testing){audio.Stop();}
   var id=Selected?.Id;devices.Items.Clear();
@@ -49,8 +51,8 @@ internal sealed class DeviceVolumePanel : FlowLayoutPanel {
    var preferred=id??CoreAudio.DefaultId();
    devices.SelectedIndex=list.FindIndex(d=>d.Id==preferred);
    if(devices.SelectedIndex<0&&list.Count>0)devices.SelectedIndex=0;
-   if(list.Count==0)info.Text="没有可用输出设备，自动提升不可用。";
-  }catch(Exception e){Store.Log("device-enumeration-failed",e);info.Text="设备识别不可用：自动提升已阻止。";}
+   if(list.Count==0)info.Text=UiText.Get("DeviceVolumePanel_015");
+  }catch(Exception e){Store.Log("device-enumeration-failed",e);info.Text=UiText.Get("DeviceVolumePanel_016");}
  }
  void LoadSelected(){
   ResetConfirmation();
@@ -63,15 +65,15 @@ internal sealed class DeviceVolumePanel : FlowLayoutPanel {
    target.Enabled=physical.Enabled=enabled.Enabled=d.Speaker;
    physical.Checked=c.ConfirmedTarget==c.TargetPercent;
    enabled.Checked=c.Enabled&&d.Speaker;
-   info.Text=d.Reason+"\n不同设备按 Windows 端点 ID 区分；驱动重装后可能需要重新设置。";
+   info.Text=d.Reason+UiText.Get("DeviceVolumePanel_024");
   }finally{loading=false;}
  }
  void Test(){
-  if(testing){MessageBox.Show("正在试听，请先停止或等待结束。");return;}
-  if(Selected is not {} d||!d.Speaker||Current is not {} c||!physical.Checked){MessageBox.Show("仅允许已确认实际连接为独立扬声器的设备试听调整。");return;}
-  if(CoreAudio.DefaultId()!=d.Id){MessageBox.Show("请先在 Windows 中把所选设备设为默认输出，然后刷新。");return;}
-  if(settings.Mode!=0&&!settings.HasVoice()){MessageBox.Show("请先选择人声，或切换为仅提示音并保存设置。");return;}
-  if(MessageBox.Show($"将试听当前提醒，必要时把「{d.Name}」的 Windows 主音量提高到 {target.Value}%。\n这是明确授权的音量测试，会放大其他程序声音；不会自动暂停或压低媒体。请先暂停其他播放，并从较低目标开始。\n播放结束后恢复；不会解除静音。确定开始？","音量试听警告",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)!=DialogResult.Yes)return;
+  if(testing){MessageBox.Show(UiText.Get("DeviceVolumePanel_017"));return;}
+  if(Selected is not {} d||!d.Speaker||Current is not {} c||!physical.Checked){MessageBox.Show(UiText.Get("DeviceVolumePanel_018"));return;}
+  if(CoreAudio.DefaultId()!=d.Id){MessageBox.Show(UiText.Get("DeviceVolumePanel_019"));return;}
+  if(settings.Mode!=0&&!settings.HasVoice()){MessageBox.Show(UiText.Get("DeviceVolumePanel_020"));return;}
+  if(MessageBox.Show(UiText.Format("DeviceVolumePanel_025",d.Name,target.Value),UiText.Get("DeviceVolumePanel_026"),MessageBoxButtons.YesNo,MessageBoxIcon.Warning)!=DialogResult.Yes)return;
   audio.Stop();ResetConfirmation();
   int requested=target.Value;bool validated=false;
   var trial=new DeviceVolumeSetting{TargetPercent=requested,Enabled=true,ConfirmedTarget=requested};
@@ -79,10 +81,10 @@ internal sealed class DeviceVolumePanel : FlowLayoutPanel {
   Action<bool>? done=null;
   done=completed=>{
    audio.Finished-=done;testing=false;
-   if(!VolumePolicy.CanConfirmPreview(completed,validated,Selected?.Id==d.Id,target.Value==requested)){info.Text="试听未完成或目标音量未验证，无法确认。请查看上方音量状态后重试。";return;}
+   if(!VolumePolicy.CanConfirmPreview(completed,validated,Selected?.Id==d.Id,target.Value==requested)){info.Text=UiText.Get("DeviceVolumePanel_021");return;}
    try{
     if(CoreAudio.DefaultId()!=d.Id||Selected?.Id!=d.Id||target.Value!=requested)return;
-    testedTarget=requested;testedDevice=d.Id;confirm.Enabled=true;info.Text="试听已完成。若音量合适，请点击下方确认按钮；确认后还需启用并保存。";
+    testedTarget=requested;testedDevice=d.Id;confirm.Enabled=true;info.Text=UiText.Get("DeviceVolumePanel_022");
    }catch(Exception e){Store.Log("volume-preview-confirm-failed",e);}
   };
   audio.Finished+=done;
@@ -97,11 +99,12 @@ internal sealed class DeviceVolumePanel : FlowLayoutPanel {
    else validated=true;
    if(!validated)throw new InvalidOperationException("Target volume preview was blocked");return lease;
   });
-  if(testing&&!audio.Playing){audio.Finished-=done;testing=false;ResetConfirmation();info.Text="试听未能开始，请检查上方状态后重试。";}
+  if(testing&&!audio.Playing){audio.Finished-=done;testing=false;ResetConfirmation();info.Text=UiText.Get("DeviceVolumePanel_023");}
  }
  internal void Apply(){
   if(testing)audio.Stop();
   settings.DeviceVolumes=drafts.ToDictionary(x=>x.Key,x=>x.Value.Copy());
  }
 }
+
 

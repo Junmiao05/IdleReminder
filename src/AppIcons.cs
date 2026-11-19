@@ -6,7 +6,7 @@ internal static class AppIcons {
  internal static Icon LoadTray()=>Load("Tray",SystemInformation.SmallIconSize);
  static Icon Load(string kind,Size size){
   using var stream=typeof(AppIcons).Assembly.GetManifestResourceStream("IdleReminder.Icons."+kind+".ico")
-   ??throw new InvalidDataException("程序图标资源缺失，请重新解压完整发布包。");
+   ??throw new InvalidDataException(UiText.Get("AppIcons_001"));
   return new Icon(stream,size);
  }
 }

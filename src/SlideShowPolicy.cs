@@ -23,7 +23,7 @@ public static class SlideShowPolicy {
  }
  public static void Validate(SlideWindowRule rule){
   if(!IsPresentationProcess(rule.ProcessName)||string.IsNullOrWhiteSpace(rule.WindowClass)||rule.WindowClass.Length>256)
-   throw new ArgumentException("仅允许 POWERPNT.EXE / wpp.exe 的具体窗口类名，不能使用全屏或通配符规则。");
-  if(rule.WindowClass.Contains('*')||rule.WindowClass.Contains('?'))throw new ArgumentException("窗口类名必须精确匹配。");
+   throw new ArgumentException(UiText.Get("SlideShowPolicy_001"));
+  if(rule.WindowClass.Contains('*')||rule.WindowClass.Contains('?'))throw new ArgumentException(UiText.Get("SlideShowPolicy_002"));
  }
 }

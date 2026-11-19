@@ -3,6 +3,7 @@
 namespace IdleReminder;
 public sealed class Settings {
  public int ConfigurationVersion {get;set;}=1;
+ public string Language {get;set;}=LanguagePolicy.SimplifiedChinese;
  // Null is an older existing configuration; false is a fresh configuration awaiting setup.
  public bool? TimingSetupAcknowledged {get;set;}
  [System.Text.Json.Serialization.JsonExtensionData]
@@ -57,8 +58,9 @@ public sealed class Settings {
   }
  }
  public void Validate() {
- if(ConfigurationVersion>1||ConfigurationVersion<0)throw new InvalidDataException("不支持的配置格式版本");ConfigurationVersion=1;
- if(MediaApplications?.Any(x=>x==null)==true||DuckApplications?.Any(x=>x==null)==true||DeviceVolumes?.Values.Any(x=>x==null)==true)throw new InvalidDataException("配置名单或设备中含null项");
+ if(ConfigurationVersion>1||ConfigurationVersion<0)throw new InvalidDataException(UiText.Get("Engine_001"));ConfigurationVersion=1;
+ if(MediaApplications?.Any(x=>x==null)==true||DuckApplications?.Any(x=>x==null)==true||DeviceVolumes?.Values.Any(x=>x==null)==true)throw new InvalidDataException(UiText.Get("Engine_002"));
+ Language=LanguagePolicy.Normalize(Language);
  if(!Enum.IsDefined(InputTiming))InputTiming=InputTimingMode.WindowsLastInput;
  Phone ??= new();Phone.Validate();
  InputModeNotices ??= new(){Applications=new()};InputModeNotices.Validate();

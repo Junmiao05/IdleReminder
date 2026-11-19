@@ -35,7 +35,7 @@ internal interface IEndpointVolume {
  void GetVolumeStepInfo(out uint step,out uint count);void VolumeStepUp(ref Guid context);void VolumeStepDown(ref Guid context);void QueryHardwareSupport(out uint mask);void GetVolumeRange(out float min,out float max,out float increment);
 }
 internal sealed record OutputDevice(string Id,string Name,bool Speaker,string Reason) {
- public override string ToString()=>Name+(Speaker?"（扬声器）":"（禁止自动提升）");
+ public override string ToString()=>Name+(Speaker?UiText.Get("CoreAudio_001"):UiText.Get("CoreAudio_002"));
 }
 internal static class CoreAudio {
  [DllImport("ole32.dll")]static extern int PropVariantClear(ref PropVariant value);
@@ -48,12 +48,12 @@ internal static class CoreAudio {
  internal static OutputDevice Describe(IDevice device){
   device.GetId(out var id);device.OpenPropertyStore(0,out var props);
   try {
-   var name=Property(props,"a45c254e-df1c-4efd-8020-67d146a850e0",14) as string??"未知输出设备";
+   var name=Property(props,"a45c254e-df1c-4efd-8020-67d146a850e0",14) as string??UiText.Get("CoreAudio_003");
    var factor=Property(props,"1da5d803-d492-4edd-8c23-e0c0ffee7f0e",0) as uint?;
    string? subtype=null;
    try{subtype=Property(props,"1da5d803-d492-4edd-8c23-e0c0ffee7f0e",8) as string;}catch(COMException){}
    bool speaker=VolumePolicy.IsSpeaker(factor,subtype,name);
-   return new(id,name,speaker,speaker?"驱动报告为扬声器；仍需确认实际连接为扬声器":"耳机、混合接口或类型不明确，禁止提升");
+   return new(id,name,speaker,speaker?UiText.Get("CoreAudio_004"):UiText.Get("CoreAudio_005"));
   }finally{Release(props);}
  }
  internal static List<OutputDevice> List(){

@@ -28,7 +28,7 @@ internal interface IAudioSessionControl2 {
 }
 internal readonly record struct AudioSafetyResult(bool Known,bool OtherActive) {
  internal bool AllowsBoost=>AudioSessionPolicy.CanBoost(Known,OtherActive);
- internal string Reason=>Known?"仍有其他程序的活动音频，保持原主音量":"无法确认其他程序的音频状态，保持原主音量";
+ internal string Reason=>Known?UiText.Get("AudioSessionSafety_001"):UiText.Get("AudioSessionSafety_002");
 }
 internal static class AudioSessionSafety {
  // Read only session state and ownership, never media titles, paths or content.

@@ -1,0 +1,73 @@
+:root {
+  color-scheme: light dark;
+  --page: #f5f7fa;
+  --paper: #fff;
+  --text: #202a35;
+  --muted: #526171;
+  --line: #dbe2e9;
+  --link: #175fa9;
+  --note: #edf4fc;
+  --code: #edf0f4;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 1.5rem; }
+body { margin: 0; background: var(--page); color: var(--text); font: 1.0625rem/1.8 system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--link); outline-offset: 4px; border-radius: 2px; }
+.skip { position: absolute; top: -8rem; left: 1rem; padding: .5rem 1rem; background: var(--paper); z-index: 10; }
+.skip:focus { top: .5rem; }
+.site-header { max-width: 1180px; margin: auto; padding: 1.5rem 1.75rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.brand { color: var(--text); font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+.brand span { color: var(--muted); font-size: .9rem; font-weight: 400; margin-left: .6rem; }
+.languages { display: flex; flex-wrap: wrap; gap: .9rem; font-size: .9rem; }
+.languages [aria-current] { color: var(--text); font-weight: 700; text-decoration: none; }
+.layout { max-width: 1180px; margin: 0 auto; padding: 0 1.75rem; display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 2rem; align-items: start; }
+.toc { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto; padding: .75rem .5rem .75rem 0; font-size: .87rem; line-height: 1.55; }
+.toc h2 { margin: 0 0 .8rem; font-size: .95rem; color: var(--muted); }
+.toc ol { padding-left: 1.4rem; margin: 0; }
+.toc li { padding: .23rem 0 .23rem .2rem; }
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+main { min-width: 0; overflow-wrap: break-word; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 2.25rem 2.5rem; }
+.mobile-toc { display: none; }
+.toc h2 { border: 0; padding: 0; }
+h1, h2, h3 { line-height: 1.35; text-wrap: balance; }
+h1 { font-size: clamp(1.85rem, 3vw, 2.4rem); letter-spacing: -.025em; margin: 0 0 1.1rem; }
+h2 { font-size: 1.45rem; padding-top: 2rem; margin: 2.1rem 0 1.1rem; border-top: 1px solid var(--line); }
+h3 { font-size: 1.12rem; margin: 1.6rem 0 .7rem; }
+p { margin: 0 0 1rem; }
+li { margin: .45rem 0; padding-left: .25rem; }
+ul, ol { margin: .6rem 0 1.25rem; padding-left: 1.5rem; }
+strong { font-weight: 650; }
+code { font-family: "Cascadia Code", Consolas, monospace; background: var(--code); border-radius: 4px; padding: .1em .3em; font-size: .88em; overflow-wrap: anywhere; }
+.notice { border-left: 4px solid var(--link); background: var(--note); border-radius: 0 8px 8px 0; padding: .9rem 1.1rem; margin: 1.4rem 0; }
+.notice p { margin: 0; }
+.back-top { margin: 2.5rem 0 0; font-size: .92rem; }
+footer { max-width: 1180px; margin: 1.5rem auto 2.5rem; padding: 0 1.75rem; color: var(--muted); font-size: .85rem; }
+@media (prefers-color-scheme: dark) {
+  :root { --page: #141a21; --paper: #1c242e; --text: #e6edf5; --muted: #afbecf; --line: #3a4654; --link: #8bbff7; --note: #25354a; --code: #303b49; }
+}
+@media (max-width: 850px) {
+  .layout { display: block; }
+  .toc { display: none; }
+  .mobile-toc { display: block; margin-bottom: 1.25rem; padding: .8rem 1.1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+  .mobile-toc summary { cursor: pointer; color: var(--link); font-weight: 600; }
+  .mobile-toc ol { font-size: .9rem; }
+  main { padding: 1.75rem; }
+}
+@media (max-width: 520px) {
+  .site-header { align-items: start; flex-direction: column; padding: 1.1rem; }
+  .layout { padding: 0 .75rem; }
+  main { padding: 1.3rem 1.1rem; border-radius: 10px; }
+  h2 { font-size: 1.3rem; }
+  footer { padding: 0 1.1rem; }
+}
+@media print {
+  :root { --page: #fff; --paper: #fff; --text: #000; --muted: #444; --line: #bbb; --link: #000; --note: #f3f3f3; --code: #eee; }
+  .toc, .mobile-toc, .languages, .back-top, .skip, footer { display: none; }
+  .layout { display: block; padding: 0; }
+  main { padding: 0; border: 0; }
+  h2, h3 { break-after: avoid; }
+  .notice { break-inside: avoid; }
+}

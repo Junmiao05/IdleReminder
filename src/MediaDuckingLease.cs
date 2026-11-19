@@ -48,7 +48,7 @@ internal sealed class MediaDuckingLease:IDisposable {
  internal bool Allows(IAudioSessionControl2 session){session.GetSessionInstanceIdentifier(out var id);return sessionsById.Allows(id);}
   internal void PreserveCurrent(){foreach(var adjustment in adjustments)adjustment.PreserveCurrent();}
  internal void StageForMasterBoost(string device){foreach(var pair in deviceIds.Where(x=>x.Value==device))pair.Key.StageForMasterBoost();}
- internal void CompensateMasterGain(string device,float gainDb){foreach(var pair in deviceIds.Where(x=>x.Value==device))pair.Key.CompensateMasterGain(gainDb);report?.Invoke($"已补偿主音量增益 {gainDb:F1} dB，进一步压低同设备音乐");}
+ internal void CompensateMasterGain(string device,float gainDb){foreach(var pair in deviceIds.Where(x=>x.Value==device))pair.Key.CompensateMasterGain(gainDb);report?.Invoke(UiText.Format("MediaDuckingLease_001",gainDb));}
  internal void CancelMasterBoost(string device){foreach(var pair in deviceIds.Where(x=>x.Value==device)){try{pair.Key.CancelMasterBoost();}catch(Exception e){Store.Log("duck-compensation-cancel-failed",e);}}}
  MediaDuckingLease(Action<string>? report){this.report=report;}
  [DllImport("kernel32.dll",SetLastError=true)]static extern IntPtr OpenProcess(uint access,bool inherit,uint process);
@@ -67,7 +67,7 @@ internal sealed class MediaDuckingLease:IDisposable {
   try{
    // Ducking has its own explicit executable list, independent from pause exclusions.
    var entries=(settings.DuckApplications??settings.MediaApplications).Where(x=>x.EndsWith(".exe",StringComparison.OrdinalIgnoreCase)).ToArray();
-   if(entries.Length==0){report?.Invoke("未压低媒体：请在压低音量名单中添加播放器 .exe");return null;}
+   if(entries.Length==0){report?.Invoke(UiText.Get("MediaDuckingLease_002"));return null;}
    enumerator.EnumAudioEndpoints(0,1,out devices);devices.GetCount(out uint count);
    for(uint i=0;i<count;i++){
     devices.Item(i,out var device);device.GetId(out var endpointId);object? manager=null;IAudioSessionEnumerator? sessions=null;
@@ -86,7 +86,7 @@ internal sealed class MediaDuckingLease:IDisposable {
        var volume=new DuckVolume(value);owned=true;
        var adjustment=new DuckingAdjustment(volume,settings.DuckRemainingPercent);
        lease.adjustments.Add(adjustment);lease.deviceIds.Add(adjustment,endpointId);lease.sessionsById.Add(instance,adjustment);
-       if(adjustment.Reduced)report?.Invoke($"指定播放器应用音量 {adjustment.Original*100:F1}% → {adjustment.Applied*100:F1}%（临时）");
+       if(adjustment.Reduced)report?.Invoke(UiText.Format("MediaDuckingLease_003",adjustment.Original*100,adjustment.Applied*100));
       }catch(Exception e){failed=true;Store.Log("media-duck-session-failed",e);}
       finally{if(!owned)CoreAudio.Release(value);}
      }
@@ -94,7 +94,7 @@ internal sealed class MediaDuckingLease:IDisposable {
     finally{CoreAudio.Release(sessions);CoreAudio.Release(manager);CoreAudio.Release(device);}
    }
    int reduced=lease.adjustments.Count(x=>x.Reduced);
-   report?.Invoke(reduced>0?$"已临时压低 {reduced} 个指定播放器音频会话，保留原应用音量的 {settings.DuckRemainingPercent}%":"无需压低音乐：名单内没有需要衰减的活动音频；主音量按设备授权判断");
+   report?.Invoke(reduced>0?UiText.Format("MediaDuckingLease_004",reduced,settings.DuckRemainingPercent):UiText.Get("MediaDuckingLease_005"));
    if(reduced==0){lease.Dispose();return null;}
    return lease;
   }catch{lease.Dispose();throw;}
@@ -103,15 +103,15 @@ internal sealed class MediaDuckingLease:IDisposable {
  public void Dispose(){
   if(disposing)return;disposing=true;
   if(gradualRestore&&adjustments.Any(x=>x.Reduced)){
-   report?.Invoke("主音量保留手动设置，音乐将在约2秒内渐渐恢复；最终仍按当前主音量播放");
+   report?.Invoke(UiText.Get("MediaDuckingLease_006"));
    MusicRestoreScheduler.Begin(progress=>{foreach(var adjustment in adjustments){try{adjustment.RestoreGradually(progress);}catch(Exception e){adjustment.PreserveCurrent();Store.Log("music-restore-step-failed",e);}}},FinishDispose);
   }else FinishDispose();
  }
  void FinishDispose(){
   if(finished)return;finished=true;
   int restored=0,preserved=0;
-  foreach(var adjustment in adjustments){try{adjustment.Dispose();if(adjustment.Restored)restored++;if(adjustment.Preserved)preserved++;}catch(Exception e){Store.Log("media-duck-restore-failed",e);report?.Invoke("部分播放器音量恢复失败，请检查 Windows 音量混合器");}}
+  foreach(var adjustment in adjustments){try{adjustment.Dispose();if(adjustment.Restored)restored++;if(adjustment.Preserved)preserved++;}catch(Exception e){Store.Log("media-duck-restore-failed",e);report?.Invoke(UiText.Get("MediaDuckingLease_007"));}}
   adjustments.Clear();sessionsById.Clear();deviceIds.Clear();
-  if(restored>0||preserved>0)report?.Invoke($"播放器音量处理结束：已恢复 {restored} 个会话，保留手动调整 {preserved} 个会话");
+  if(restored>0||preserved>0)report?.Invoke(UiText.Format("MediaDuckingLease_008",restored,preserved));
  }
 }

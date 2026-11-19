@@ -7,7 +7,7 @@ internal sealed class InputActivitySource:IDisposable {
  internal InputActivitySource(Func<InputAccessState>? accessProbe=null){this.accessProbe=accessProbe??new ForegroundInputPermission().Read;}
  internal bool AccessRestricted=>receiver!=null&&accessState!=InputAccessState.Allowed;
  internal InputTimingMode ActiveMode=>receiver?.Healthy==true&&accessState==InputAccessState.Allowed?InputTimingMode.DeviceHeaders:InputTimingMode.WindowsLastInput;
- internal string Status=>accessState==InputAccessState.HigherForeground?"前台权限较高，临时回退Windows计时":accessState==InputAccessState.Unavailable?"无法确认前台接收权限，临时回退Windows计时":fallback?"设备事件接收失败，已回退Windows计时":ActiveMode==InputTimingMode.DeviceHeaders?"设备键鼠事件计时（实验）":"Windows输入计时";
+ internal string Status=>accessState==InputAccessState.HigherForeground?UiText.Get("InputActivitySource_001"):accessState==InputAccessState.Unavailable?UiText.Get("InputActivitySource_002"):fallback?UiText.Get("InputActivitySource_003"):ActiveMode==InputTimingMode.DeviceHeaders?UiText.Get("InputActivitySource_004"):UiText.Get("InputActivitySource_005");
  internal void Configure(InputTimingMode mode,bool requireDevice=false){
   if(configured&&requested==mode&&this.requireDevice==requireDevice)return;
   receiver?.Dispose();receiver=null;requested=mode;this.requireDevice=requireDevice;configured=true;fallback=false;accessState=InputAccessState.Allowed;unchecked{generation++;}

@@ -1,0 +1,1642 @@
+<root>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <data name="SettingsForm_001" xml:space="preserve">
+    <value>Ignore events without a device ID</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_VoicePreset" xml:space="preserve">
+    <value>Voice preset in use: {0}</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_AudioFileFilter" xml:space="preserve">
+    <value>Audio files</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="Tray_StatusSuffix" xml:space="preserve">
+    <value>; {0}</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_StatusTooltip" xml:space="preserve">
+    <value>IdleReminder: {0}</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="AppIcons_001" xml:space="preserve">
+    <value>App icon resources are missing. Extract the complete release package again.</value>
+    <comment>UI text; source: AppIcons</comment>
+  </data>
+  <data name="Audio_001" xml:space="preserve">
+    <value>No automatic volume adjustment yet</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_002" xml:space="preserve">
+    <value>Audio playback could not start.</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_003" xml:space="preserve">
+    <value>Audio fade-in failed. Playback stopped and volume was restored.</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_004" xml:space="preserve">
+    <value>The audio could not be played. Choose another file.</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_005" xml:space="preserve">
+    <value>Volume not raised: media volume reduction or audio session checks failed</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_006" xml:space="preserve">
+    <value>Volume not raised: media pause or volume reduction has not been confirmed</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_007" xml:space="preserve">
+    <value>Volume adjustment failed. See the diagnostic log.</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_008" xml:space="preserve">
+    <value>The volume-adjusted preview could not start. Check mute, the default output, and the device type.</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="Audio_009" xml:space="preserve">
+    <value>Could not open the audio. Check the file.</value>
+    <comment>UI text; source: Audio</comment>
+  </data>
+  <data name="AudioSessionSafety_001" xml:space="preserve">
+    <value>Other apps still have active audio. Keeping the current master volume.</value>
+    <comment>UI text; source: AudioSessionSafety</comment>
+  </data>
+  <data name="AudioSessionSafety_002" xml:space="preserve">
+    <value>Other apps' audio state could not be verified. Keeping the current master volume.</value>
+    <comment>UI text; source: AudioSessionSafety</comment>
+  </data>
+  <data name="ConfigFileStore_001" xml:space="preserve">
+    <value>The main settings file is missing, but a backup exists. Restore the backup first.</value>
+    <comment>UI text; source: ConfigFileStore</comment>
+  </data>
+  <data name="ConfigFileStore_002" xml:space="preserve">
+    <value>Settings cannot be null.</value>
+    <comment>UI text; source: ConfigFileStore</comment>
+  </data>
+  <data name="ConfigFileStore_003" xml:space="preserve">
+    <value>Settings could not be read or have not been loaded. Overwriting is blocked. Keep settings.json, restore a backup, and restart.</value>
+    <comment>UI text; source: ConfigFileStore</comment>
+  </data>
+  <data name="ConfigFileStore_004" xml:space="preserve">
+    <value>Another instance or app changed the settings. Saving was stopped. Reopen IdleReminder and check your settings.</value>
+    <comment>UI text; source: ConfigFileStore</comment>
+  </data>
+  <data name="CoreAudio_001" xml:space="preserve">
+    <value> (speakers)</value>
+    <comment>UI text; source: CoreAudio</comment>
+  </data>
+  <data name="CoreAudio_002" xml:space="preserve">
+    <value> (automatic volume boost blocked)</value>
+    <comment>UI text; source: CoreAudio</comment>
+  </data>
+  <data name="CoreAudio_003" xml:space="preserve">
+    <value>Unknown output device</value>
+    <comment>UI text; source: CoreAudio</comment>
+  </data>
+  <data name="CoreAudio_004" xml:space="preserve">
+    <value>The driver reports speakers. Confirm that speakers are actually connected.</value>
+    <comment>UI text; source: CoreAudio</comment>
+  </data>
+  <data name="CoreAudio_005" xml:space="preserve">
+    <value>Headphones, a shared jack, or an unknown device type. Volume boost is blocked.</value>
+    <comment>UI text; source: CoreAudio</comment>
+  </data>
+  <data name="DeviceVolumePanel_024" xml:space="preserve">
+    <value>
+Devices are identified by Windows endpoint ID. Reinstalling a driver may require setup again.</value>
+    <comment>UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_025" xml:space="preserve">
+    <value>Preview the current reminder and, if needed, raise the Windows master volume for "{0}" to {1}%.
+This volume test also makes other apps louder. Media will not be paused or reduced automatically. Pause other playback first and start with a low target.
+Volume will be restored afterward. The test will not unmute the device. Start the test?</value>
+    <comment>UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_026" xml:space="preserve">
+    <value>Volume preview warning</value>
+    <comment>UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="Engine_001" xml:space="preserve">
+    <value>Unsupported settings format version</value>
+    <comment>UI text; source: Engine</comment>
+  </data>
+  <data name="Engine_002" xml:space="preserve">
+    <value>A settings list or device collection contains a null entry.</value>
+    <comment>UI text; source: Engine</comment>
+  </data>
+  <data name="InputActivitySource_001" xml:space="preserve">
+    <value>Foreground app has higher privileges. Temporarily using Windows input timing.</value>
+    <comment>UI text; source: InputActivitySource</comment>
+  </data>
+  <data name="InputActivitySource_002" xml:space="preserve">
+    <value>Foreground access could not be verified. Temporarily using Windows input timing.</value>
+    <comment>UI text; source: InputActivitySource</comment>
+  </data>
+  <data name="InputActivitySource_003" xml:space="preserve">
+    <value>Device input could not be read. Using Windows input timing.</value>
+    <comment>UI text; source: InputActivitySource</comment>
+  </data>
+  <data name="InputActivitySource_004" xml:space="preserve">
+    <value>Keyboard and mouse events (experimental)</value>
+    <comment>UI text; source: InputActivitySource</comment>
+  </data>
+  <data name="InputActivitySource_005" xml:space="preserve">
+    <value>Windows input timing</value>
+    <comment>UI text; source: InputActivitySource</comment>
+  </data>
+  <data name="InputModeNoticePanel_007" xml:space="preserve">
+    <value>Pen apps: input timing suggestions</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_008" xml:space="preserve">
+    <value>Games: input timing suggestions</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_009" xml:space="preserve">
+    <value>Enable input timing suggestions for pen apps</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_010" xml:space="preserve">
+    <value>Enable input timing suggestions for games</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_011" xml:space="preserve">
+    <value>When device input timing is selected and a listed app is running, suggest Windows input timing or turning off the device ID filter.
+The list starts empty. Browse to add your drawing apps. Suggestions only: choose a mode and save it yourself.</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_012" xml:space="preserve">
+    <value>When Windows input timing is selected and a listed app is running, show a Windows notification. Click it to open this page, choose a mode, and save.
+This does not switch modes, request elevation, or change reminder playback automatically.
+The list starts empty. Browse or import apps yourself. Full-screen apps are not automatically treated as games.</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_013" xml:space="preserve">
+    <value>Windows apps</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_014" xml:space="preserve">
+    <value>Choose a Steam installation or library folder containing steamapps\common</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_015" xml:space="preserve">
+    <value>The suggestion list supports up to 512 entries. Select fewer items or remove some existing entries.</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_016" xml:space="preserve">
+    <value>Device input timing</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_017" xml:space="preserve">
+    <value>Windows input timing</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_018" xml:space="preserve">
+    <value>Suggestions in this category are off. Save to apply changes.</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_019" xml:space="preserve">
+    <value>Selected mode: {0}. These suggestions will not appear.</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_020" xml:space="preserve">
+    <value>Selected mode: {0}. The list is empty, so these suggestions will not appear.</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_021" xml:space="preserve">
+    <value>Selected mode: {0}. These suggestions are eligible. Save to apply changes.</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_022" xml:space="preserve">
+    <value>IdleReminder</value>
+    <comment>UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePolicy_001" xml:space="preserve">
+    <value>Input timing suggestion lists support up to 512 entries.</value>
+    <comment>UI text; source: InputModeNoticePolicy</comment>
+  </data>
+  <data name="InputModeNoticePolicy_002" xml:space="preserve">
+    <value>Enter an EXE filename, or browse to select its full path.</value>
+    <comment>UI text; source: InputModeNoticePolicy</comment>
+  </data>
+  <data name="KdeStartupNotification_001" xml:space="preserve">
+    <value>Phone notifications enabled</value>
+    <comment>UI text; source: KdeStartupNotification</comment>
+  </data>
+  <data name="KdeStartupNotification_002" xml:space="preserve">
+    <value>Open KDE Connect on your phone and make sure it is connected to your PC. Notifications may not arrive if the phone app has been fully closed.</value>
+    <comment>UI text; source: KdeStartupNotification</comment>
+  </data>
+  <data name="KdeStartupNotification_003" xml:space="preserve">
+    <value>IdleReminder: phone connection reminder</value>
+    <comment>UI text; source: KdeStartupNotification</comment>
+  </data>
+  <data name="MediaApplicationFilter_001" xml:space="preserve">
+    <value>Select the app's .exe file. Shortcuts and other files are not supported.</value>
+    <comment>UI text; source: MediaApplicationFilter</comment>
+  </data>
+  <data name="MediaApplicationFilter_002" xml:space="preserve">
+    <value>Enter a media app ID, not a URL. Add it from the current media list.</value>
+    <comment>UI text; source: MediaApplicationFilter</comment>
+  </data>
+  <data name="MediaDuckingLease_001" xml:space="preserve">
+    <value>Compensated for a {0:F1} dB master-volume gain by further reducing music on the same device</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_002" xml:space="preserve">
+    <value>Media volume not reduced: add the player's .exe to the volume reduction list</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_003" xml:space="preserve">
+    <value>Selected player volume: {0:F1}% → {1:F1}% (temporary)</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_004" xml:space="preserve">
+    <value>Temporarily reduced {0} audio sessions for listed players to {1}% of their original app volume</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_005" xml:space="preserve">
+    <value>No music needs reduction: listed apps have no active audio requiring it. Master-volume boost follows device authorization.</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_006" xml:space="preserve">
+    <value>Keeping your manual master volume. Music volume will gradually recover over about 2 seconds and follow the current master volume.</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_007" xml:space="preserve">
+    <value>Some player volumes could not be restored. Check the Windows volume mixer.</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaDuckingLease_008" xml:space="preserve">
+    <value>Player volume processing finished: restored {0} sessions; kept manual changes for {1} sessions</value>
+    <comment>UI text; source: MediaDuckingLease</comment>
+  </data>
+  <data name="MediaScopePanel_017" xml:space="preserve">
+    <value>All: pause all supported media</value>
+    <comment>UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_018" xml:space="preserve">
+    <value>Pause only listed apps; keep other media playing</value>
+    <comment>UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_019" xml:space="preserve">
+    <value>Keep listed apps playing; pause other supported media</value>
+    <comment>UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_020" xml:space="preserve">
+    <value>Windows apps (*.exe)</value>
+    <comment>UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_021" xml:space="preserve">
+    <value>The volume reduction list accepts only .exe filenames or full paths. Use Browse to add them.</value>
+    <comment>UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="PermissionStatusText_001" xml:space="preserve">
+    <value>Running as administrator. No additional prompt is needed.</value>
+    <comment>UI text; source: PermissionStatusText</comment>
+  </data>
+  <data name="PermissionStatusText_002" xml:space="preserve">
+    <value>Running without administrator privileges.
+Device input timing may fall back to Windows input timing when an app runs with higher privileges. To request elevation, click Save Settings again, dismiss the confirmation, and approve the Windows UAC prompt.</value>
+    <comment>UI text; source: PermissionStatusText</comment>
+  </data>
+  <data name="PermissionStatusText_003" xml:space="preserve">
+    <value>Running without administrator privileges.
+Windows input timing does not require elevation. You can request it by selecting device input timing and saving your settings.</value>
+    <comment>UI text; source: PermissionStatusText</comment>
+  </data>
+  <data name="PermissionStatusText_004" xml:space="preserve">
+    <value>Administrator status could not be verified. Check the app’s privileges directly. The absence of a UAC prompt does not confirm its status.</value>
+    <comment>UI text; source: PermissionStatusText</comment>
+  </data>
+  <data name="PhoneNotifications_001" xml:space="preserve">
+    <value>Idle reminder: You have been away from your PC for a while. Remember to check back.</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_002" xml:space="preserve">
+    <value>Select the official kdeconnect-cli.exe.</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_003" xml:space="preserve">
+    <value>The KDE Connect command did not start.</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_004" xml:space="preserve">
+    <value>KDE Connect output exceeded the limit.</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_005" xml:space="preserve">
+    <value>The KDE Connect device check failed.</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_006" xml:space="preserve">
+    <value>Phone notifications off</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_007" xml:space="preserve">
+    <value>Phone notifications not configured</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_008" xml:space="preserve">
+    <value>A phone notification is already being sent; skipping this one</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_009" xml:space="preserve">
+    <value>Phone offline; skipping this notification (no delayed delivery)</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_010" xml:space="preserve">
+    <value>IdleReminder: This is a phone notification test.</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_011" xml:space="preserve">
+    <value>Notification command submitted. Check your phone for delivery.</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhoneNotifications_012" xml:space="preserve">
+    <value>Phone notification failed. The PC reminder is unaffected.</value>
+    <comment>UI text; source: PhoneNotifications</comment>
+  </data>
+  <data name="PhonePanel_017" xml:space="preserve">
+    <value>KDE Connect command line</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_018" xml:space="preserve">
+    <value>; connection not checked yet. An offline refresh keeps the saved target.</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_019" xml:space="preserve">
+    <value>. Test the notification, then save.</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_020" xml:space="preserve">
+    <value>No paired online phone found. Keeping the saved target; no other device will be selected automatically.</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_021" xml:space="preserve">
+    <value>The target phone is online. You can send a test notification.</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_022" xml:space="preserve">
+    <value>Select a paired online phone. No other device will be selected automatically.</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_023" xml:space="preserve">
+    <value>Wait for the phone notification operation to finish before saving.</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_024" xml:space="preserve">
+    <value>Before enabling phone notifications, select the official command-line app and a paired phone.</value>
+    <comment>UI text; source: PhonePanel</comment>
+  </data>
+  <data name="Presets_001" xml:space="preserve">
+    <value>Clear Bell</value>
+    <comment>UI text; source: Presets</comment>
+  </data>
+  <data name="Presets_002" xml:space="preserve">
+    <value>Electronic Tone</value>
+    <comment>UI text; source: Presets</comment>
+  </data>
+  <data name="Presets_003" xml:space="preserve">
+    <value>Soft Tone</value>
+    <comment>UI text; source: Presets</comment>
+  </data>
+  <data name="Presets_004" xml:space="preserve">
+    <value>Short Alert</value>
+    <comment>UI text; source: Presets</comment>
+  </data>
+  <data name="Presets_005" xml:space="preserve">
+    <value>Classic System Style</value>
+    <comment>UI text; source: Presets</comment>
+  </data>
+  <data name="Program_001" xml:space="preserve">
+    <value>Administrator handoff did not finish. The original instance is still running. Exit it from the tray and try again.</value>
+    <comment>UI text; source: Program</comment>
+  </data>
+  <data name="Program_002" xml:space="preserve">
+    <value>IdleReminder is already running. Open settings from the system tray.</value>
+    <comment>UI text; source: Program</comment>
+  </data>
+  <data name="Program_003" xml:space="preserve">
+    <value>An error occurred. See the diagnostic log in the project's data folder.</value>
+    <comment>UI text; source: Program</comment>
+  </data>
+  <data name="Program_004" xml:space="preserve">
+    <value>The app could not start. Check the diagnostic log in the project's data folder.</value>
+    <comment>UI text; source: Program</comment>
+  </data>
+  <data name="RuleStatusText_001" xml:space="preserve">
+    <value>Reminders paused during a slideshow</value>
+    <comment>UI text; source: RuleStatusText</comment>
+  </data>
+  <data name="RuleStatusText_002" xml:space="preserve">
+    <value>Reminders paused by an app rule</value>
+    <comment>UI text; source: RuleStatusText</comment>
+  </data>
+  <data name="RuleStatusText_003" xml:space="preserve">
+    <value>Waiting for user activity to resume</value>
+    <comment>UI text; source: RuleStatusText</comment>
+  </data>
+  <data name="RuleStatusText_004" xml:space="preserve">
+    <value>Checking app rules</value>
+    <comment>UI text; source: RuleStatusText</comment>
+  </data>
+  <data name="SettingsForm_046" xml:space="preserve">
+    <value>None / custom recording</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_047" xml:space="preserve">
+    <value>Windows Idle Reminder v{0}</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_048" xml:space="preserve">
+    <value>Idle Reminder</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_049" xml:space="preserve">
+    <value>Enable Reminders</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_050" xml:space="preserve">
+    <value>Pause Until I Resume</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_051" xml:space="preserve">
+    <value>Import / Replace Tone</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_052" xml:space="preserve">
+    <value>Restore Built-in Tone</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_053" xml:space="preserve">
+    <value>Import / Replace Voice</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_054" xml:space="preserve">
+    <value>Remove Voice</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_055" xml:space="preserve">
+    <value>Preview Tone</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_056" xml:space="preserve">
+    <value>Preview Voice</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_057" xml:space="preserve">
+    <value>Preview Both</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_058" xml:space="preserve">
+    <value>Stop Preview</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_059" xml:space="preserve">
+    <value>Settings saved.</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_060" xml:space="preserve">
+    <value>Using a built-in tone</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_061" xml:space="preserve">
+    <value>Custom tone imported</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_062" xml:space="preserve">
+    <value>Custom voice recording imported</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_063" xml:space="preserve">
+    <value>No built-in voices. Import your own recording.</value>
+    <comment>UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SkinSelectionPanel_003" xml:space="preserve">
+    <value>Default (built-in)</value>
+    <comment>UI text; source: SkinSelectionPanel</comment>
+  </data>
+  <data name="SkinSelectionPanel_004" xml:space="preserve">
+    <value>
+Reopen settings to load new or updated presets.
+Use the separate Skin Designer to edit colors. This page selects presets only.
+Selection previews immediately. Click Save Settings to keep it.</value>
+    <comment>UI text; source: SkinSelectionPanel</comment>
+  </data>
+  <data name="SkinSelectionPanel_005" xml:space="preserve">
+    <value>
+Skipped {0} invalid presets.</value>
+    <comment>UI text; source: SkinSelectionPanel</comment>
+  </data>
+  <data name="SlideShowPanel_009" xml:space="preserve">
+    <value>Read Presentation App Windows</value>
+    <comment>UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_010" xml:space="preserve">
+    <value>Add Slideshow Window Rule</value>
+    <comment>UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_011" xml:space="preserve">
+    <value>Confirm Manual Rule</value>
+    <comment>UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_012" xml:space="preserve">
+    <value>Remove Selected Rule</value>
+    <comment>UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_013" xml:space="preserve">
+    <value>Could not read presentation app windows. Try again later.</value>
+    <comment>UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPolicy_001" xml:space="preserve">
+    <value>Use a specific window class for POWERPNT.EXE or wpp.exe. Full-screen and wildcard rules are not allowed.</value>
+    <comment>UI text; source: SlideShowPolicy</comment>
+  </data>
+  <data name="SlideShowPolicy_002" xml:space="preserve">
+    <value>The window class must match exactly.</value>
+    <comment>UI text; source: SlideShowPolicy</comment>
+  </data>
+  <data name="SteamApplicationImport_001" xml:space="preserve">
+    <value>Choose a Steam installation, library, steamapps, or steamapps\common folder. Import other libraries separately.</value>
+    <comment>UI text; source: SteamApplicationImport</comment>
+  </data>
+  <data name="SteamApplicationImport_002" xml:space="preserve">
+    <value>To avoid scanning linked locations, choose a Steam library path that does not pass through directory links.</value>
+    <comment>UI text; source: SteamApplicationImport</comment>
+  </data>
+  <data name="SteamImportForm_010" xml:space="preserve">
+    <value>Found {0} candidate EXEs; skipped {1} linked or inaccessible folders.</value>
+    <comment>UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_011" xml:space="preserve">
+    <value>The scan reached a count, depth, or time limit. Results are incomplete; browse to add missing apps.</value>
+    <comment>UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="Store_001" xml:space="preserve">
+    <value>Only WAV and MP3 files are supported.</value>
+    <comment>UI text; source: Store</comment>
+  </data>
+  <data name="Store_002" xml:space="preserve">
+    <value>Audio files must not exceed 50 MB.</value>
+    <comment>UI text; source: Store</comment>
+  </data>
+  <data name="SuppressionPanel_012" xml:space="preserve">
+    <value>While playing</value>
+    <comment>UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_013" xml:space="preserve">
+    <value>While running</value>
+    <comment>UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_014" xml:space="preserve">
+    <value>Windows apps</value>
+    <comment>UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPolicy_001" xml:space="preserve">
+    <value>Select an app or enter a media app ID.</value>
+    <comment>UI text; source: SuppressionPolicy</comment>
+  </data>
+  <data name="SuppressionPolicy_002" xml:space="preserve">
+    <value>Select a valid suppression rule.</value>
+    <comment>UI text; source: SuppressionPolicy</comment>
+  </data>
+  <data name="SuppressionPolicy_003" xml:space="preserve">
+    <value>Running rules require an .exe filename or full path. Media package IDs can be used only for playing rules.</value>
+    <comment>UI text; source: SuppressionPolicy</comment>
+  </data>
+  <data name="Tray_021" xml:space="preserve">
+    <value>Reminders enabled</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_022" xml:space="preserve">
+    <value>IdleReminder v{0}</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_023" xml:space="preserve">
+    <value>Pause for {0} minutes</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_024" xml:space="preserve">
+    <value>Version {0}</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_025" xml:space="preserve">
+    <value>The original settings have been kept. Automatic overwriting is blocked. Back up and restore your settings, then restart.</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_026" xml:space="preserve">
+    <value>A listed pen app is running. If pen input cannot stop reminders, consider Windows input timing or turning off the device ID filter. Click to open Advanced Settings. The mode will not change automatically.</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_027" xml:space="preserve">
+    <value>A listed game is running. If Windows input timing is affected, consider keyboard and mouse event timing (experimental). Click to open Advanced Settings. The mode will not change automatically.</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_028" xml:space="preserve">
+    <value>Reminders are off while Windows is asleep</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_029" xml:space="preserve">
+    <value>Reminders paused because Windows is locked or the session state is unknown</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_030" xml:space="preserve">
+    <value>The foreground app has higher or unverified privileges. Using Windows input timing temporarily; games may reset it and prevent reminders. Device mode requests UAC; canceling keeps the fallback. See Advanced Settings.</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_031" xml:space="preserve">
+    <value>Reminders paused until the timer expires</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_032" xml:space="preserve">
+    <value>Reminders off until manually resumed</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_033" xml:space="preserve">
+    <value>Pausing supported media</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_034" xml:space="preserve">
+    <value>Reminders enabled; </value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_035" xml:space="preserve">
+    <value>; WPS slideshow detection is unreliable. You can configure an exception.</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_036" xml:space="preserve">
+    <value>; Could not pause some media ({0})</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_037" xml:space="preserve">
+    <value>; Media sessions paused: {0}</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_038" xml:space="preserve">
+    <value>; Playing media is outside the pause rules</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_039" xml:space="preserve">
+    <value>; Playing media does not support pausing</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_040" xml:space="preserve">
+    <value>; Windows reported no media sessions that can be paused</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_041" xml:space="preserve">
+    <value>; Media pause timed out. The reminder will still play.</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_042" xml:space="preserve">
+    <value>; Media pause is unavailable. The reminder will still play.</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_043" xml:space="preserve">
+    <value>; Sending a phone notification</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_044" xml:space="preserve">
+    <value>; Phone notification canceled or timed out</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_045" xml:space="preserve">
+    <value>; Phone notification failed. The PC reminder is unaffected.</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_046" xml:space="preserve">
+    <value>Settings saved, but Windows startup could not be updated. Try again.</value>
+    <comment>UI text; source: Tray</comment>
+  </data>
+  <data name="VersionInfoPanel_006" xml:space="preserve">
+    <value>Running version: {0}</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_007" xml:space="preserve">
+    <value>Current executable path (follows the running copy)</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_008" xml:space="preserve">
+    <value>Settings and recordings folder</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_009" xml:space="preserve">
+    <value>User guide</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_010" xml:space="preserve">
+    <value>Updating</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_011" xml:space="preserve">
+    <value>1. Exit the old app from its tray menu before replacing the full release. Closing settings does not exit the app.
+2. Back up the data folder shown above and your themes folder, including personal recordings, skins, and settings.
+3. Keep a fixed install location. For this development project, publish\current is recommended.
+4. If you move the app, run the new copy once, check its version and paths, and save startup settings.
+5. An old instance can prevent the new copy from staying open. Check the tray version after your next sign-in.
+6. After updating, check your voice files, skin, and device targets. Keep your personal data and themes.
+There is no automatic patch installer. This page does not download updates or change startup settings.
+This page is read-only. No save is needed.</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_012" xml:space="preserve">
+    <value>This project is completely free.</value>
+    <comment>UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VolumeLease_001" xml:space="preserve">
+    <value>Volume not raised: current output device is not configured</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_002" xml:space="preserve">
+    <value>Volume not raised: selected device is not the default output</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_003" xml:space="preserve">
+    <value>Volume not raised: </value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_004" xml:space="preserve">
+    <value>Temporarily raised Windows volume to {0:F0}%</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_005" xml:space="preserve">
+    <value>Stopped the reminder and attempted to restore volume: </value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_006" xml:space="preserve">
+    <value>Reminder finished. Restored the original volume to {0:F0}%.</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_007" xml:space="preserve">
+    <value>Reminder finished. Kept volume changes made by you or another app.</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumeLease_008" xml:space="preserve">
+    <value>Could not restore master volume; music remains reduced. Check the Windows volume mixer and diagnostic log.</value>
+    <comment>UI text; source: VolumeLease</comment>
+  </data>
+  <data name="VolumePolicy_001" xml:space="preserve">
+    <value>The device is not confirmed as speakers, or its type is unclear.</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="VolumePolicy_002" xml:space="preserve">
+    <value>Current output device is not configured.</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="VolumePolicy_003" xml:space="preserve">
+    <value>Automatic volume boost is off for this device.</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="VolumePolicy_004" xml:space="preserve">
+    <value>The target volume has not been confirmed by a preview.</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="VolumePolicy_005" xml:space="preserve">
+    <value>The device is muted. IdleReminder will not unmute it.</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="VolumePolicy_006" xml:space="preserve">
+    <value>Current Windows volume ({0:F0}%) already meets the target ({1}%).</value>
+    <comment>UI text; source: VolumePolicy</comment>
+  </data>
+  <data name="InputModeNoticePolicy_003" xml:space="preserve">
+    <value>Enter an EXE filename or full path. URLs, shortcuts, and launch arguments are not supported.</value>
+    <comment>UI text; source: InputModeNoticePolicy</comment>
+  </data>
+  <data name="SettingsForm_002" xml:space="preserve">
+    <value>Enable per-app rules</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_003" xml:space="preserve">
+    <value>Pause supported playing media before a reminder</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_004" xml:space="preserve">
+    <value>Repeat reminders while idle</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_005" xml:space="preserve">
+    <value>Ask to resume after an indefinite pause</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_006" xml:space="preserve">
+    <value>Start when I sign in to Windows</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_007" xml:space="preserve">
+    <value>Action failed: </value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_008" xml:space="preserve">
+    <value>Basic Settings</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_009" xml:space="preserve">
+    <value>First-time setup: The default idle threshold is 20 minutes.
+Reminders after sleep depend on your PC’s sleep mode and system policy. Test this on your PC first.
+If reminders work after automatic sleep, there is no need to change power settings for Idle Reminder.
+If your PC sleeps before a reminder can play, shorten the idle threshold (for example, set a 5-minute reminder if Windows sleeps after 10 minutes), or adjust the Windows sleep timer.
+Turning off the display is different from sleep. Idle Reminder does not change your power settings. Click Save Settings after reviewing this message to dismiss it.</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_010" xml:space="preserve">
+    <value>Idle threshold (minutes)</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_011" xml:space="preserve">
+    <value>Repeat interval (minutes)</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_012" xml:space="preserve">
+    <value>Turning this off suspends the Media Rules that suppress reminders while apps are playing or running. Your list is kept.
+Slideshow suppression has its own setting.
+Downloads and games are not detected automatically. Idle detection continues for apps without rules.
+Lock screen, sleep, manual pause, and pausing or lowering media volume before reminders are unaffected.</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_013" xml:space="preserve">
+    <value>Reminder Sound</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_014" xml:space="preserve">
+    <value>Playback mode</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_015" xml:space="preserve">
+    <value>Built-in tone</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_016" xml:space="preserve">
+    <value>App volume (0–100)</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_017" xml:space="preserve">
+    <value>Voice source</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_018" xml:space="preserve">
+    <value>WAV or MP3, up to 50 MB. Each clip plays for up to 2 minutes.
+Imported files are copied to the project's data folder. No audio is recorded. Phone notifications use your local network when enabled.</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_019" xml:space="preserve">
+    <value>Pause &amp; Resume</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_020" xml:space="preserve">
+    <value>Ask again after (minutes)</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_021" xml:space="preserve">
+    <value>Reminders are enabled whenever the app starts. Previous pauses do not carry over.
+Timed pauses resume automatically when they expire.
+During this session, an indefinite pause can show a resume question after the delay, when there is new input and no full-screen app.
+The question does not take focus. Choosing Later restarts its timer.</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_022" xml:space="preserve">
+    <value>Media Rules</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_023" xml:space="preserve">
+    <value>Pause playing media that supports pausing before a reminder.
+Previews do not trigger this. Media is not resumed automatically. Only media sessions exposed by Windows are supported.</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_024" xml:space="preserve">
+    <value>Slideshow</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_025" xml:space="preserve">
+    <value>Phone Notifications</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_026" xml:space="preserve">
+    <value>Device Volume</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_027" xml:space="preserve">
+    <value>Advanced Settings</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_028" xml:space="preserve">
+    <value>Input timing</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_029" xml:space="preserve">
+    <value>This filter is off by default. Enable it only after confirming that events without a device ID are interfering.
+It may miss some touchpad or remote input. Use it only with verified external keyboards and mice.
+A device ID does not guarantee a physical device.
+On this PC, an elevated game required matching privileges to receive real input. A non-elevated reminder falls back when the foreground app has higher privileges and shows a warning. Saving device event mode requests normal UAC if needed; startup checks too. Canceling keeps the app running without elevation and retains the fallback.
+If no UAC prompt appears after enabling device timing, try Save Settings again and dismiss the saved message. An already elevated app will not request permission again.</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_030" xml:space="preserve">
+    <value>Device event timing helps when a game or another app keeps resetting the system input timer.
+It counts keyboard and mouse event headers only. It does not read key contents or pointer coordinates, or install hooks.
+Virtual devices, touch, remote control, and anti-cheat compatibility remain limited. Device events are not guaranteed to represent physical input.
+If input cannot be received, timing falls back to Windows. Lock-screen, sleep, slideshow, and pause rules still apply.
+Saving settings or changing modes restarts idle counting.</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_031" xml:space="preserve">
+    <value>Automatic volume boost: configure each separate speaker on Device Volume.
+Settings, imported audio, and size-limited diagnostic logs are stored in the project's data folder.
+Checks run every second. After sleep or unlock, new input is required.
+The default mode reads the last input time. Experimental mode reads event headers, not key contents.</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_032" xml:space="preserve">
+    <value>Skins</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_033" xml:space="preserve">
+    <value>Version &amp; Updates</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_034" xml:space="preserve">
+    <value>Click Save Settings to apply your changes.</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_035" xml:space="preserve">
+    <value>If your PC sleeps before a reminder can play, shorten the idle threshold or adjust the Windows sleep timer. If reminders work after sleep, there is no need to change power settings for Idle Reminder.
+Idle Reminder does not change your sleep policy. Reminders pause while Windows is locked. Test reminders after sleep on this PC. Turning off the display alone does not test sleep.</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_036" xml:space="preserve">
+    <value>Save Settings</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_037" xml:space="preserve">
+    <value>Import a local voice recording first.</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_038" xml:space="preserve">
+    <value>Could not save settings: </value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_039" xml:space="preserve">
+    <value>Choose Local Audio</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_040" xml:space="preserve">
+    <value>Status: </value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_041" xml:space="preserve">
+    <value>Windows input timing (default)</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_042" xml:space="preserve">
+    <value>Keyboard and mouse events (experimental)</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_043" xml:space="preserve">
+    <value>Tone only</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_044" xml:space="preserve">
+    <value>Voice only</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="SettingsForm_045" xml:space="preserve">
+    <value>Tone, then voice</value>
+    <comment>Static UI text; source: SettingsForm</comment>
+  </data>
+  <data name="Tray_001" xml:space="preserve">
+    <value>Enable reminders</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_002" xml:space="preserve">
+    <value>Custom pause...</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_003" xml:space="preserve">
+    <value>Pause until resumed manually</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_004" xml:space="preserve">
+    <value>Open settings</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_005" xml:space="preserve">
+    <value>Exit</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_006" xml:space="preserve">
+    <value>Audio reminder failed</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_007" xml:space="preserve">
+    <value>Idle detection failed. Waiting for user activity to recover.</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_008" xml:space="preserve">
+    <value>Could not read settings</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_009" xml:space="preserve">
+    <value>Change input timing mode?</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_010" xml:space="preserve">
+    <value>Could not save settings. Check permissions for the project’s data folder.</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_011" xml:space="preserve">
+    <value>Could not read settings. Reminders cannot be enabled with defaults. Restore your settings and restart.</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_012" xml:space="preserve">
+    <value>Reminders enabled</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_013" xml:space="preserve">
+    <value>Reminders paused</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_014" xml:space="preserve">
+    <value>Reminders are off while Windows is asleep</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_015" xml:space="preserve">
+    <value>Device input access limited</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_016" xml:space="preserve">
+    <value>Reminders paused on the lock screen or secure desktop</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_017" xml:space="preserve">
+    <value>Resume reminders?</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_018" xml:space="preserve">
+    <value>Reminders are paused. Would you like to resume them?</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_019" xml:space="preserve">
+    <value>Resume</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="Tray_020" xml:space="preserve">
+    <value>Later</value>
+    <comment>Static UI text; source: Tray</comment>
+  </data>
+  <data name="SuppressionPanel_001" xml:space="preserve">
+    <value>Suppress reminders (separate from media pause lists)</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_002" xml:space="preserve">
+    <value>Controlled by Enable per-app rules on Basic Settings. Turning it off keeps your rules but stops applying them.
+Slideshow suppression has its own page.
+Keeping media playing does not suppress reminders.
+Pause lists control media playback; the rules below control reminder sound.
+Unlisted apps use normal idle detection. Any matching rule suppresses reminders.</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_003" xml:space="preserve">
+    <value>App / media app ID</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_004" xml:space="preserve">
+    <value>Suppress reminders</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_005" xml:space="preserve">
+    <value>Browse Apps...</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_006" xml:space="preserve">
+    <value>Read Current Media Apps</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_007" xml:space="preserve">
+    <value>No recognizable media sessions. Start playback first.</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_008" xml:space="preserve">
+    <value>The media interface is unavailable. Try again later.</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_009" xml:space="preserve">
+    <value>Add / Update Rule</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_010" xml:space="preserve">
+    <value>Remove Selected Rule</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="SuppressionPanel_011" xml:space="preserve">
+    <value>For playing rules, start playback, then use Read Current Media Apps. The EXE name may differ from the media app ID.</value>
+    <comment>Static UI text; source: SuppressionPanel</comment>
+  </data>
+  <data name="PhonePanel_001" xml:space="preserve">
+    <value>Enable phone notifications when reminders start</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_002" xml:space="preserve">
+    <value>Connection not checked. Refresh paired online phones.</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_003" xml:space="preserve">
+    <value>Experimental; reliability varies</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_004" xml:space="preserve">
+    <value>Send a local reminder to a selected, paired Android phone through KDE Connect. Off by default. Install KDE Connect on both devices and pair them manually on a trusted local network.</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_005" xml:space="preserve">
+    <value>Full path to the official kdeconnect-cli.exe</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_006" xml:space="preserve">
+    <value>Browse for KDE Connect CLI</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_007" xml:space="preserve">
+    <value>Select kdeconnect-cli.exe in the official installation folder</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_008" xml:space="preserve">
+    <value>Refresh Paired Online Phones</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_009" xml:space="preserve">
+    <value>Send Test to Selected Phone</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_010" xml:space="preserve">
+    <value>A test immediately sends fixed text to the selected phone without saving first. Normal audio previews do not send notifications. Save Settings when setup is complete.</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_011" xml:space="preserve">
+    <value>Pair in KDE Connect first and allow notifications on the phone. If locked phones miss them, check background battery restrictions. Disable unrelated plugins such as file sharing, clipboard, remote input, and notification mirroring.
+IdleReminder does not install software, pair devices, or change firewall rules. It sends fixed reminder text, not filenames or app content.
+Submitting a command does not confirm delivery. Phone settings control sound, Do Not Disturb, and lock-screen behavior.</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_012" xml:space="preserve">
+    <value>Saved target: </value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_013" xml:space="preserve">
+    <value>Selected: </value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_014" xml:space="preserve">
+    <value>CLI path changed. Refresh and select the phone again.</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_015" xml:space="preserve">
+    <value>Phone notification operation canceled or timed out. PC playback is unaffected.</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="PhonePanel_016" xml:space="preserve">
+    <value>Phone notification operation failed. Check the official CLI path, running KDE Connect app, and pairing.</value>
+    <comment>Static UI text; source: PhonePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_001" xml:space="preserve">
+    <value>Confirm separate speakers</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_002" xml:space="preserve">
+    <value>Enable volume boost for this device</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_003" xml:space="preserve">
+    <value>Confirm Preview Volume</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_004" xml:space="preserve">
+    <value>Each output device has its own Windows master-volume target. Off by default.
+Use confirmed separate speakers only, never headphones or a shared jack.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_005" xml:space="preserve">
+    <value>Previews do not pause media. Normal previews do not raise master volume.
+The volume-adjusted preview on this page temporarily changes master volume after you approve it.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_006" xml:space="preserve">
+    <value>Refresh Output Devices</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_007" xml:space="preserve">
+    <value>Target Windows volume (%) — 35% is only a starting suggestion</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_008" xml:space="preserve">
+    <value>Consider configuring player volume reduction first; it is optional.
+Without it, raising master volume also makes other apps louder.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_009" xml:space="preserve">
+    <value>Preview with Volume Adjustment</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_010" xml:space="preserve">
+    <value>Stop Preview / Restore Volume</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_011" xml:space="preserve">
+    <value>Preview confirmed. Enable volume boost for this device, then Save Settings.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_012" xml:space="preserve">
+    <value>Raising master volume also makes other apps on that device louder.
+After preview confirmation and opt-in, master volume can rise even without music reduction.
+Media Rules can coordinate music reduction and volume boost. Other sounds may still become louder.
+Failed state checks block the boost.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_013" xml:space="preserve">
+    <value>Confirm separate speakers are connected and complete a preview at the current target volume first.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_014" xml:space="preserve">
+    <value>Device volume operation failed. Refresh devices and try again.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_015" xml:space="preserve">
+    <value>No output devices available. Volume boost is unavailable.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_016" xml:space="preserve">
+    <value>Device identification unavailable. Volume boost is blocked.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_017" xml:space="preserve">
+    <value>A preview is playing. Stop it or wait for it to finish.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_018" xml:space="preserve">
+    <value>Volume-adjusted previews are allowed only for devices confirmed as separate speakers.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_019" xml:space="preserve">
+    <value>Set the selected device as the Windows default output, then refresh.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_020" xml:space="preserve">
+    <value>Choose a voice recording, or switch to Tone only and save first.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_021" xml:space="preserve">
+    <value>The preview did not finish or the target was not verified. Check volume status above and try again.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_022" xml:space="preserve">
+    <value>Preview finished. If the volume is suitable, confirm below, then enable the option and save.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="DeviceVolumePanel_023" xml:space="preserve">
+    <value>The preview could not start. Check the status above and try again.</value>
+    <comment>Static UI text; source: DeviceVolumePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_001" xml:space="preserve">
+    <value>Suggest input timing when a listed app is running</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_002" xml:space="preserve">
+    <value>If game suggestions are missing, check:
+Windows Settings → System → Notifications: Do Not Disturb and automatic rules for gaming or full-screen apps.
+Whether the listed path is a launcher. Select the actual running game EXE; launchers may exit after starting the game.</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_003" xml:space="preserve">
+    <value>Add to Suggestion List</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_004" xml:space="preserve">
+    <value>Remove Selected Entry</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_005" xml:space="preserve">
+    <value>Import from Steam Folder...</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="InputModeNoticePanel_006" xml:space="preserve">
+    <value>The two suggestion categories have separate switches and lists. Each entry is suggested at most once per session, with at least a minute between notifications.
+Use EXE filenames or full paths, up to 512 entries. Browsing and Steam import store full paths.
+Eligible does not mean immediate: an app must match, and reminders must not be paused or playing. Repeated notifications for the same app are suppressed.
+Edits affect the draft until Save Settings. Dismissing a notification does not change settings. Do Not Disturb may hide it.</value>
+    <comment>Static UI text; source: InputModeNoticePanel</comment>
+  </data>
+  <data name="MediaScopePanel_001" xml:space="preserve">
+    <value>Temporarily lower listed players during reminders</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_002" xml:space="preserve">
+    <value>Allow master-volume boost while music is reduced</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_003" xml:space="preserve">
+    <value>Pause scope (requires the option above)</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_004" xml:space="preserve">
+    <value>App list: one exact media app ID per line, case-insensitive</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_005" xml:space="preserve">
+    <value>Select apps for the media list (they will not be run)</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_006" xml:space="preserve">
+    <value>Could not add the selected app: </value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_007" xml:space="preserve">
+    <value>Select one or more .exe files. Apps will not be run or copied.
+Both filenames and full paths are added; apps with the same name may match together.
+If the media app ID differs, as with some Store apps, use Read Current Media Apps below.
+Save Settings after adding apps.</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_008" xml:space="preserve">
+    <value>Windows reports no media apps. Open a player and start playback, then try again.</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_009" xml:space="preserve">
+    <value>Could not read media apps. Try again later.</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_010" xml:space="preserve">
+    <value>Add Selected App to List</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_011" xml:space="preserve">
+    <value>Volume reduction list (separate): one .exe filename or full path per line</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_012" xml:space="preserve">
+    <value>Browse Players to Lower...</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_013" xml:space="preserve">
+    <value>Select players for temporary volume reduction (they will not be run)</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_014" xml:space="preserve">
+    <value>Keep this % of app volume (20%: original 50% → temporary 10%)</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_015" xml:space="preserve">
+    <value>Lower only listed players with active audio.
+Keeping media playing does not prevent volume reduction. Music can be reduced even when media pausing is off.
+The pause scope and exception list above do not block these volume changes.
+Browser audio is handled per app, not per URL.
+Volume is restored afterward; manual app-volume or mute changes are kept.
+Enabling reduction also selects permission for master-volume boost. You can clear that permission separately.
+Playback continues. Coordinated boost also requires an enabled, confirmed device target on Device Volume.
+When master volume rises, music on the same device is reduced further to compensate for the actual gain in decibels.
+Music may briefly mute during the transition to avoid an initial volume spike.
+Allowing boost may also make other, unlisted audio louder.
+At the end, master volume is restored first, then player volume. Normal previews do not trigger this.</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="MediaScopePanel_016" xml:space="preserve">
+    <value>Save after editing. Normal previews do not pause media.</value>
+    <comment>Static UI text; source: MediaScopePanel</comment>
+  </data>
+  <data name="SlideShowPanel_001" xml:space="preserve">
+    <value>Suppress reminders during slideshows</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_002" xml:space="preserve">
+    <value>WPS Presentation (compatibility varies)</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_003" xml:space="preserve">
+    <value>Remind normally while editing; suppress reminders during full-screen or windowed slideshows.</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_004" xml:space="preserve">
+    <value>If a WPS version is not detected, normal idle detection continues. You can configure a specific slideshow window class.
+Start a show before reading windows. Do not select a general editing-window class.
+Turn off automatic detection for that app or remove a manual rule to make an exception.
+Manual rules may not work with every version. Test both editing and slideshow states.</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_005" xml:space="preserve">
+    <value>No visible POWERPNT.EXE or wpp.exe windows found.</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_006" xml:space="preserve">
+    <value>Manual rule: process name (POWERPNT.EXE or wpp.exe only)</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_007" xml:space="preserve">
+    <value>Slideshow window class (exact match)</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SlideShowPanel_008" xml:space="preserve">
+    <value>Confirm that this class is used only for slideshow windows. If editing windows share it, reminders will also be suppressed while editing. Add it anyway?</value>
+    <comment>Static UI text; source: SlideShowPanel</comment>
+  </data>
+  <data name="SkinSelectionPanel_001" xml:space="preserve">
+    <value>Select a Preset</value>
+    <comment>Static UI text; source: SkinSelectionPanel</comment>
+  </data>
+  <data name="SkinSelectionPanel_002" xml:space="preserve">
+    <value>Preset folder: </value>
+    <comment>Static UI text; source: SkinSelectionPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_001" xml:space="preserve">
+    <value>Open User Guide</value>
+    <comment>Static UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_002" xml:space="preserve">
+    <value>The user guide is missing. Extract the full release package, including its docs folder.</value>
+    <comment>Static UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_003" xml:space="preserve">
+    <value>Could not open the guide. Open the file shown above manually.</value>
+    <comment>Static UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_004" xml:space="preserve">
+    <value>Developed by 君喵Junmiao &amp; Codex</value>
+    <comment>Static UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="VersionInfoPanel_005" xml:space="preserve">
+    <value>Could not open your browser. Visit: </value>
+    <comment>Static UI text; source: VersionInfoPanel</comment>
+  </data>
+  <data name="SteamImportForm_001" xml:space="preserve">
+    <value>Import Checked Items</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_002" xml:space="preserve">
+    <value>Select All</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_003" xml:space="preserve">
+    <value>Clear All</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_004" xml:space="preserve">
+    <value>Import from Steam Folder</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_005" xml:space="preserve">
+    <value>Import only game EXEs for which you want input timing suggestions. Steam and game files are not changed.
+Prefer the actual game executable. Launchers, anti-cheat tools, crash reporters, and uninstallers usually are not needed.
+Nothing is checked by default. Select All includes helpers, so review before importing. Import other Steam libraries separately.</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_006" xml:space="preserve">
+    <value>Scanning... You can cancel at any time.</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_007" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_008" xml:space="preserve">
+    <value>Canceling scan...</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="SteamImportForm_009" xml:space="preserve">
+    <value>Scan failed. Check the Steam folder and access permissions.</value>
+    <comment>Static UI text; source: SteamImportForm</comment>
+  </data>
+  <data name="CustomPauseForm_001" xml:space="preserve">
+    <value>Custom Pause</value>
+    <comment>Static UI text; source: CustomPauseForm</comment>
+  </data>
+  <data name="CustomPauseForm_002" xml:space="preserve">
+    <value>Pause duration (minutes)</value>
+    <comment>Static UI text; source: CustomPauseForm</comment>
+  </data>
+  <data name="CustomPauseForm_003" xml:space="preserve">
+    <value>Set 1–10,080 minutes (up to 7 days).
+Reminders resume when the timer expires. Restarting the app enables reminders.
+Cancel keeps the current pause unchanged.</value>
+    <comment>Static UI text; source: CustomPauseForm</comment>
+  </data>
+  <data name="CustomPauseForm_004" xml:space="preserve">
+    <value>Start Pause</value>
+    <comment>Static UI text; source: CustomPauseForm</comment>
+  </data>
+  <data name="Language_Label" xml:space="preserve">
+    <value>Display language / 界面语言</value>
+  </data>
+  <data name="Language_Help" xml:space="preserve">
+    <value>Choose a language, then click Save Settings to apply it.
+The settings window, tray menu, and future messages will use your chosen language.</value>
+  </data>
+  <data name="Layout_InputHeading">
+    <value>Idle detection</value>
+  </data>
+  <data name="Layout_SlidesIndependent">
+    <value>Slideshow rules have their own switch.</value>
+  </data>
+  <data name="Layout_Admin">
+    <value>Running as administrator.</value>
+  </data>
+  <data name="Layout_DetailsShow">
+    <value>Show details</value>
+  </data>
+  <data name="Layout_Ordinary">
+    <value>Running without administrator privileges. See Advanced Settings.</value>
+  </data>
+  <data name="Layout_FilterHeading">
+    <value>Device input filter</value>
+  </data>
+  <data name="Layout_PermissionUnknown">
+    <value>Administrator status is unavailable. See Advanced Settings.</value>
+  </data>
+  <data name="Layout_FilterWarning">
+    <value>Experimental, off by default. When enabled, this may miss touchpad, pen or remote input. Reminders may continue while you use those devices.</value>
+  </data>
+  <data name="Layout_PermissionHeading">
+    <value>Permissions</value>
+  </data>
+  <data name="Layout_DetailsHide">
+    <value>Hide details</value>
+  </data>
+  <data name="Layout_InputSummary">
+    <value>Use Windows input timing for normal use. Try device events if an app keeps resetting the idle timer.</value>
+  </data>
+  <data name="Layout_AppRulesEffect">
+    <value>Turning this off disables per-app suppression. Your saved rules are kept.</value>
+  </data>
+  <data name="SkinPreset_InvalidColor" xml:space="preserve">
+    <value>The preset contains an invalid color value.</value>
+  </data>
+  <data name="SkinPreset_NoColors" xml:space="preserve">
+    <value>The preset has no colors.</value>
+  </data>
+  <data name="CheckmarkAsset_Invalid" xml:space="preserve">
+    <value>Select a valid PNG file no larger than 2 MB.</value>
+  </data>
+  <data name="SkinPreset_InvalidImagePath" xml:space="preserve">
+    <value>Invalid checkmark PNG path.</value>
+  </data>
+  <data name="CheckmarkAsset_NotPng" xml:space="preserve">
+    <value>The file is not a PNG.</value>
+  </data>
+  <data name="SkinPreset_Untitled" xml:space="preserve">
+    <value>Untitled</value>
+  </data>
+  <data name="CheckmarkAsset_Size" xml:space="preserve">
+    <value>PNG dimensions must be 1–512 pixels. A square icon with a transparent background is recommended.</value>
+  </data>
+  <data name="CheckmarkPath_Invalid" xml:space="preserve">
+    <value>Invalid checkmark asset path.</value>
+  </data>
+  <data name="SkinPreset_Invalid" xml:space="preserve">
+    <value>Invalid preset.</value>
+  </data>
+  <data name="SkinPreset_TooLarge" xml:space="preserve">
+    <value>The preset file is too large.</value>
+  </data>
+  <data name="ComboBox_NameHint" xml:space="preserve">
+    <value>Press F2 or use the context menu to open the full name.</value>
+  </data>
+  <data name="ComboBox_ViewName" xml:space="preserve">
+    <value>View full name...</value>
+  </data>
+  <data name="ComboBox_NameTitle" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+
+  <data name="DeviceVolumePanel_012Details" xml:space="preserve"><value>Only volume below the target is raised. Existing higher volume is not reduced; muted devices are not unmuted.
+Volume is restored afterward. Manual volume or mute changes during playback are kept.
+Changing master volume during a reminder can suddenly make reduced media louder.
+Device names and drivers cannot verify physical connections. Do not enable this for shared jacks.</value></data>
+  <data name="DeviceVolumePanel_012Tail" xml:space="preserve"><value>Normal preview buttons do not adjust master volume. After confirmation, enable the option and save.</value></data>
+  <data name="MediaScopePanel_016Details" xml:space="preserve"><value>Browsers are handled as whole apps. URLs and tabs cannot be distinguished reliably.
+URL lists are unsupported. Web pages, history, and media titles are not read.
+An empty list in listed-apps-only mode pauses no media.
+Pause and volume reduction lists are saved separately. Neither list determines whether a reminder plays.
+Without coordinated boost permission, other active, unreduced audio blocks master-volume boost.</value></data>
+  <data name="PhonePanel_010Details" xml:space="preserve"><value>Notifications are sent asynchronously after reminder playback actually begins. Offline phones or delivery failures do not affect PC playback. Expired notifications are not sent after reconnection.</value></data>
+  <data name="SlideShowPanel_003Details" xml:space="preserve"><value>A running app or an arbitrary full-screen window is not enough to identify a slideshow.
+Slides, document names, window titles, notes, and screen contents are not read.
+After a show ends, reminders follow actual idle time. Missed reminders are not queued.
+Existing running-app suppression rules still apply. Remove conflicting rules.</value></data>
+  <data name="SuppressionPanel_011Details" xml:space="preserve"><value>Browse Apps is for running rules only.
+Playing rules use Windows media sessions for both music and video. They do not distinguish URLs.
+Running rules check whether an EXE is running, including in the background or minimized. No process memory is read.
+A browser rule can affect the whole browser. Choose carefully.
+If detection fails, normal idle rules apply. Checks run about every 2 seconds.
+After a rule stops matching, reminders follow actual idle time. Missed reminders are not queued.</value></data>
+  <data name="SuppressionPanel_011Tail" xml:space="preserve"><value>Remove a rule to restore normal detection for that app. Save after editing.</value></data></root>

@@ -10,14 +10,14 @@ public static class MediaApplicationFilter {
  }
  public static string[] ExecutableEntries(string path){
   if(!System.IO.Path.IsPathFullyQualified(path)||!string.Equals(System.IO.Path.GetExtension(path),".exe",StringComparison.OrdinalIgnoreCase))
-   throw new ArgumentException("请选择软件的 .exe 文件，不支持快捷方式或其他文件。");
+   throw new ArgumentException(UiText.Get("MediaApplicationFilter_001"));
   var full=System.IO.Path.GetFullPath(path);
   return [System.IO.Path.GetFileName(full),full];
  }
  public static List<string> Parse(string text){
   var entries=text.Split(['\r','\n'],StringSplitOptions.RemoveEmptyEntries|StringSplitOptions.TrimEntries).Distinct(StringComparer.OrdinalIgnoreCase).ToList();
   if(entries.Any(x=>x.Contains("://")||x.StartsWith("www.",StringComparison.OrdinalIgnoreCase)||System.Text.RegularExpressions.Regex.IsMatch(x,@"^[\w.-]+\.(com|net|org|cn|tv|io)(/.*)?$",System.Text.RegularExpressions.RegexOptions.IgnoreCase)||x.Length>512))
-   throw new ArgumentException("这里只支持软件的媒体应用标识，不支持网址。请从当前媒体列表添加。");
+   throw new ArgumentException(UiText.Get("MediaApplicationFilter_002"));
   return entries;
  }
 }

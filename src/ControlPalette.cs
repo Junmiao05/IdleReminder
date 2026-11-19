@@ -6,6 +6,10 @@ public static class ControlPalette {
   ["SelectionBackground"]="Accent",["SelectionText"]="AccentText",["SliderTrack"]="Border",
   ["SliderFill"]="Accent",["SliderThumb"]="Accent",["SliderTicks"]="Helper",["SliderDisabled"]="DisabledControl"
  };
+ internal static readonly IReadOnlyDictionary<string,string> TabFallbacks=new Dictionary<string,string>{
+  ["TabSelectedBackground"]="Window",["TabSelectedText"]="Text",
+  ["TabUnselectedBackground"]="Button",["TabUnselectedText"]="ButtonText"
+ };
  public static void FillMissing(Dictionary<string,string> colors){
   foreach(var pair in Fallbacks)if(!colors.ContainsKey(pair.Key)&&colors.TryGetValue(pair.Value,out var color))colors[pair.Key]=color;
  }
