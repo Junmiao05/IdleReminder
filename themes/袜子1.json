@@ -12,14 +12,14 @@
     "ButtonText": "#D97226",
     "AccentText": "#405BA6",
     "Border": "#DFBB13",
-    "DisabledControl": "#F0F0F0",
-    "DisabledText": "#6D6D6D",
+    "DisabledControl": "#F2EFE6",
+    "DisabledText": "#DFBB13",
     "CheckBox.CheckedFill": "#39D1FD",
     "CheckBox.CheckedBorder": "#405BA6",
-    "CheckBox.Checkmark": "#F0F0F0",
+    "CheckBox.Checkmark": "#FEFDFA",
     "CheckBox.UncheckedFill": "#DFBB13",
     "CheckBox.UncheckedBorder": "#D97226",
-    "CheckBox.DisabledFill": "#F0F0F0",
+    "CheckBox.DisabledFill": "#FEFDFA",
     "CheckBox.DisabledBorder": "#DFBB13",
     "CheckBox.DisabledCheckmark": "#EAE4D5",
     "SelectionBackground": "#D97226",
@@ -28,6 +28,10 @@
     "SliderFill": "#39D1FD",
     "SliderThumb": "#405BA6",
     "SliderTicks": "#242D44",
-    "SliderDisabled": "#EAE4D5"
+    "SliderDisabled": "#EAE4D5",
+    "TabSelectedBackground": "#39D1FD",
+    "TabSelectedText": "#FEFDFA",
+    "TabUnselectedBackground": "#DFBB13",
+    "TabUnselectedText": "#242D44"
   }
 }

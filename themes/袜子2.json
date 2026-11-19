@@ -28,6 +28,10 @@
     "SliderFill": "#F9DB97",
     "SliderThumb": "#FDA093",
     "SliderTicks": "#8CAB89",
-    "SliderDisabled": "#D5C09B"
+    "SliderDisabled": "#D5C09B",
+    "TabSelectedBackground": "#FBB095",
+    "TabSelectedText": "#FDFAF2",
+    "TabUnselectedBackground": "#EDCE65",
+    "TabUnselectedText": "#538867"
   }
 }

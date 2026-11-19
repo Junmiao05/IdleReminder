@@ -8,8 +8,8 @@
     "Text": "#4549A0",
     "Helper": "#669AE1",
     "Accent": "#EF92C5",
-    "Button": "#F0FEFF",
-    "ButtonText": "#6F91CE",
+    "Button": "#FFECF7",
+    "ButtonText": "#D6499D",
     "AccentText": "#FFFFFF",
     "Border": "#828EBF",
     "DisabledControl": "#F0EFF5",
@@ -28,6 +28,10 @@
     "SliderFill": "#FBACD8",
     "SliderThumb": "#FC76AF",
     "SliderTicks": "#565BB6",
-    "SliderDisabled": "#828EBF"
+    "SliderDisabled": "#828EBF",
+    "TabSelectedBackground": "#FED6EF",
+    "TabSelectedText": "#4549A0",
+    "TabUnselectedBackground": "#FFF0F8",
+    "TabUnselectedText": "#E899C0"
   }
 }

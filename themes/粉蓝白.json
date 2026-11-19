@@ -8,7 +8,7 @@
     "Text": "#435BA3",
     "Helper": "#669AE1",
     "Accent": "#FBA8DC",
-    "Button": "#F0FDFF",
+    "Button": "#FBFFFF",
     "ButtonText": "#6F91CE",
     "AccentText": "#FFFFFF",
     "Border": "#828EBF",
@@ -28,6 +28,10 @@
     "SliderFill": "#FEC5ED",
     "SliderThumb": "#FDA6D3",
     "SliderTicks": "#565BB6",
-    "SliderDisabled": "#828EBF"
+    "SliderDisabled": "#828EBF",
+    "TabSelectedBackground": "#FBA4DE",
+    "TabSelectedText": "#FFFFFF",
+    "TabUnselectedBackground": "#FFFFFF",
+    "TabUnselectedText": "#6FBCF0"
   }
 }
