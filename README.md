@@ -16,6 +16,7 @@ Windows 11 x64 用户请下载 IdleReminder-v0.0.2.0-win-x64.zip；已知限制�
 For Windows 11 x64, download IdleReminder-v0.0.2.0-win-x64.zip. See the included documentation for known limitations and update instructions.
 
 https://github.com/Junmiao05/IdleReminder/releases/tag/v0.0.2.0
+
 软件常驻系统托盘，关闭设置窗口不等于退出。修改选项后请点击“保存设置”。
 当前未进行代码签名。遇到安全提示时请先核对下载来源和SHA256，不要关闭系统安全防护。
 
