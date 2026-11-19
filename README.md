@@ -32,7 +32,7 @@ https://github.com/Junmiao05/IdleReminder/releases/tag/skin-designer-v0.0.1.0
 - 预设皮肤切换。手机通知通过另行安装并配对的KDE Connect实现，属实验性功能。
 - 默认Windows输入计时；可选设备键鼠事件计时及过滤，用于兼容性排查。设备模式可能请求正常UAC，拒绝后仍可普通运行。
 
-详细使用方法见使用指南.txt；测试证据范围和限制见测试与兼容性说明.md。
+详细使用方法见新版 docs 中的 HTML/TXT 指南；测试证据范围和限制见测试与兼容性说明.md。
 
 ## 已知限制
 
@@ -63,7 +63,7 @@ https://github.com/Junmiao05/IdleReminder/releases/tag/skin-designer-v0.0.1.0
     .\build.ps1
 
 生成文件位于publish/current。如脚本受系统策略限制，可手动执行其中命令，无需永久修改执行策略。
-本公开源码基线对应0.0.1.28，不含下一版resx重构或独立SkinDesigner代码。包内完整构建说明见SOURCE-README.md。
+本公开源码基线对应v0.0.2.0。包内完整构建说明见SOURCE-README.md。
 
 ## 许可
 
