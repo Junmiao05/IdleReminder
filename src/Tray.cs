@@ -21,7 +21,7 @@ internal sealed class Tray : ApplicationContext {
  DateTimeOffset lastWall;
  bool blocked;bool inputAccessWarningShown;
  readonly InputModeNoticePolicy inputNotices=new(),penInputNotices=new(InputTimingMode.DeviceHeaders);long nextAnyInputNotice;bool inputNoticeQuery,inputNoticeWarned,timingBalloon;long nextInputNoticeCheck;int inputNoticeGeneration;bool openTimingRequested;
- string status="提醒功能已启用";
+ string status=UiText.Get("Tray_021");
  string noticeTrace="";int noticeTraceBudget=50;
  void TraceNotice(string code){if(code==noticeTrace||noticeTraceBudget<=0)return;noticeTrace=code;noticeTraceBudget--;Store.Log("input-notice-"+code);}
  bool promptOpen;bool exitRequested;
@@ -39,25 +39,18 @@ internal sealed class Tray : ApplicationContext {
  safety.PowerChanged+=transition=>Power(this,new PowerModeChangedEventArgs(transition==PowerTransition.Suspend?PowerModes.Suspend:PowerModes.Resume));
  audio.ReminderStarted+=StartPhoneNotification;audio.Finished+=_=>phoneSend?.Cancel();
  s.PrepareForLaunch();
- audio.VolumeSettings=s;audio.VolumeStatusChanged+=value=>volumeStatus="；"+value;
- icon=new NotifyIcon{Icon=trayArtwork,Text=$"闲置提醒器 v{AppVersion.Current}",Visible=true};
- var menu=new ContextMenuStrip();
- menu.Items.Add("启用提醒",null,(_,_)=>Enable());
- foreach(var n in new[]{30,60,120}){var minutes=n;menu.Items.Add($"暂停 {n} 分钟",null,(_,_)=>Pause(minutes));}
- menu.Items.Add("自定义暂停…",null,(_,_)=>{menu.Close();using var dialog=new CustomPauseForm();if(dialog.ShowDialog()==DialogResult.OK)Pause(dialog.Minutes);});
- menu.Items.Add("暂停直到手动恢复",null,(_,_)=>Pause(null));
- menu.Items.Add($"版本 {AppVersion.Current}").Enabled=false;
- menu.Items.Add("打开设置",null,(_,_)=>{SettingsWindowPresenter.Log("tray-request");menu.Close();settingsOpen.Request();});
- menu.Items.Add("退出程序",null,(_,_)=>ExitThread());
+ audio.VolumeSettings=s;audio.VolumeStatusChanged+=value=>volumeStatus=UiText.Format("Tray_StatusSuffix",value);
+ icon=new NotifyIcon{Icon=trayArtwork,Text=UiText.Format("Tray_022",AppVersion.Current),Visible=true};
+ var menu=TrayMenu.Create(Enable,Pause,()=>{SettingsWindowPresenter.Log("tray-request");settingsOpen.Request();},ExitThread);
  icon.ContextMenuStrip=menu;icon.DoubleClick+=(_,_)=>{SettingsWindowPresenter.Log("tray-request");menu.Close();settingsOpen.Request();};
  icon.BalloonTipClicked+=(_,_)=>{if(!timingBalloon)return;TraceNotice("clicked");timingBalloon=false;openTimingRequested=true;settingsOpen.Request();};
  icon.BalloonTipShown+=(_,_)=>{if(timingBalloon)TraceNotice("shell-shown");};
  icon.BalloonTipClosed+=(_,_)=>{if(timingBalloon)TraceNotice("closed-or-expired");timingBalloon=false;};
- audio.Failed+=message=>ShowTip("音频提醒失败",message,ToolTipIcon.Warning);
+ audio.Failed+=message=>ShowTip(UiText.Get("Tray_006"),message,ToolTipIcon.Warning);
  last=activity.Read().Stamp;tick=Environment.TickCount64;lastWall=DateTimeOffset.UtcNow;engine.Reset(tick);
  SystemEvents.PowerModeChanged+=Power;SystemEvents.SessionSwitch+=Session;
- timer.Tick+=(_,_)=>{try{Poll();}catch(Exception e){CancelPreparation();audio.Stop();engine.Reset(Environment.TickCount64,true);Store.Log("poll-failed",e);SetStatus("检测异常，等待用户操作后恢复");}};
- if(Store.WriteBlocked){s.Enabled=false;ShowTip("配置读取失败","原配置已保留，禁止自动覆盖。请备份并恢复配置后重新启动。",ToolTipIcon.Warning);}else Save();
+ timer.Tick+=(_,_)=>{try{Poll();}catch(Exception e){CancelPreparation();audio.Stop();engine.Reset(Environment.TickCount64,true);Store.Log("poll-failed",e);SetStatus(UiText.Get("Tray_007"));}};
+ if(Store.WriteBlocked){s.Enabled=false;ShowTip(UiText.Get("Tray_008"),UiText.Get("Tray_025"),ToolTipIcon.Warning);}else Save();
  phoneStartupTip.Tick+=async(_,_)=>{
   phoneStartupTip.Stop();
   if(exitRequested||Store.WriteBlocked||!s.Phone.Enabled)return;
@@ -90,7 +83,7 @@ internal sealed class Tray : ApplicationContext {
    TraceNotice(match==null?"no-match":pen?"pen-match":"game-match");
    if(exitRequested||generation!=inputNoticeGeneration||match==null||powerSuspended||engine.Suspended||!s.Enabled||audio.Playing||preparingReminder!=null||!Native.Accessible()||!policy.Eligible(options,s.InputTiming)||Environment.TickCount64<nextAnyInputNotice)return;
    if(!policy.TryMark(match,Environment.TickCount64)){TraceNotice("mark-rejected");return;}nextAnyInputNotice=Environment.TickCount64+60000;
-   ShowTip("是否调整闲置检测方式？",pen?"名单内数位板软件正在运行。若数位笔无法停止播报，可考虑Windows输入计时或关闭无设备标识过滤。点击打开高级设置；不会自动切换。":"名单内游戏软件正在运行。若Windows输入计时受影响，可手动选择设备键鼠事件计时（实验）。点击打开高级设置；不会自动切换。",ToolTipIcon.Info,true);
+   ShowTip(UiText.Get("Tray_009"),pen?UiText.Get("Tray_026"):UiText.Get("Tray_027"),ToolTipIcon.Info,true);
   }catch(OperationCanceledException){TraceNotice("cancelled-or-timeout");}
   catch(Exception ex){if(!inputNoticeWarned){inputNoticeWarned=true;Store.Log("input-mode-notice-query-failed",ex);}}
   finally{if(generation==inputNoticeGeneration)inputNoticeQuery=false;}
@@ -112,31 +105,31 @@ internal sealed class Tray : ApplicationContext {
   });
  }
  void Session(object o,SessionSwitchEventArgs e)=>OnUi(()=>{CancelPreparation();audio.Stop();engine.Reset(Environment.TickCount64,true);});
- void Save(){try{Store.Save(s);}catch(Exception e){Store.Log("save-failed",e);MessageBox.Show("设置保存失败，请检查项目 data 文件夹权限。");}}
- void SetStatus(string text){if(statusRendered&&status==text)return;statusRendered=true;status=text;icon.Text=("闲置提醒器："+text)[..Math.Min(63,("闲置提醒器："+text).Length)];form?.UpdateStatus(text);}
- internal void Enable(){if(Store.WriteBlocked){MessageBox.Show("配置读取失败，已禁止启用默认提醒。请恢复配置后重新启动。");return;}CancelPreparation();s.Enabled=true;s.PauseUntil=null;s.AskAt=null;engine.Reset(Environment.TickCount64);Save();SetStatus("提醒功能已启用");}
- internal void Pause(int? minutes){CancelPreparation();s.Enabled=false;s.PauseUntil=minutes.HasValue?DateTimeOffset.UtcNow.AddMinutes(minutes.Value):null;s.AskAt=DateTimeOffset.UtcNow.AddMinutes(s.AskMinutes);audio.Stop();Save();SetStatus("当前已暂停");}
+ void Save(){try{Store.Save(s);}catch(Exception e){Store.Log("save-failed",e);MessageBox.Show(UiText.Get("Tray_010"));}}
+ void SetStatus(string text){if(statusRendered&&status==text)return;statusRendered=true;status=text;var tooltip=UiText.Format("Tray_StatusTooltip",text);icon.Text=tooltip[..Math.Min(63,tooltip.Length)];form?.UpdateStatus(text);}
+ internal void Enable(){if(Store.WriteBlocked){MessageBox.Show(UiText.Get("Tray_011"));return;}CancelPreparation();s.Enabled=true;s.PauseUntil=null;s.AskAt=null;engine.Reset(Environment.TickCount64);Save();SetStatus(UiText.Get("Tray_012"));}
+ internal void Pause(int? minutes){CancelPreparation();s.Enabled=false;s.PauseUntil=minutes.HasValue?DateTimeOffset.UtcNow.AddMinutes(minutes.Value):null;s.AskAt=DateTimeOffset.UtcNow.AddMinutes(s.AskMinutes);audio.Stop();Save();SetStatus(UiText.Get("Tray_013"));}
  void Poll(){
  safety.Refresh();
- if(safety.Blocked){CancelPreparation();audio.Stop();engine.Reset(Environment.TickCount64,true);SetStatus(safety.Suspended?"系统睡眠中，不播放提醒":"锁屏或会话状态未知，暂停提醒");return;}
- if(powerSuspended||engine.Suspended){CancelPreparation();audio.Stop();SetStatus("系统睡眠中，不播放提醒");return;}
+ if(safety.Blocked){CancelPreparation();audio.Stop();engine.Reset(Environment.TickCount64,true);SetStatus(safety.Suspended?UiText.Get("Tray_028"):UiText.Get("Tray_029"));return;}
+ if(powerSuspended||engine.Suspended){CancelPreparation();audio.Stop();SetStatus(UiText.Get("Tray_014"));return;}
  var now=Environment.TickCount64;var wall=DateTimeOffset.UtcNow;
  var sample=activity.Read();var input=sample.Stamp;var changed=input!=last;
  if(activity.AccessRestricted&&!inputAccessWarningShown){
   inputAccessWarningShown=true;
-  ShowTip("设备输入接收权限受限","前台程序权限较高或无法确认接收权限，已临时使用Windows计时。若游戏会刷新该计时，提醒可能无法触发。设备模式启动时会申请UAC；取消后仍保留回退，请核对高级设置说明。",ToolTipIcon.Warning);
+  ShowTip(UiText.Get("Tray_015"),UiText.Get("Tray_030"),ToolTipIcon.Warning);
  }
  var gap=now-tick>5000||(wall-lastWall).TotalSeconds>5;
  tick=now;lastWall=wall;last=input;
  if(gap){CancelPreparation();audio.Stop();engine.Reset(now,true);}
- if(!Native.Accessible()){blocked=true;CancelPreparation();audio.Stop();engine.Reset(now,true);SetStatus("锁屏或安全桌面，暂停提醒");return;}
+ if(!Native.Accessible()){blocked=true;CancelPreparation();audio.Stop();engine.Reset(now,true);SetStatus(UiText.Get("Tray_016"));return;}
  if(blocked){blocked=false;engine.Reset(now,true);}
  if(changed)CancelPreparation();
  audio.HandleInput(input);
  if(!s.Enabled&&s.PauseUntil is {} until&&wall>=until){Enable();}
  if(!s.Enabled){
  engine.Reset(now);
- SetStatus(s.PauseUntil.HasValue?"当前定时暂停":"当前已关闭，等待用户恢复操作");
+ SetStatus(s.PauseUntil.HasValue?UiText.Get("Tray_031"):UiText.Get("Tray_032"));
  if(s.AskAgain&&s.PauseUntil==null&&s.AskAt is {} ask&&wall>=ask&&changed&&!Native.Fullscreen()&&!promptOpen){
  promptOpen=true;
  // Modeless, non-activating prompt; never interrupts the foreground application.
@@ -160,10 +153,10 @@ internal sealed class Tray : ApplicationContext {
  last=activity.Read().Stamp; // Capture fresh baseline before starting playback.
  _=PrepareReminderAsync(previousReminder,now);
  }
- SetStatus(preparingReminder!=null?"正在暂停可暂停媒体":CurrentRuleStatus());
+ SetStatus(preparingReminder!=null?UiText.Get("Tray_033"):CurrentRuleStatus());
  }
  string CurrentRuleStatus()=>RuleStatusText.Get(suppressionActive,suppressionQuery,suppressionKnown,slideShowActive,engine.WaitingInput,
-  "提醒功能已启用；"+activity.Status+(wpsUnknown?"；WPS放映未能可靠识别，可配置例外":"")+mediaStatus+volumeStatus+(s.Phone.Enabled?phoneStatus:""));
+  UiText.Get("Tray_034")+activity.Status+(wpsUnknown?UiText.Get("Tray_035"):"")+mediaStatus+volumeStatus+(s.Phone.Enabled?phoneStatus:""));
  void RefreshSuppression(long now){
   var plan=SuppressionPolicy.Capture(s);
   if(!plan.NeedsCheck){suppressionKnown=true;suppressionActive=false;slideShowActive=false;wpsUnknown=false;return;}
@@ -200,10 +193,10 @@ internal sealed class Tray : ApplicationContext {
     try{
      var result=await MediaPause.PauseAllAsync(deadline.Token,()=>activity.Read().Stamp==baseline,s.MediaScope,s.MediaApplications.ToArray());
      suppressBoost=VolumePolicy.SkipBoostForMedia(true,true,result.Protected,result.Failed,result.UnsupportedPlaying);
-     mediaStatus=result.Failed>0?$"；部分媒体未能暂停（{result.Failed}）":result.Paused>0?$"；已确认暂停 {result.Paused} 个媒体":result.Protected>0?"；播放中的媒体不在暂停范围内":result.UnsupportedPlaying>0?"；播放中的媒体不支持暂停":"；Windows 未提供可暂停的播放会话";
+     mediaStatus=result.Failed>0?UiText.Format("Tray_036",result.Failed):result.Paused>0?UiText.Format("Tray_037",result.Paused):result.Protected>0?UiText.Get("Tray_038"):result.UnsupportedPlaying>0?UiText.Get("Tray_039"):UiText.Get("Tray_040");
      if(result.Failed>0)Store.Log("media-pause-partial-failure");
-    }catch(OperationCanceledException) when(!pending.IsCancellationRequested){mediaStatus="；媒体暂停超时，仍播放提醒";Store.Log("media-pause-timeout");}
-    catch(Exception ex) when(ex is not OperationCanceledException){mediaStatus="；媒体暂停不可用，仍播放提醒";Store.Log("media-pause-failed",ex);}
+    }catch(OperationCanceledException) when(!pending.IsCancellationRequested){mediaStatus=UiText.Get("Tray_041");Store.Log("media-pause-timeout");}
+    catch(Exception ex) when(ex is not OperationCanceledException){mediaStatus=UiText.Get("Tray_042");Store.Log("media-pause-failed",ex);}
    }else mediaStatus="";
    pending.Token.ThrowIfCancellationRequested();
    if(safety.Blocked||powerSuspended||engine.Suspended||engine.WaitingInput||suppressionActive||suppressionQuery||!s.Enabled||audio.IsPreview||activity.Read().Stamp!=baseline||!Native.Accessible())return;
@@ -215,16 +208,33 @@ internal sealed class Tray : ApplicationContext {
  void StartPhoneNotification(){
   if(!s.Phone.Enabled||lifetime.IsCancellationRequested)return;
   phoneSend?.Cancel();phoneSend?.Dispose();phoneSend=CancellationTokenSource.CreateLinkedTokenSource(lifetime.Token);
-  var options=s.Phone.Copy();var token=phoneSend.Token;phoneStatus="；正在发送手机通知";
+  var options=s.Phone.Copy();var token=phoneSend.Token;phoneStatus=UiText.Get("Tray_043");
   _=SendPhoneNotificationAsync(options,token);
  }
  async Task SendPhoneNotificationAsync(PhoneOptions options,CancellationToken token){
-  try{var result=await Task.Run(()=>phone.SendAsync(options,false,token),token);if(!token.IsCancellationRequested)OnUi(()=>phoneStatus="；"+result);}
-  catch(OperationCanceledException){if(!lifetime.IsCancellationRequested)OnUi(()=>phoneStatus="；手机通知已取消或超时");}
-  catch(Exception ex){Store.Log("phone-send-failed",ex);if(!lifetime.IsCancellationRequested)OnUi(()=>phoneStatus="；手机通知失败，电脑播报不受影响");}
+  try{var result=await Task.Run(()=>phone.SendAsync(options,false,token),token);if(!token.IsCancellationRequested)OnUi(()=>phoneStatus=UiText.Format("Tray_StatusSuffix",result));}
+  catch(OperationCanceledException){if(!lifetime.IsCancellationRequested)OnUi(()=>phoneStatus=UiText.Get("Tray_044"));}
+  catch(Exception ex){Store.Log("phone-send-failed",ex);if(!lifetime.IsCancellationRequested)OnUi(()=>phoneStatus=UiText.Get("Tray_045"));}
  }
  internal IEnumerable<string> Files(int mode)=>s.AudioFiles(AppContext.BaseDirectory,mode);
- void Open(){SettingsWindowPresenter.Log("open-enter");if(form is null||form.IsDisposed){SettingsWindowPresenter.Log("construct-begin");form=new SettingsForm(s,this,audio);SettingsWindowPresenter.Log("construct-end");form.FormClosed+=(_,_)=>form=null;}form.UpdateStatus(status);SettingsWindowPresenter.Show(form);if(openTimingRequested){openTimingRequested=false;form.ShowInputTiming();}}
+ SettingsForm CreateSettingsForm(){
+  var created=new SettingsForm(s,this,audio);
+  created.FormClosed+=(_,_)=>{if(ReferenceEquals(form,created))form=null;};
+  created.LanguageRefreshRequested+=source=>eventDispatch.BeginInvoke((Action)(()=>RefreshSettingsLanguage(source)));
+  return created;
+ }
+ void Open(){SettingsWindowPresenter.Log("open-enter");if(form is null||form.IsDisposed){SettingsWindowPresenter.Log("construct-begin");form=CreateSettingsForm();SettingsWindowPresenter.Log("construct-end");}form.UpdateStatus(status);SettingsWindowPresenter.Show(form);if(openTimingRequested){openTimingRequested=false;form.ShowInputTiming();}}
+ void RefreshSettingsLanguage(SettingsForm source){
+  if(exitRequested||source.IsDisposed||!ReferenceEquals(form,source))return;
+  try{
+   var view=SettingsViewState.Capture(source);
+   var replacement=CreateSettingsForm();
+   source.Close();
+   form=replacement;
+   replacement.UpdateStatus(status);
+   view.Show(replacement);
+  }catch(Exception ex){Store.Log("language-window-refresh-failed",ex);}
+ }
  bool liveElevationPending;
  internal void RequestInputElevation(){
   if(exitRequested||liveElevationPending||Store.WriteBlocked||s.InputTiming!=InputTimingMode.DeviceHeaders)return;
@@ -240,14 +250,26 @@ internal sealed class Tray : ApplicationContext {
   CancelPreparation();audio.Stop();
   s.CopyFrom(accepted);audio.VolumeSettings=s;activity.Configure(s.InputTiming,s.RequireIdentifiedDeviceInput);last=activity.Read().Stamp;
   engine.Reset(Environment.TickCount64);
-  try{Startup.Set(startup);return null;}catch(Exception e){Store.Log("startup-save-failed",e);return "设置已保存，但自启动更新失败，请重试。";}
+  if(UiText.CultureOverride?.Name!=s.Language){
+   ApplicationLanguage.Apply(s.Language);
+   TrayMenu.Refresh(icon.ContextMenuStrip!);
+   mediaStatus="";volumeStatus="";phoneStatus="";
+   statusRendered=false;
+   SetStatus(!s.Enabled?UiText.Get(s.PauseUntil.HasValue?"Tray_031":"Tray_032"):CurrentRuleStatus());
+   foreach(var prompt in Application.OpenForms.OfType<ResumeForm>().ToArray())prompt.RefreshLanguage();
+  }
+  try{Startup.Set(startup);return null;}catch(Exception e){Store.Log("startup-save-failed",e);return UiText.Get("Tray_046");}
  }
  protected override void ExitThreadCore(){if(exitRequested)return;exitRequested=true;settingsOpen.Dispose();SlideShowHelper.Stop();lifetime.Cancel();phoneSend?.Cancel();CancelPreparation();timer.Stop();phoneStartupTip.Dispose();audio.Dispose();safety.Dispose();activity.Dispose();phoneSend?.Dispose();SystemEvents.PowerModeChanged-=Power;SystemEvents.SessionSwitch-=Session;icon.Visible=false;icon.Dispose();trayArtwork.Dispose();timer.Dispose();form?.Dispose();eventDispatch.Dispose();MusicRestoreScheduler.WhenIdle(()=>base.ExitThreadCore());}
 }
 internal sealed class ResumeForm:Form {
  protected override bool ShowWithoutActivation=>true;
  protected override CreateParams CreateParams {get{var p=base.CreateParams;p.ExStyle|=0x08000000;return p;}}
- internal ResumeForm(Action enable,Action later){Text="闲置提醒";Size=new Size(410,170);StartPosition=FormStartPosition.CenterScreen;ShowInTaskbar=true;TopMost=false;var panel=new FlowLayoutPanel{Dock=DockStyle.Fill,Padding=new Padding(18)};panel.Controls.Add(new Label{Text="闲置提醒目前已关闭，是否重新启用？",AutoSize=true,Margin=new Padding(3,3,3,20)});var yes=new Button{Text="重新启用",AutoSize=true};var no=new Button{Text="稍后再次提醒",AutoSize=true};yes.Click+=(_,_)=>{enable();Close();};no.Click+=(_,_)=>{later();Close();};panel.Controls.Add(yes);panel.Controls.Add(no);Controls.Add(panel);}
+ internal void RefreshLanguage(){
+  Text=UiText.Get("Tray_017");
+  foreach(Control control in Controls[0].Controls)if(control.Tag is string key)control.Text=UiText.Get(key);
+ }
+ internal ResumeForm(Action enable,Action later){Text=UiText.Get("Tray_017");Size=new Size(410,200);StartPosition=FormStartPosition.CenterScreen;ShowInTaskbar=true;TopMost=false;var panel=new FlowLayoutPanel{Dock=DockStyle.Fill,Padding=new Padding(18)};panel.Controls.Add(new Label{Tag="Tray_018",Text=UiText.Get("Tray_018"),AutoSize=true,MaximumSize=new Size(340,0),Margin=new Padding(3,3,3,20)});var yes=new Button{Tag="Tray_019",Text=UiText.Get("Tray_019"),AutoSize=true};var no=new Button{Tag="Tray_020",Text=UiText.Get("Tray_020"),AutoSize=true};yes.Click+=(_,_)=>{enable();Close();};no.Click+=(_,_)=>{later();Close();};panel.Controls.Add(yes);panel.Controls.Add(no);Controls.Add(panel);}
 }
 
 

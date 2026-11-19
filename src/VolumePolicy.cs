@@ -16,12 +16,12 @@ public static class VolumePolicy {
  public static bool SkipBoostForMedia(bool pauseRequested,bool resultKnown,int protectedPlaying=0,int failed=0,int unsupportedPlaying=0)
   => pauseRequested&&(!resultKnown||protectedPlaying>0||failed>0||unsupportedPlaying>0);
  public static string? BlockReason(bool speaker,bool muted,float current,DeviceVolumeSetting? config){
-  if(!speaker)return "设备不是已确认的扬声器或类型不明确";
-  if(config==null)return "当前输出设备未配置";
-  if(!config.Enabled)return "此设备自动提升尚未启用";
-  if(config.ConfirmedTarget!=config.TargetPercent)return "目标音量尚未通过试听确认";
-  if(muted)return "设备已静音，程序不自动解除静音";
-  if(current+0.001f>=config.TargetPercent/100f)return $"当前 Windows 音量 {current*100:F0}% 已达到目标 {config.TargetPercent}%";
+  if(!speaker)return UiText.Get("VolumePolicy_001");
+  if(config==null)return UiText.Get("VolumePolicy_002");
+  if(!config.Enabled)return UiText.Get("VolumePolicy_003");
+  if(config.ConfirmedTarget!=config.TargetPercent)return UiText.Get("VolumePolicy_004");
+  if(muted)return UiText.Get("VolumePolicy_005");
+  if(current+0.001f>=config.TargetPercent/100f)return UiText.Format("VolumePolicy_006",current*100,config.TargetPercent);
   return null;
  }
  public static bool CanRaise(bool speaker,bool muted,float current,DeviceVolumeSetting? config)

@@ -17,10 +17,10 @@ public static class SuppressionPolicy {
   => (rule.Mode==SuppressionMode.WhileRunning?running:playing).Any(id=>string.Equals(id,rule.Application,StringComparison.OrdinalIgnoreCase));
  public static void Validate(SuppressionRule rule){
   if(string.IsNullOrWhiteSpace(rule.Application)||MediaApplicationFilter.Parse(rule.Application).Count!=1)
-   throw new ArgumentException("请选择一个软件或填写一个媒体应用标识。");
-  if(!Enum.IsDefined(rule.Mode))throw new ArgumentException("请选择有效的提醒规则。");
+   throw new ArgumentException(UiText.Get("SuppressionPolicy_001"));
+  if(!Enum.IsDefined(rule.Mode))throw new ArgumentException(UiText.Get("SuppressionPolicy_002"));
   if(rule.Mode==SuppressionMode.WhileRunning&&!rule.Application.EndsWith(".exe",StringComparison.OrdinalIgnoreCase))
-   throw new ArgumentException("运行中不提醒需要 .exe 文件名或完整路径；媒体包标识只能用于播放中不提醒。");
+   throw new ArgumentException(UiText.Get("SuppressionPolicy_003"));
  }
 }
 

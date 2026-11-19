@@ -13,13 +13,13 @@ public static class SteamApplicationImport {
    var info=new DirectoryInfo(candidate);
    if(info.Name.Equals("common",StringComparison.OrdinalIgnoreCase)&&info.Parent?.Name.Equals("steamapps",StringComparison.OrdinalIgnoreCase)==true)return info.FullName;
   }
-  throw new ArgumentException("请选择Steam安装目录、Steam库目录、steamapps或steamapps\\common目录。其他库需分别导入。");
+  throw new ArgumentException(UiText.Get("SteamApplicationImport_001"));
  }
  public static SteamImportResult Scan(string selected,CancellationToken token,int maxCandidates=3000,int maxDirectories=20000,int maxDepth=12,TimeSpan? timeLimit=null){
   token.ThrowIfCancellationRequested();
   var root=CommonFolder(selected);var results=new List<SteamImportCandidate>();var pending=new Stack<(string Path,int Depth)>();
   // Never follow directory links/junctions, including ancestors of the chosen common folder.
-  for(DirectoryInfo? p=new(root);p!=null;p=p.Parent)if((p.Attributes&FileAttributes.ReparsePoint)!=0)throw new ArgumentException("为避免扫描链接指向的其他目录，请选择不经过目录链接的Steam库。");
+  for(DirectoryInfo? p=new(root);p!=null;p=p.Parent)if((p.Attributes&FileAttributes.ReparsePoint)!=0)throw new ArgumentException(UiText.Get("SteamApplicationImport_002"));
   pending.Push((root,0));var clock=Stopwatch.StartNew();int visited=0,skipped=0;bool limited=false;
   while(pending.Count>0){
    token.ThrowIfCancellationRequested();

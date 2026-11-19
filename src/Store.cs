@@ -11,5 +11,5 @@ internal static class Store {
  internal static bool WriteBlocked=>config.WriteBlocked;
  internal static Settings Load(){var value=config.Load();if(config.WriteBlocked)Log("config-load-blocked");return value;}
  internal static void Save(Settings settings)=>config.Save(settings);
- internal static string Import(string path,string kind){var ext=Path.GetExtension(path).ToLowerInvariant();if(ext!=".wav"&&ext!=".mp3")throw new InvalidOperationException("仅支持 WAV 或 MP3");if(new FileInfo(path).Length>50*1024*1024)throw new InvalidOperationException("音频不能超过 50 MB");var p=Path.Combine(Data,kind+"-"+Guid.NewGuid().ToString("N")+ext);File.Copy(path,p);return p;}
+ internal static string Import(string path,string kind){var ext=Path.GetExtension(path).ToLowerInvariant();if(ext!=".wav"&&ext!=".mp3")throw new InvalidOperationException(UiText.Get("Store_001"));if(new FileInfo(path).Length>50*1024*1024)throw new InvalidOperationException(UiText.Get("Store_002"));var p=Path.Combine(Data,kind+"-"+Guid.NewGuid().ToString("N")+ext);File.Copy(path,p);return p;}
 }

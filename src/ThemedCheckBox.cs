@@ -8,8 +8,12 @@ namespace IdleReminder;
 // Repaint only the checkbox glyph after the normal WinForms renderer.
 internal class ThemedCheckBox:CheckBox {
  static CheckBoxPalette palette=new();
+
+#if !SKIN_DESIGNER_PUBLIC
  static Bitmap? customMark;
  internal static void ApplyCheckmark(Image? image){var next=image==null?null:new Bitmap(image);var old=customMark;customMark=next;old?.Dispose();PaletteChanged?.Invoke();}
+
+#endif
  static event Action? PaletteChanged;
  bool listening;
  internal static void ApplyPalette(CheckBoxPalette value){palette=value.Copy();palette.Validate();PaletteChanged?.Invoke();}
@@ -67,12 +71,16 @@ internal class ThemedCheckBox:CheckBox {
   using(var brush=new SolidBrush(fill))g.FillRectangle(brush,bounds);
   using(var pen=new Pen(border,Math.Max(1,scale)))g.DrawRectangle(pen,bounds.X+scale/2,bounds.Y+scale/2,bounds.Width-scale,bounds.Height-scale);
   if(!marked)return;
+
+#if !SKIN_DESIGNER_PUBLIC
   if(state==CheckState.Checked&&customMark!=null){
    var image=customMark;float inset=Math.Max(1,scale);float w=bounds.Width-2*inset,h=bounds.Height-2*inset;float ratio=Math.Min(w/image.Width,h/image.Height);
    int iw=Math.Max(1,(int)(image.Width*ratio)),ih=Math.Max(1,(int)(image.Height*ratio));var destination=new Rectangle(bounds.Left+(bounds.Width-iw)/2,bounds.Top+(bounds.Height-ih)/2,iw,ih);
    using var attributes=new System.Drawing.Imaging.ImageAttributes();if(!enabled){var matrix=new System.Drawing.Imaging.ColorMatrix{Matrix33=.45f};attributes.SetColorMatrix(matrix);}
    var oldMode=g.InterpolationMode;try{g.InterpolationMode=InterpolationMode.HighQualityBicubic;g.DrawImage(image,destination,0,0,image.Width,image.Height,GraphicsUnit.Pixel,attributes);}finally{g.InterpolationMode=oldMode;}return;
   }
+
+#endif
   var saved=g.Save();
   try{
    g.SmoothingMode=SmoothingMode.AntiAlias;

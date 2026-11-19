@@ -23,7 +23,7 @@ internal static class UiStyle {
    else if(control is Label label){
     bool helper=label.ForeColor==SystemColors.GrayText;
     bool heading=label.Font.Bold||label.Text.StartsWith("复选框颜色");
-    if(heading)label.Font=new Font(label.Font.FontFamily,10F,FontStyle.Bold);
+    if(heading&&label is not DetailsToggle)label.Font=new Font(label.Font.FontFamily,10F,FontStyle.Bold);
     label.ForeColor=helper?HintColor:TextColor;
     // Keep padding outside the full font line, including Chinese lower strokes.
     label.MinimumSize=new Size(label.MinimumSize.Width,Math.Max(label.MinimumSize.Height,label.Font.Height+label.Padding.Vertical+4));
